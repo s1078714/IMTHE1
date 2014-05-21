@@ -12,7 +12,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration buildProperties="" id="de.innot.avreclipse.toolchain.winavr.base.286113588" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
+				<configuration buildProperties="" description="" id="de.innot.avreclipse.toolchain.winavr.base.286113588" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
 					<folderInfo id="de.innot.avreclipse.toolchain.winavr.base.286113588.69186518" name="/" resourcePath="">
 						<toolChain id="de.innot.avreclipse.toolchain.winavr.base.1474795077" name="de.innot.avreclipse.toolchain.winavr.base" superClass="de.innot.avreclipse.toolchain.winavr.base">
 							<option id="de.innot.avreclipse.toolchain.options.toolchain.objcopy.flash.1886950669" name="Generate HEX file for Flash memory" superClass="de.innot.avreclipse.toolchain.options.toolchain.objcopy.flash"/>
@@ -21,10 +21,16 @@
 							<option id="de.innot.avreclipse.toolchain.options.toolchain.size.1312542631" name="Print Size" superClass="de.innot.avreclipse.toolchain.options.toolchain.size"/>
 							<option id="de.innot.avreclipse.toolchain.options.toolchain.avrdude.380495931" name="AVRDude" superClass="de.innot.avreclipse.toolchain.options.toolchain.avrdude"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="de.innot.avreclipse.targetplatform.avr.1767130253" name="AVR Cross-Target" osList="all" superClass="de.innot.avreclipse.targetplatform.avr"/>
-							<builder id="de.innot.avreclipse.target.builder.winavr.base.1666959323" managedBuildOn="false" name="AVR GNU Make Builder.Default" superClass="de.innot.avreclipse.target.builder.winavr.base"/>
-							<tool id="de.innot.avreclipse.tool.assembler.winavr.base.258791227" name="AVR Assembler" superClass="de.innot.avreclipse.tool.assembler.winavr.base"/>
-							<tool id="de.innot.avreclipse.tool.compiler.winavr.base.807170759" name="AVR Compiler" superClass="de.innot.avreclipse.tool.compiler.winavr.base"/>
-							<tool id="de.innot.avreclipse.tool.cppcompiler.base.435394145" name="AVR C++ Compiler" superClass="de.innot.avreclipse.tool.cppcompiler.base"/>
+							<builder id="de.innot.avreclipse.target.builder.winavr.base.1666959323" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="AVR GNU Make Builder" superClass="de.innot.avreclipse.target.builder.winavr.base"/>
+							<tool id="de.innot.avreclipse.tool.assembler.winavr.base.258791227" name="AVR Assembler" superClass="de.innot.avreclipse.tool.assembler.winavr.base">
+								<inputType id="de.innot.avreclipse.tool.assembler.input.151264156" superClass="de.innot.avreclipse.tool.assembler.input"/>
+							</tool>
+							<tool id="de.innot.avreclipse.tool.compiler.winavr.base.807170759" name="AVR Compiler" superClass="de.innot.avreclipse.tool.compiler.winavr.base">
+								<inputType id="de.innot.avreclipse.compiler.winavr.input.213330408" name="C Source Files" superClass="de.innot.avreclipse.compiler.winavr.input"/>
+							</tool>
+							<tool id="de.innot.avreclipse.tool.cppcompiler.base.435394145" name="AVR C++ Compiler" superClass="de.innot.avreclipse.tool.cppcompiler.base">
+								<inputType id="de.innot.avreclipse.cppcompiler.input.662759681" superClass="de.innot.avreclipse.cppcompiler.input"/>
+							</tool>
 							<tool id="de.innot.avreclipse.tool.linker.winavr.base.2140911875" name="AVR C Linker" superClass="de.innot.avreclipse.tool.linker.winavr.base"/>
 							<tool id="de.innot.avreclipse.tool.cpplinker.base.755531744" name="AVR C++ Linker" superClass="de.innot.avreclipse.tool.cpplinker.base"/>
 							<tool id="de.innot.avreclipse.tool.archiver.winavr.base.1496361467" name="AVR Archiver" superClass="de.innot.avreclipse.tool.archiver.winavr.base"/>
@@ -47,4 +53,5 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="HelloWorld.null.300763857" name="HelloWorld"/>
 	</storageModule>
+	<storageModule moduleId="refreshScope"/>
 </cproject>
