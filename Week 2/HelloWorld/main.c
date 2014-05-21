@@ -17,7 +17,7 @@ int main(void)
 	while (1)
 	{
 		PORTB ^= 1 << PINB0;	// XOR (^) to toggle only pin 0 on Port B
-		_delay_ms(1000);		// Delay between the toggling on and off of 100 ms
+//		_delay_ms(100);		// Delay between the toggling on and off of 100 ms
 
 		if (bit_is_clear(PINB, 1))
 		{

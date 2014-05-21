@@ -1,4 +1,4 @@
-#Wed May 21 12:37:45 CEST 2014
+#Wed May 21 16:37:57 CEST 2014
 avrtarget/ClockFrequency=1000000
 avrtarget/ExtRAMSize=0
 avrtarget/ExtendedRAM=false
@@ -9,7 +9,7 @@ avrtarget/avrdude/BitBangDelay=
 avrtarget/avrdude/Bitclock=
 avrtarget/avrdude/EEPROMFile=
 avrtarget/avrdude/EEPROMFromConfig=true
-avrtarget/avrdude/FlashFile=C\:\\Users\\Gunnar\\Documents\\GitHub\\Lijn_In_Leren\\IMTHE1\\Week 2\\HelloWorld\\main.hex
+avrtarget/avrdude/FlashFile=${workspace_loc\:/Teller2/main.hex}
 avrtarget/avrdude/FlashFromConfig=false
 avrtarget/avrdude/NoChipErase=false
 avrtarget/avrdude/NoSigCheck=false
