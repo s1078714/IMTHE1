@@ -8,13 +8,11 @@
 #include <avr/io.h>
 #include <avr/delay.h>
 
-//int secs = 0;
 int i;
 
 int main(void)
 {
 	DDRD = 0b11111111; // Signaal op PortD0 (is nu output)
-	//PORTD = 0b00000001; // 5 Volt op PortD0
 	DDRC = 0b0110000;
 
 	uint8_t secs = 0;
@@ -39,9 +37,6 @@ int main(void)
 		{
 			secs++;
 		}
-
-		//		displayLinks();
-		//		displayRechts();
 	}
 
 
@@ -63,14 +58,6 @@ displayRechts(cijferRechts)
 
 	PORTC = 0b0100000;
 	PORTD = cijfer[cijferRechts];
-
-
-
-
-	//	for (i=0;i<10;i++)
-	//	{
-	//		PORTD = cijfer[i];
-	//	}
 }
 
 displayLinks(cijferLinks)
@@ -89,9 +76,4 @@ displayLinks(cijferLinks)
 
 	PORTC = 0b0010000;
 	PORTD = cijfer[cijferLinks];
-
-
-
-	//	for (i=0;i<10;i++)
-	//		cijfer[i];
 }
