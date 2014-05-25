@@ -141,11 +141,6 @@ displayRechts(cijferRechts)
   d4:	f9 1f       	adc	r31, r25
   d6:	81 81       	ldd	r24, Z+1	; 0x01
   d8:	8b b9       	out	0x0b, r24	; 11
-
-	//	for (i=0;i<10;i++)
-	//	{
-	//		PORTD = cijfer[i];
-	//	}
 }
   da:	2a 96       	adiw	r28, 0x0a	; 10
   dc:	0f b6       	in	r0, 0x3f	; 63
@@ -211,11 +206,6 @@ displayLinks(cijferLinks)
  12e:	f9 1f       	adc	r31, r25
  130:	81 81       	ldd	r24, Z+1	; 0x01
  132:	8b b9       	out	0x0b, r24	; 11
-
-
-
-	//	for (i=0;i<10;i++)
-	//		cijfer[i];
 }
  134:	2a 96       	adiw	r28, 0x0a	; 10
  136:	0f b6       	in	r0, 0x3f	; 63
@@ -228,8 +218,8 @@ displayLinks(cijferLinks)
  144:	08 95       	ret
 
 00000146 <main>:
+#include <avr/delay.h>
 
-//int secs = 0;
 int i;
 
 int main(void)
@@ -242,7 +232,6 @@ int main(void)
 	DDRD = 0b11111111; // Signaal op PortD0 (is nu output)
  150:	8f ef       	ldi	r24, 0xFF	; 255
  152:	8a b9       	out	0x0a, r24	; 10
-	//PORTD = 0b00000001; // 5 Volt op PortD0
 	DDRC = 0b0110000;
  154:	80 e3       	ldi	r24, 0x30	; 48
  156:	87 b9       	out	0x07, r24	; 7

@@ -258,15 +258,15 @@
  311               	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\Gunnar\AppData\Local\Temp/ccsfypYM.s:2      *ABS*:0000003f __SREG__
-C:\Users\Gunnar\AppData\Local\Temp/ccsfypYM.s:3      *ABS*:0000003e __SP_H__
-C:\Users\Gunnar\AppData\Local\Temp/ccsfypYM.s:4      *ABS*:0000003d __SP_L__
-C:\Users\Gunnar\AppData\Local\Temp/ccsfypYM.s:5      *ABS*:00000034 __CCP__
-C:\Users\Gunnar\AppData\Local\Temp/ccsfypYM.s:6      *ABS*:00000000 __tmp_reg__
-C:\Users\Gunnar\AppData\Local\Temp/ccsfypYM.s:7      *ABS*:00000001 __zero_reg__
-C:\Users\Gunnar\AppData\Local\Temp/ccsfypYM.s:18     .text:00000000 displayRechts
-C:\Users\Gunnar\AppData\Local\Temp/ccsfypYM.s:89     .text:0000005c displayLinks
-C:\Users\Gunnar\AppData\Local\Temp/ccsfypYM.s:159    .text:000000b6 main
+C:\Users\Gunnar\AppData\Local\Temp/cc29GgBc.s:2      *ABS*:0000003f __SREG__
+C:\Users\Gunnar\AppData\Local\Temp/cc29GgBc.s:3      *ABS*:0000003e __SP_H__
+C:\Users\Gunnar\AppData\Local\Temp/cc29GgBc.s:4      *ABS*:0000003d __SP_L__
+C:\Users\Gunnar\AppData\Local\Temp/cc29GgBc.s:5      *ABS*:00000034 __CCP__
+C:\Users\Gunnar\AppData\Local\Temp/cc29GgBc.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\Gunnar\AppData\Local\Temp/cc29GgBc.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\Gunnar\AppData\Local\Temp/cc29GgBc.s:18     .text:00000000 displayRechts
+C:\Users\Gunnar\AppData\Local\Temp/cc29GgBc.s:89     .text:0000005c displayLinks
+C:\Users\Gunnar\AppData\Local\Temp/cc29GgBc.s:159    .text:000000b6 main
                             *COM*:00000002 i
 
 UNDEFINED SYMBOLS
