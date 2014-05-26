@@ -1,4 +1,4 @@
-#Tue May 27 00:28:19 CEST 2014
+#Tue May 27 00:50:08 CEST 2014
 avrtarget/ClockFrequency=1000000
 avrtarget/ExtRAMSize=0
 avrtarget/ExtendedRAM=false
@@ -8,8 +8,8 @@ avrtarget/UseExtendedRAMforHeap=true
 avrtarget/avrdude/BitBangDelay=
 avrtarget/avrdude/Bitclock=
 avrtarget/avrdude/EEPROMFile=
-avrtarget/avrdude/EEPROMFromConfig=true
-avrtarget/avrdude/FlashFile=${workspace_loc\:/${ProjName}/main.hex}
+avrtarget/avrdude/EEPROMFromConfig=false
+avrtarget/avrdude/FlashFile=C\:\\Users\\Gunnar\\Documents\\GitHub\\Lijn_In_Leren\\IMTHE1\\Week 2\\RGB-LED\\Release\\RGBLED.hex
 avrtarget/avrdude/FlashFromConfig=false
 avrtarget/avrdude/NoChipErase=false
 avrtarget/avrdude/NoSigCheck=false

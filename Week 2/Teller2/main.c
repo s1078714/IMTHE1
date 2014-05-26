@@ -12,7 +12,7 @@ int i;
 
 int main(void)
 {
-	DDRD = 0b11111111; // Signaal op PortD0 (is nu output)
+	DDRD = 0b11111111; // bit1 == output, bit0 == input
 	DDRC = 0b0110000;
 
 	uint8_t secs = 0;

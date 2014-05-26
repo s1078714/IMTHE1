@@ -229,7 +229,7 @@ int main(void)
  14a:	1f 93       	push	r17
  14c:	cf 93       	push	r28
  14e:	df 93       	push	r29
-	DDRD = 0b11111111; // Signaal op PortD0 (is nu output)
+	DDRD = 0b11111111; // bit1 == output, bit0 == input
  150:	8f ef       	ldi	r24, 0xFF	; 255
  152:	8a b9       	out	0x0a, r24	; 10
 	DDRC = 0b0110000;
