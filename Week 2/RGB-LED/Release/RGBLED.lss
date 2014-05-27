@@ -3,7 +3,7 @@ RGBLED.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000000d4  00000000  00000000  00000054  2**1
+  0 .text         00000170  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
 
 Disassembly of section .text:
@@ -43,56 +43,132 @@ Disassembly of section .text:
   6e:	d8 e0       	ldi	r29, 0x08	; 8
   70:	de bf       	out	0x3e, r29	; 62
   72:	cd bf       	out	0x3d, r28	; 61
-  74:	0e 94 40 00 	call	0x80	; 0x80 <main>
-  78:	0c 94 68 00 	jmp	0xd0	; 0xd0 <_exit>
+  74:	0e 94 6e 00 	call	0xdc	; 0xdc <main>
+  78:	0c 94 b6 00 	jmp	0x16c	; 0x16c <_exit>
 
 0000007c <__bad_interrupt>:
   7c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
-00000080 <main>:
-  80:	8f e0       	ldi	r24, 0x0F	; 15
-  82:	8a b9       	out	0x0a, r24	; 10
-  84:	a4 e0       	ldi	r26, 0x04	; 4
-  86:	28 ea       	ldi	r18, 0xA8	; 168
-  88:	31 e6       	ldi	r19, 0x61	; 97
-  8a:	f5 e0       	ldi	r31, 0x05	; 5
-  8c:	e6 e0       	ldi	r30, 0x06	; 6
-  8e:	77 e0       	ldi	r23, 0x07	; 7
-  90:	6c e0       	ldi	r22, 0x0C	; 12
-  92:	5d e0       	ldi	r21, 0x0D	; 13
-  94:	4e e0       	ldi	r20, 0x0E	; 14
-  96:	ab b9       	out	0x0b, r26	; 11
-  98:	c9 01       	movw	r24, r18
-  9a:	01 97       	sbiw	r24, 0x01	; 1
-  9c:	f1 f7       	brne	.-4      	; 0x9a <main+0x1a>
-  9e:	fb b9       	out	0x0b, r31	; 11
-  a0:	c9 01       	movw	r24, r18
+00000080 <delay_ms>:
+  80:	2a ef       	ldi	r18, 0xFA	; 250
+  82:	30 e0       	ldi	r19, 0x00	; 0
+  84:	04 c0       	rjmp	.+8      	; 0x8e <delay_ms+0xe>
+  86:	01 97       	sbiw	r24, 0x01	; 1
+  88:	f9 01       	movw	r30, r18
+  8a:	31 97       	sbiw	r30, 0x01	; 1
+  8c:	f1 f7       	brne	.-4      	; 0x8a <delay_ms+0xa>
+  8e:	00 97       	sbiw	r24, 0x00	; 0
+  90:	d1 f7       	brne	.-12     	; 0x86 <delay_ms+0x6>
+  92:	08 95       	ret
+
+00000094 <fade_in>:
+  94:	dc 01       	movw	r26, r24
+  96:	20 e0       	ldi	r18, 0x00	; 0
+  98:	4a ef       	ldi	r20, 0xFA	; 250
+  9a:	50 e0       	ldi	r21, 0x00	; 0
+  9c:	2c 93       	st	X, r18
+  9e:	84 e6       	ldi	r24, 0x64	; 100
+  a0:	90 e0       	ldi	r25, 0x00	; 0
   a2:	01 97       	sbiw	r24, 0x01	; 1
-  a4:	f1 f7       	brne	.-4      	; 0xa2 <main+0x22>
-  a6:	eb b9       	out	0x0b, r30	; 11
-  a8:	c9 01       	movw	r24, r18
-  aa:	01 97       	sbiw	r24, 0x01	; 1
-  ac:	f1 f7       	brne	.-4      	; 0xaa <main+0x2a>
-  ae:	7b b9       	out	0x0b, r23	; 11
-  b0:	c9 01       	movw	r24, r18
-  b2:	01 97       	sbiw	r24, 0x01	; 1
-  b4:	f1 f7       	brne	.-4      	; 0xb2 <main+0x32>
-  b6:	6b b9       	out	0x0b, r22	; 11
-  b8:	c9 01       	movw	r24, r18
-  ba:	01 97       	sbiw	r24, 0x01	; 1
-  bc:	f1 f7       	brne	.-4      	; 0xba <main+0x3a>
-  be:	5b b9       	out	0x0b, r21	; 11
-  c0:	c9 01       	movw	r24, r18
-  c2:	01 97       	sbiw	r24, 0x01	; 1
-  c4:	f1 f7       	brne	.-4      	; 0xc2 <main+0x42>
-  c6:	4b b9       	out	0x0b, r20	; 11
-  c8:	c9 01       	movw	r24, r18
-  ca:	01 97       	sbiw	r24, 0x01	; 1
-  cc:	f1 f7       	brne	.-4      	; 0xca <main+0x4a>
-  ce:	e3 cf       	rjmp	.-58     	; 0x96 <main+0x16>
+  a4:	fa 01       	movw	r30, r20
+  a6:	31 97       	sbiw	r30, 0x01	; 1
+  a8:	f1 f7       	brne	.-4      	; 0xa6 <fade_in+0x12>
+  aa:	00 97       	sbiw	r24, 0x00	; 0
+  ac:	d1 f7       	brne	.-12     	; 0xa2 <fade_in+0xe>
+  ae:	2f 5f       	subi	r18, 0xFF	; 255
+  b0:	2f 3f       	cpi	r18, 0xFF	; 255
+  b2:	a1 f7       	brne	.-24     	; 0x9c <fade_in+0x8>
+  b4:	08 95       	ret
 
-000000d0 <_exit>:
-  d0:	f8 94       	cli
+000000b6 <fade_out>:
+  b6:	dc 01       	movw	r26, r24
+  b8:	20 e0       	ldi	r18, 0x00	; 0
+  ba:	4a ef       	ldi	r20, 0xFA	; 250
+  bc:	50 e0       	ldi	r21, 0x00	; 0
+  be:	82 2f       	mov	r24, r18
+  c0:	80 95       	com	r24
+  c2:	8c 93       	st	X, r24
+  c4:	84 e6       	ldi	r24, 0x64	; 100
+  c6:	90 e0       	ldi	r25, 0x00	; 0
+  c8:	01 97       	sbiw	r24, 0x01	; 1
+  ca:	fa 01       	movw	r30, r20
+  cc:	31 97       	sbiw	r30, 0x01	; 1
+  ce:	f1 f7       	brne	.-4      	; 0xcc <fade_out+0x16>
+  d0:	00 97       	sbiw	r24, 0x00	; 0
+  d2:	d1 f7       	brne	.-12     	; 0xc8 <fade_out+0x12>
+  d4:	2f 5f       	subi	r18, 0xFF	; 255
+  d6:	2f 3f       	cpi	r18, 0xFF	; 255
+  d8:	91 f7       	brne	.-28     	; 0xbe <fade_out+0x8>
+  da:	08 95       	ret
 
-000000d2 <__stop_program>:
-  d2:	ff cf       	rjmp	.-2      	; 0xd2 <__stop_program>
+000000dc <main>:
+  dc:	cf 93       	push	r28
+  de:	df 93       	push	r29
+  e0:	83 e8       	ldi	r24, 0x83	; 131
+  e2:	84 bd       	out	0x24, r24	; 36
+  e4:	82 e0       	ldi	r24, 0x02	; 2
+  e6:	85 bd       	out	0x25, r24	; 37
+  e8:	81 ea       	ldi	r24, 0xA1	; 161
+  ea:	80 93 80 00 	sts	0x0080, r24
+  ee:	8a e0       	ldi	r24, 0x0A	; 10
+  f0:	80 93 81 00 	sts	0x0081, r24
+  f4:	8c e1       	ldi	r24, 0x1C	; 28
+  f6:	84 b9       	out	0x04, r24	; 4
+  f8:	87 e0       	ldi	r24, 0x07	; 7
+  fa:	8a b9       	out	0x0a, r24	; 10
+  fc:	28 ee       	ldi	r18, 0xE8	; 232
+  fe:	33 e0       	ldi	r19, 0x03	; 3
+ 100:	ca ef       	ldi	r28, 0xFA	; 250
+ 102:	d0 e0       	ldi	r29, 0x00	; 0
+ 104:	05 c0       	rjmp	.+10     	; 0x110 <main+0x34>
+ 106:	21 50       	subi	r18, 0x01	; 1
+ 108:	30 40       	sbci	r19, 0x00	; 0
+ 10a:	ce 01       	movw	r24, r28
+ 10c:	01 97       	sbiw	r24, 0x01	; 1
+ 10e:	f1 f7       	brne	.-4      	; 0x10c <main+0x30>
+ 110:	21 15       	cp	r18, r1
+ 112:	31 05       	cpc	r19, r1
+ 114:	c1 f7       	brne	.-16     	; 0x106 <main+0x2a>
+ 116:	88 e8       	ldi	r24, 0x88	; 136
+ 118:	90 e0       	ldi	r25, 0x00	; 0
+ 11a:	0e 94 4a 00 	call	0x94	; 0x94 <fade_in>
+ 11e:	87 e4       	ldi	r24, 0x47	; 71
+ 120:	90 e0       	ldi	r25, 0x00	; 0
+ 122:	0e 94 5b 00 	call	0xb6	; 0xb6 <fade_out>
+ 126:	88 ee       	ldi	r24, 0xE8	; 232
+ 128:	93 e0       	ldi	r25, 0x03	; 3
+ 12a:	01 97       	sbiw	r24, 0x01	; 1
+ 12c:	fe 01       	movw	r30, r28
+ 12e:	31 97       	sbiw	r30, 0x01	; 1
+ 130:	f1 f7       	brne	.-4      	; 0x12e <main+0x52>
+ 132:	00 97       	sbiw	r24, 0x00	; 0
+ 134:	d1 f7       	brne	.-12     	; 0x12a <main+0x4e>
+ 136:	8a e8       	ldi	r24, 0x8A	; 138
+ 138:	90 e0       	ldi	r25, 0x00	; 0
+ 13a:	0e 94 4a 00 	call	0x94	; 0x94 <fade_in>
+ 13e:	88 e8       	ldi	r24, 0x88	; 136
+ 140:	90 e0       	ldi	r25, 0x00	; 0
+ 142:	0e 94 5b 00 	call	0xb6	; 0xb6 <fade_out>
+ 146:	88 ee       	ldi	r24, 0xE8	; 232
+ 148:	93 e0       	ldi	r25, 0x03	; 3
+ 14a:	01 97       	sbiw	r24, 0x01	; 1
+ 14c:	fe 01       	movw	r30, r28
+ 14e:	31 97       	sbiw	r30, 0x01	; 1
+ 150:	f1 f7       	brne	.-4      	; 0x14e <main+0x72>
+ 152:	00 97       	sbiw	r24, 0x00	; 0
+ 154:	d1 f7       	brne	.-12     	; 0x14a <main+0x6e>
+ 156:	87 e4       	ldi	r24, 0x47	; 71
+ 158:	90 e0       	ldi	r25, 0x00	; 0
+ 15a:	0e 94 4a 00 	call	0x94	; 0x94 <fade_in>
+ 15e:	8a e8       	ldi	r24, 0x8A	; 138
+ 160:	90 e0       	ldi	r25, 0x00	; 0
+ 162:	0e 94 5b 00 	call	0xb6	; 0xb6 <fade_out>
+ 166:	28 ee       	ldi	r18, 0xE8	; 232
+ 168:	33 e0       	ldi	r19, 0x03	; 3
+ 16a:	cd cf       	rjmp	.-102    	; 0x106 <main+0x2a>
+
+0000016c <_exit>:
+ 16c:	f8 94       	cli
+
+0000016e <__stop_program>:
+ 16e:	ff cf       	rjmp	.-2      	; 0x16e <__stop_program>
