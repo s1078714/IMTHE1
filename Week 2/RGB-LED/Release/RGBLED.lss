@@ -149,8 +149,8 @@ Disassembly of section .text:
  130:	24 9a       	sbi	0x04, 4	; 4
  132:	8f ef       	ldi	r24, 0xFF	; 255
  134:	85 b9       	out	0x05, r24	; 5
- 136:	88 ee       	ldi	r24, 0xE8	; 232
- 138:	93 e0       	ldi	r25, 0x03	; 3
+ 136:	8c e2       	ldi	r24, 0x2C	; 44
+ 138:	91 e0       	ldi	r25, 0x01	; 1
  13a:	90 93 05 01 	sts	0x0105, r25
  13e:	80 93 04 01 	sts	0x0104, r24
  142:	c4 e1       	ldi	r28, 0x14	; 20

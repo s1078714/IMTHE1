@@ -79,7 +79,7 @@ int main( void )
 
 	PORTB = 0xFF;
 
-	pp=1000; //Hiermee wordt de snelheid van het branden/doven geregeld
+	pp=300; //Hiermee wordt de snelheid van het branden/doven geregeld
 
 	for(;;) //Hiermee wordt een loop gecreëerd waarmee de reeks kleuren wordt doorlopen
 	{
