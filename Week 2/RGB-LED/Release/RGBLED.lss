@@ -3,38 +3,40 @@ RGBLED.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000170  00000000  00000000  00000054  2**1
+  0 .text         0000032e  00000000  00000000  00000074  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          0000000a  00800100  00800100  000003a2  2**0
+                  ALLOC
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
    0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
-   4:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-   8:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-   c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  10:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  14:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  18:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  1c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  20:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  24:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  28:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  2c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  30:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  34:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  38:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  3c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  40:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  44:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  48:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  4c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  50:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  54:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  58:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  5c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  60:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  64:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+   4:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+   8:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+   c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  10:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  14:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  18:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  1c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  20:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  24:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  28:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  2c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  30:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  34:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  38:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  3c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  40:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  44:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  48:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  4c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  50:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  54:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  58:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  5c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  60:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  64:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
 
 00000068 <__ctors_end>:
   68:	11 24       	eor	r1, r1
@@ -43,132 +45,265 @@ Disassembly of section .text:
   6e:	d8 e0       	ldi	r29, 0x08	; 8
   70:	de bf       	out	0x3e, r29	; 62
   72:	cd bf       	out	0x3d, r28	; 61
-  74:	0e 94 6e 00 	call	0xdc	; 0xdc <main>
-  78:	0c 94 b6 00 	jmp	0x16c	; 0x16c <_exit>
 
-0000007c <__bad_interrupt>:
-  7c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+00000074 <__do_clear_bss>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	01 c0       	rjmp	.+2      	; 0x7e <.do_clear_bss_start>
 
-00000080 <delay_ms>:
-  80:	2a ef       	ldi	r18, 0xFA	; 250
-  82:	30 e0       	ldi	r19, 0x00	; 0
-  84:	04 c0       	rjmp	.+8      	; 0x8e <delay_ms+0xe>
-  86:	01 97       	sbiw	r24, 0x01	; 1
-  88:	f9 01       	movw	r30, r18
-  8a:	31 97       	sbiw	r30, 0x01	; 1
-  8c:	f1 f7       	brne	.-4      	; 0x8a <delay_ms+0xa>
-  8e:	00 97       	sbiw	r24, 0x00	; 0
-  90:	d1 f7       	brne	.-12     	; 0x86 <delay_ms+0x6>
-  92:	08 95       	ret
+0000007c <.do_clear_bss_loop>:
+  7c:	1d 92       	st	X+, r1
 
-00000094 <fade_in>:
-  94:	dc 01       	movw	r26, r24
-  96:	20 e0       	ldi	r18, 0x00	; 0
-  98:	4a ef       	ldi	r20, 0xFA	; 250
-  9a:	50 e0       	ldi	r21, 0x00	; 0
-  9c:	2c 93       	st	X, r18
-  9e:	84 e6       	ldi	r24, 0x64	; 100
-  a0:	90 e0       	ldi	r25, 0x00	; 0
-  a2:	01 97       	sbiw	r24, 0x01	; 1
-  a4:	fa 01       	movw	r30, r20
-  a6:	31 97       	sbiw	r30, 0x01	; 1
-  a8:	f1 f7       	brne	.-4      	; 0xa6 <fade_in+0x12>
-  aa:	00 97       	sbiw	r24, 0x00	; 0
-  ac:	d1 f7       	brne	.-12     	; 0xa2 <fade_in+0xe>
-  ae:	2f 5f       	subi	r18, 0xFF	; 255
-  b0:	2f 3f       	cpi	r18, 0xFF	; 255
-  b2:	a1 f7       	brne	.-24     	; 0x9c <fade_in+0x8>
-  b4:	08 95       	ret
+0000007e <.do_clear_bss_start>:
+  7e:	aa 30       	cpi	r26, 0x0A	; 10
+  80:	b1 07       	cpc	r27, r17
+  82:	e1 f7       	brne	.-8      	; 0x7c <.do_clear_bss_loop>
+  84:	0e 94 94 00 	call	0x128	; 0x128 <main>
+  88:	0c 94 95 01 	jmp	0x32a	; 0x32a <_exit>
 
-000000b6 <fade_out>:
-  b6:	dc 01       	movw	r26, r24
-  b8:	20 e0       	ldi	r18, 0x00	; 0
-  ba:	4a ef       	ldi	r20, 0xFA	; 250
-  bc:	50 e0       	ldi	r21, 0x00	; 0
-  be:	82 2f       	mov	r24, r18
-  c0:	80 95       	com	r24
-  c2:	8c 93       	st	X, r24
-  c4:	84 e6       	ldi	r24, 0x64	; 100
-  c6:	90 e0       	ldi	r25, 0x00	; 0
-  c8:	01 97       	sbiw	r24, 0x01	; 1
-  ca:	fa 01       	movw	r30, r20
-  cc:	31 97       	sbiw	r30, 0x01	; 1
-  ce:	f1 f7       	brne	.-4      	; 0xcc <fade_out+0x16>
-  d0:	00 97       	sbiw	r24, 0x00	; 0
-  d2:	d1 f7       	brne	.-12     	; 0xc8 <fade_out+0x12>
-  d4:	2f 5f       	subi	r18, 0xFF	; 255
-  d6:	2f 3f       	cpi	r18, 0xFF	; 255
-  d8:	91 f7       	brne	.-28     	; 0xbe <fade_out+0x8>
-  da:	08 95       	ret
+0000008c <__bad_interrupt>:
+  8c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
-000000dc <main>:
-  dc:	cf 93       	push	r28
-  de:	df 93       	push	r29
-  e0:	83 e8       	ldi	r24, 0x83	; 131
-  e2:	84 bd       	out	0x24, r24	; 36
-  e4:	82 e0       	ldi	r24, 0x02	; 2
-  e6:	85 bd       	out	0x25, r24	; 37
-  e8:	81 ea       	ldi	r24, 0xA1	; 161
-  ea:	80 93 80 00 	sts	0x0080, r24
-  ee:	8a e0       	ldi	r24, 0x0A	; 10
-  f0:	80 93 81 00 	sts	0x0081, r24
-  f4:	8c e1       	ldi	r24, 0x1C	; 28
-  f6:	84 b9       	out	0x04, r24	; 4
-  f8:	87 e0       	ldi	r24, 0x07	; 7
-  fa:	8a b9       	out	0x0a, r24	; 10
-  fc:	28 ee       	ldi	r18, 0xE8	; 232
-  fe:	33 e0       	ldi	r19, 0x03	; 3
- 100:	ca ef       	ldi	r28, 0xFA	; 250
- 102:	d0 e0       	ldi	r29, 0x00	; 0
- 104:	05 c0       	rjmp	.+10     	; 0x110 <main+0x34>
- 106:	21 50       	subi	r18, 0x01	; 1
- 108:	30 40       	sbci	r19, 0x00	; 0
- 10a:	ce 01       	movw	r24, r28
- 10c:	01 97       	sbiw	r24, 0x01	; 1
- 10e:	f1 f7       	brne	.-4      	; 0x10c <main+0x30>
- 110:	21 15       	cp	r18, r1
- 112:	31 05       	cpc	r19, r1
- 114:	c1 f7       	brne	.-16     	; 0x106 <main+0x2a>
- 116:	88 e8       	ldi	r24, 0x88	; 136
- 118:	90 e0       	ldi	r25, 0x00	; 0
- 11a:	0e 94 4a 00 	call	0x94	; 0x94 <fade_in>
- 11e:	87 e4       	ldi	r24, 0x47	; 71
- 120:	90 e0       	ldi	r25, 0x00	; 0
- 122:	0e 94 5b 00 	call	0xb6	; 0xb6 <fade_out>
- 126:	88 ee       	ldi	r24, 0xE8	; 232
- 128:	93 e0       	ldi	r25, 0x03	; 3
- 12a:	01 97       	sbiw	r24, 0x01	; 1
- 12c:	fe 01       	movw	r30, r28
- 12e:	31 97       	sbiw	r30, 0x01	; 1
- 130:	f1 f7       	brne	.-4      	; 0x12e <main+0x52>
- 132:	00 97       	sbiw	r24, 0x00	; 0
- 134:	d1 f7       	brne	.-12     	; 0x12a <main+0x4e>
- 136:	8a e8       	ldi	r24, 0x8A	; 138
- 138:	90 e0       	ldi	r25, 0x00	; 0
- 13a:	0e 94 4a 00 	call	0x94	; 0x94 <fade_in>
- 13e:	88 e8       	ldi	r24, 0x88	; 136
- 140:	90 e0       	ldi	r25, 0x00	; 0
- 142:	0e 94 5b 00 	call	0xb6	; 0xb6 <fade_out>
- 146:	88 ee       	ldi	r24, 0xE8	; 232
- 148:	93 e0       	ldi	r25, 0x03	; 3
- 14a:	01 97       	sbiw	r24, 0x01	; 1
- 14c:	fe 01       	movw	r30, r28
- 14e:	31 97       	sbiw	r30, 0x01	; 1
- 150:	f1 f7       	brne	.-4      	; 0x14e <main+0x72>
- 152:	00 97       	sbiw	r24, 0x00	; 0
- 154:	d1 f7       	brne	.-12     	; 0x14a <main+0x6e>
- 156:	87 e4       	ldi	r24, 0x47	; 71
- 158:	90 e0       	ldi	r25, 0x00	; 0
- 15a:	0e 94 4a 00 	call	0x94	; 0x94 <fade_in>
- 15e:	8a e8       	ldi	r24, 0x8A	; 138
- 160:	90 e0       	ldi	r25, 0x00	; 0
- 162:	0e 94 5b 00 	call	0xb6	; 0xb6 <fade_out>
- 166:	28 ee       	ldi	r18, 0xE8	; 232
- 168:	33 e0       	ldi	r19, 0x03	; 3
- 16a:	cd cf       	rjmp	.-102    	; 0x106 <main+0x2a>
+00000090 <delay_ms>:
+  90:	02 c0       	rjmp	.+4      	; 0x96 <delay_ms+0x6>
+  92:	00 00       	nop
+  94:	01 97       	sbiw	r24, 0x01	; 1
+  96:	00 97       	sbiw	r24, 0x00	; 0
+  98:	e1 f7       	brne	.-8      	; 0x92 <delay_ms+0x2>
+  9a:	10 92 03 01 	sts	0x0103, r1
+  9e:	10 92 02 01 	sts	0x0102, r1
+  a2:	08 95       	ret
 
-0000016c <_exit>:
- 16c:	f8 94       	cli
+000000a4 <ledRoodAan>:
+  a4:	2a 98       	cbi	0x05, 2	; 5
+  a6:	02 c0       	rjmp	.+4      	; 0xac <ledRoodAan+0x8>
+  a8:	00 00       	nop
+  aa:	01 97       	sbiw	r24, 0x01	; 1
+  ac:	00 97       	sbiw	r24, 0x00	; 0
+  ae:	e1 f7       	brne	.-8      	; 0xa8 <ledRoodAan+0x4>
+  b0:	10 92 03 01 	sts	0x0103, r1
+  b4:	10 92 02 01 	sts	0x0102, r1
+  b8:	08 95       	ret
 
-0000016e <__stop_program>:
- 16e:	ff cf       	rjmp	.-2      	; 0x16e <__stop_program>
+000000ba <ledGroenAan>:
+  ba:	2b 98       	cbi	0x05, 3	; 5
+  bc:	02 c0       	rjmp	.+4      	; 0xc2 <ledGroenAan+0x8>
+  be:	00 00       	nop
+  c0:	01 97       	sbiw	r24, 0x01	; 1
+  c2:	00 97       	sbiw	r24, 0x00	; 0
+  c4:	e1 f7       	brne	.-8      	; 0xbe <ledGroenAan+0x4>
+  c6:	10 92 03 01 	sts	0x0103, r1
+  ca:	10 92 02 01 	sts	0x0102, r1
+  ce:	08 95       	ret
+
+000000d0 <ledBlauwAan>:
+  d0:	2c 98       	cbi	0x05, 4	; 5
+  d2:	02 c0       	rjmp	.+4      	; 0xd8 <ledBlauwAan+0x8>
+  d4:	00 00       	nop
+  d6:	01 97       	sbiw	r24, 0x01	; 1
+  d8:	00 97       	sbiw	r24, 0x00	; 0
+  da:	e1 f7       	brne	.-8      	; 0xd4 <ledBlauwAan+0x4>
+  dc:	10 92 03 01 	sts	0x0103, r1
+  e0:	10 92 02 01 	sts	0x0102, r1
+  e4:	08 95       	ret
+
+000000e6 <ledRoodUit>:
+  e6:	2a 9a       	sbi	0x05, 2	; 5
+  e8:	02 c0       	rjmp	.+4      	; 0xee <ledRoodUit+0x8>
+  ea:	00 00       	nop
+  ec:	01 97       	sbiw	r24, 0x01	; 1
+  ee:	00 97       	sbiw	r24, 0x00	; 0
+  f0:	e1 f7       	brne	.-8      	; 0xea <ledRoodUit+0x4>
+  f2:	10 92 03 01 	sts	0x0103, r1
+  f6:	10 92 02 01 	sts	0x0102, r1
+  fa:	08 95       	ret
+
+000000fc <ledGroenUit>:
+  fc:	2b 9a       	sbi	0x05, 3	; 5
+  fe:	02 c0       	rjmp	.+4      	; 0x104 <ledGroenUit+0x8>
+ 100:	00 00       	nop
+ 102:	01 97       	sbiw	r24, 0x01	; 1
+ 104:	00 97       	sbiw	r24, 0x00	; 0
+ 106:	e1 f7       	brne	.-8      	; 0x100 <ledGroenUit+0x4>
+ 108:	10 92 03 01 	sts	0x0103, r1
+ 10c:	10 92 02 01 	sts	0x0102, r1
+ 110:	08 95       	ret
+
+00000112 <ledBlauwUit>:
+ 112:	2c 9a       	sbi	0x05, 4	; 5
+ 114:	02 c0       	rjmp	.+4      	; 0x11a <ledBlauwUit+0x8>
+ 116:	00 00       	nop
+ 118:	01 97       	sbiw	r24, 0x01	; 1
+ 11a:	00 97       	sbiw	r24, 0x00	; 0
+ 11c:	e1 f7       	brne	.-8      	; 0x116 <ledBlauwUit+0x4>
+ 11e:	10 92 03 01 	sts	0x0103, r1
+ 122:	10 92 02 01 	sts	0x0102, r1
+ 126:	08 95       	ret
+
+00000128 <main>:
+ 128:	cf 93       	push	r28
+ 12a:	df 93       	push	r29
+ 12c:	22 9a       	sbi	0x04, 2	; 4
+ 12e:	23 9a       	sbi	0x04, 3	; 4
+ 130:	24 9a       	sbi	0x04, 4	; 4
+ 132:	8f ef       	ldi	r24, 0xFF	; 255
+ 134:	85 b9       	out	0x05, r24	; 5
+ 136:	88 ee       	ldi	r24, 0xE8	; 232
+ 138:	93 e0       	ldi	r25, 0x03	; 3
+ 13a:	90 93 05 01 	sts	0x0105, r25
+ 13e:	80 93 04 01 	sts	0x0104, r24
+ 142:	c4 e1       	ldi	r28, 0x14	; 20
+ 144:	d0 e0       	ldi	r29, 0x00	; 0
+ 146:	2a 98       	cbi	0x05, 2	; 5
+ 148:	d0 93 09 01 	sts	0x0109, r29
+ 14c:	c0 93 08 01 	sts	0x0108, r28
+ 150:	17 c0       	rjmp	.+46     	; 0x180 <main+0x58>
+ 152:	28 1b       	sub	r18, r24
+ 154:	39 0b       	sbc	r19, r25
+ 156:	30 93 01 01 	sts	0x0101, r19
+ 15a:	20 93 00 01 	sts	0x0100, r18
+ 15e:	0e 94 5d 00 	call	0xba	; 0xba <ledGroenAan>
+ 162:	80 91 00 01 	lds	r24, 0x0100
+ 166:	90 91 01 01 	lds	r25, 0x0101
+ 16a:	0e 94 7e 00 	call	0xfc	; 0xfc <ledGroenUit>
+ 16e:	80 91 08 01 	lds	r24, 0x0108
+ 172:	90 91 09 01 	lds	r25, 0x0109
+ 176:	01 96       	adiw	r24, 0x01	; 1
+ 178:	90 93 09 01 	sts	0x0109, r25
+ 17c:	80 93 08 01 	sts	0x0108, r24
+ 180:	80 91 08 01 	lds	r24, 0x0108
+ 184:	90 91 09 01 	lds	r25, 0x0109
+ 188:	20 91 04 01 	lds	r18, 0x0104
+ 18c:	30 91 05 01 	lds	r19, 0x0105
+ 190:	82 17       	cp	r24, r18
+ 192:	93 07       	cpc	r25, r19
+ 194:	f0 f2       	brcs	.-68     	; 0x152 <main+0x2a>
+ 196:	2b 98       	cbi	0x05, 3	; 5
+ 198:	d0 93 09 01 	sts	0x0109, r29
+ 19c:	c0 93 08 01 	sts	0x0108, r28
+ 1a0:	17 c0       	rjmp	.+46     	; 0x1d0 <main+0xa8>
+ 1a2:	82 1b       	sub	r24, r18
+ 1a4:	93 0b       	sbc	r25, r19
+ 1a6:	90 93 01 01 	sts	0x0101, r25
+ 1aa:	80 93 00 01 	sts	0x0100, r24
+ 1ae:	0e 94 52 00 	call	0xa4	; 0xa4 <ledRoodAan>
+ 1b2:	80 91 08 01 	lds	r24, 0x0108
+ 1b6:	90 91 09 01 	lds	r25, 0x0109
+ 1ba:	0e 94 73 00 	call	0xe6	; 0xe6 <ledRoodUit>
+ 1be:	80 91 08 01 	lds	r24, 0x0108
+ 1c2:	90 91 09 01 	lds	r25, 0x0109
+ 1c6:	01 96       	adiw	r24, 0x01	; 1
+ 1c8:	90 93 09 01 	sts	0x0109, r25
+ 1cc:	80 93 08 01 	sts	0x0108, r24
+ 1d0:	20 91 08 01 	lds	r18, 0x0108
+ 1d4:	30 91 09 01 	lds	r19, 0x0109
+ 1d8:	80 91 04 01 	lds	r24, 0x0104
+ 1dc:	90 91 05 01 	lds	r25, 0x0105
+ 1e0:	28 17       	cp	r18, r24
+ 1e2:	39 07       	cpc	r19, r25
+ 1e4:	f0 f2       	brcs	.-68     	; 0x1a2 <main+0x7a>
+ 1e6:	2b 98       	cbi	0x05, 3	; 5
+ 1e8:	d0 93 09 01 	sts	0x0109, r29
+ 1ec:	c0 93 08 01 	sts	0x0108, r28
+ 1f0:	17 c0       	rjmp	.+46     	; 0x220 <main+0xf8>
+ 1f2:	28 1b       	sub	r18, r24
+ 1f4:	39 0b       	sbc	r19, r25
+ 1f6:	30 93 01 01 	sts	0x0101, r19
+ 1fa:	20 93 00 01 	sts	0x0100, r18
+ 1fe:	0e 94 68 00 	call	0xd0	; 0xd0 <ledBlauwAan>
+ 202:	80 91 00 01 	lds	r24, 0x0100
+ 206:	90 91 01 01 	lds	r25, 0x0101
+ 20a:	0e 94 89 00 	call	0x112	; 0x112 <ledBlauwUit>
+ 20e:	80 91 08 01 	lds	r24, 0x0108
+ 212:	90 91 09 01 	lds	r25, 0x0109
+ 216:	01 96       	adiw	r24, 0x01	; 1
+ 218:	90 93 09 01 	sts	0x0109, r25
+ 21c:	80 93 08 01 	sts	0x0108, r24
+ 220:	80 91 08 01 	lds	r24, 0x0108
+ 224:	90 91 09 01 	lds	r25, 0x0109
+ 228:	20 91 04 01 	lds	r18, 0x0104
+ 22c:	30 91 05 01 	lds	r19, 0x0105
+ 230:	82 17       	cp	r24, r18
+ 232:	93 07       	cpc	r25, r19
+ 234:	f0 f2       	brcs	.-68     	; 0x1f2 <main+0xca>
+ 236:	2c 98       	cbi	0x05, 4	; 5
+ 238:	d0 93 09 01 	sts	0x0109, r29
+ 23c:	c0 93 08 01 	sts	0x0108, r28
+ 240:	17 c0       	rjmp	.+46     	; 0x270 <main+0x148>
+ 242:	82 1b       	sub	r24, r18
+ 244:	93 0b       	sbc	r25, r19
+ 246:	90 93 01 01 	sts	0x0101, r25
+ 24a:	80 93 00 01 	sts	0x0100, r24
+ 24e:	0e 94 5d 00 	call	0xba	; 0xba <ledGroenAan>
+ 252:	80 91 08 01 	lds	r24, 0x0108
+ 256:	90 91 09 01 	lds	r25, 0x0109
+ 25a:	0e 94 7e 00 	call	0xfc	; 0xfc <ledGroenUit>
+ 25e:	80 91 08 01 	lds	r24, 0x0108
+ 262:	90 91 09 01 	lds	r25, 0x0109
+ 266:	01 96       	adiw	r24, 0x01	; 1
+ 268:	90 93 09 01 	sts	0x0109, r25
+ 26c:	80 93 08 01 	sts	0x0108, r24
+ 270:	20 91 08 01 	lds	r18, 0x0108
+ 274:	30 91 09 01 	lds	r19, 0x0109
+ 278:	80 91 04 01 	lds	r24, 0x0104
+ 27c:	90 91 05 01 	lds	r25, 0x0105
+ 280:	28 17       	cp	r18, r24
+ 282:	39 07       	cpc	r19, r25
+ 284:	f0 f2       	brcs	.-68     	; 0x242 <main+0x11a>
+ 286:	2c 98       	cbi	0x05, 4	; 5
+ 288:	d0 93 09 01 	sts	0x0109, r29
+ 28c:	c0 93 08 01 	sts	0x0108, r28
+ 290:	17 c0       	rjmp	.+46     	; 0x2c0 <main+0x198>
+ 292:	28 1b       	sub	r18, r24
+ 294:	39 0b       	sbc	r19, r25
+ 296:	30 93 01 01 	sts	0x0101, r19
+ 29a:	20 93 00 01 	sts	0x0100, r18
+ 29e:	0e 94 52 00 	call	0xa4	; 0xa4 <ledRoodAan>
+ 2a2:	80 91 00 01 	lds	r24, 0x0100
+ 2a6:	90 91 01 01 	lds	r25, 0x0101
+ 2aa:	0e 94 73 00 	call	0xe6	; 0xe6 <ledRoodUit>
+ 2ae:	80 91 08 01 	lds	r24, 0x0108
+ 2b2:	90 91 09 01 	lds	r25, 0x0109
+ 2b6:	01 96       	adiw	r24, 0x01	; 1
+ 2b8:	90 93 09 01 	sts	0x0109, r25
+ 2bc:	80 93 08 01 	sts	0x0108, r24
+ 2c0:	80 91 08 01 	lds	r24, 0x0108
+ 2c4:	90 91 09 01 	lds	r25, 0x0109
+ 2c8:	20 91 04 01 	lds	r18, 0x0104
+ 2cc:	30 91 05 01 	lds	r19, 0x0105
+ 2d0:	82 17       	cp	r24, r18
+ 2d2:	93 07       	cpc	r25, r19
+ 2d4:	f0 f2       	brcs	.-68     	; 0x292 <main+0x16a>
+ 2d6:	2a 98       	cbi	0x05, 2	; 5
+ 2d8:	d0 93 09 01 	sts	0x0109, r29
+ 2dc:	c0 93 08 01 	sts	0x0108, r28
+ 2e0:	17 c0       	rjmp	.+46     	; 0x310 <main+0x1e8>
+ 2e2:	82 1b       	sub	r24, r18
+ 2e4:	93 0b       	sbc	r25, r19
+ 2e6:	90 93 01 01 	sts	0x0101, r25
+ 2ea:	80 93 00 01 	sts	0x0100, r24
+ 2ee:	0e 94 68 00 	call	0xd0	; 0xd0 <ledBlauwAan>
+ 2f2:	80 91 08 01 	lds	r24, 0x0108
+ 2f6:	90 91 09 01 	lds	r25, 0x0109
+ 2fa:	0e 94 89 00 	call	0x112	; 0x112 <ledBlauwUit>
+ 2fe:	80 91 08 01 	lds	r24, 0x0108
+ 302:	90 91 09 01 	lds	r25, 0x0109
+ 306:	01 96       	adiw	r24, 0x01	; 1
+ 308:	90 93 09 01 	sts	0x0109, r25
+ 30c:	80 93 08 01 	sts	0x0108, r24
+ 310:	20 91 08 01 	lds	r18, 0x0108
+ 314:	30 91 09 01 	lds	r19, 0x0109
+ 318:	80 91 04 01 	lds	r24, 0x0104
+ 31c:	90 91 05 01 	lds	r25, 0x0105
+ 320:	28 17       	cp	r18, r24
+ 322:	39 07       	cpc	r19, r25
+ 324:	08 f0       	brcs	.+2      	; 0x328 <main+0x200>
+ 326:	0f cf       	rjmp	.-482    	; 0x146 <main+0x1e>
+ 328:	dc cf       	rjmp	.-72     	; 0x2e2 <main+0x1ba>
+
+0000032a <_exit>:
+ 32a:	f8 94       	cli
+
+0000032c <__stop_program>:
+ 32c:	ff cf       	rjmp	.-2      	; 0x32c <__stop_program>

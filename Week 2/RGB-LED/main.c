@@ -5,74 +5,7 @@
  *      Author: Gunnar
  */
 
-#include <avr/io.h>
-#include <util/delay.h>
-
-//Aliassen voor de PWM kanalen
-//PWM kanaal OCR0B wordt niet gebruikt
-#define PWM_RED   OCR0A
-#define PWM_GREEN OCR1AL
-#define PWM_BLUE  OCR1BL
-
-void delay_ms(unsigned int t)
-{
-	while(t)
-	{
-		t--;
-		_delay_ms(1);
-	}
-}
-
-void fade_in(volatile uint8_t *pwm_channel)
-{
-	unsigned int i;
-	for(i = 0; i < 255; i++)
-	{
-		*pwm_channel = i;
-		delay_ms(100);
-	}
-}
-
-void fade_out(volatile uint8_t *pwm_channel)
-{
-	unsigned int i;
-	for(i = 0; i < 255; i++)
-	{
-		*pwm_channel = ~i;
-		delay_ms(100);
-	}
-}
-
-int main(void)
-{
-	// TIMER 0 Fast PWM, clear OC0A on match
-	TCCR0A = (1 << COM0A1) | (1 << WGM01) | (1 << WGM00);
-	// TIMER 0 Prescaler ck/8
-	TCCR0B = (1 << CS01);
-
-	// TIMER 1 Fast PWM 8-bit, clear OC1A, OC1B on match
-	TCCR1A = (1 << COM1A1) | (1 << COM1B1) | (1 << WGM10);
-	// TIMER 1 Prescaler ck/8
-	TCCR1B = (1 << CS11) | (1 << WGM12);
-
-	//PWM kanalen als uitgang
-	DDRB = (1 << PB2) | (1 << PB3) | (1 << PB4); //0C0A, 0C1A, OC1B
-
-	DDRD = 0b00000111;
-
-	while(1)
-	{
-		delay_ms(1000);
-		fade_in(&PWM_GREEN);  // langzaam groen aan
-		fade_out(&PWM_RED);   // langzaam rood uit
-		delay_ms(1000);
-		fade_in(&PWM_BLUE);   // langzaam blauw aan
-		fade_out(&PWM_GREEN); // langzaam groen uit
-		delay_ms(1000);
-		fade_in(&PWM_RED);    // langzaam rood aan
-		fade_out(&PWM_BLUE);  // langzaam blauw uit
-
-		/*
+/*
 		PORTD = 0b00000000; // lichtblauw/wit
 		_delay_ms(100);
 		PORTD = 0b00000001; // geel
@@ -87,11 +20,114 @@ int main(void)
 		_delay_ms(100);
 		PORTD = 0b00000100; // cyaan
 		_delay_ms(100);
-		 */
-/*
-		PORTD = 0b00000111; // uit, er moet minimaal één uitgang op nul staan.
  */
-	}
 
-	return 0;
+#include <avr/io.h>
+
+#define nop() {asm("nop");}					//Functie die nodig is om de vertraging te realiseren
+
+unsigned int i,p,pp,ms,x;
+
+//Functie voor de vertraging
+void delay_ms(int ms)
+{
+	for (x = ms; x > 0; x--) nop();
+}
+
+//Rode led wordt aangezet
+void ledRoodAan(int ms)
+{
+  PORTB &= ~_BV(PB2);   delay_ms(ms);
+}
+
+//Groene led wordt aangezet
+void ledGroenAan(int ms)
+{
+  PORTB &= ~_BV(PB3);   delay_ms(ms);
+}
+
+//Blauwe led wordt aangezet
+void ledBlauwAan(int ms)
+{
+  PORTB &= ~_BV(PB4);   delay_ms(ms);
+}
+
+//Rode led wordt uitgezet
+void ledRoodUit(int ms)
+{
+   PORTB |= _BV(PB2);   delay_ms(ms);
+}
+
+//Groene led wordt uitgezet
+void ledGroenUit(int ms)
+{
+   PORTB |= _BV(PB3);   delay_ms(ms);
+}
+
+//Blauwe led wordt uitgezet
+void ledBlauwUit(int ms)
+{
+   PORTB |= _BV(PB4);   delay_ms(ms);
+}
+
+int main( void )
+{
+	//Output vanaf poortB
+	DDRB |= _BV(PB2);	//PB2
+	DDRB |= _BV(PB3);	//PB3
+	DDRB |= _BV(PB4);	//PB4
+
+	PORTB = 0xFF;
+
+	pp=1000; //Hiermee wordt de snelheid van het branden/doven geregeld
+
+	for(;;) //Hiermee wordt een loop gecreëerd waarmee de reeks kleuren wordt doorlopen
+	{
+		//Rode led geeft licht
+		PORTB &= ~_BV(PB2);
+		//Groene led gaat branden
+		for (i = 20; i < pp; i++) 						//waarde i wordt met 1 opgehoogd, zoland i kleiner is dan 3000 (pp)
+		{						  						//wanneer i de waarde 3000 heeft gekregen, is p gelijk aan 0
+		  p=pp-i;   ledGroenAan(i);   ledGroenUit(p);	//i heeft de waarde 20 omdat de spanning op de led een bepaalde waarde
+		}												//nodig heeft om opgemerkt te worden
+
+		//Groene led geeft licht
+		PORTB &= ~_BV(PB3);
+		//Rode led dooft uit
+		for (i = 20; i < pp; i++)
+		{
+		  p=pp-i;   ledRoodAan(p);   ledRoodUit(i);
+		}
+
+		//Groene led geeft licht
+		PORTB &= ~_BV(PB3);
+		//Blauwe led gaat branden
+		for (i = 20; i < pp; i++)
+		{
+		  p=pp-i;   ledBlauwAan(i);   ledBlauwUit(p);
+		}
+
+		//Blauwe led geeft licht
+		PORTB &= ~_BV(PB4);
+		//Groene led dooft uit
+		for (i = 20; i < pp; i++)
+		{
+		  p=pp-i;   ledGroenAan(p);   ledGroenUit(i);
+		}
+		//Blauwe led geeft licht
+		PORTB &= ~_BV(PB4);
+		//Rode led gaat branden
+		for (i = 20; i < pp; i++)
+		{
+		  p=pp-i;   ledRoodAan(i);   ledRoodUit(p);
+		}
+
+		//Rode led geeft licht
+		PORTB &= ~_BV(PB2);
+		//Blauwe led dooft uit
+		for (i = 20; i < pp; i++)
+		{
+		  p=pp-i;   ledBlauwAan(p);   ledBlauwUit(i);
+		}
+	}
 }
