@@ -1,8 +1,24 @@
-#Wed Jun 11 13:22:58 CEST 2014
+#Thu Jun 12 15:18:39 CEST 2014
 avrtarget/ClockFrequency=1000000
 avrtarget/ExtRAMSize=0
 avrtarget/ExtendedRAM=false
 avrtarget/MCUType=atmega328p
 avrtarget/UseEEPROM=false
 avrtarget/UseExtendedRAMforHeap=true
+avrtarget/avrdude/BitBangDelay=
+avrtarget/avrdude/Bitclock=
+avrtarget/avrdude/EEPROMFile=
+avrtarget/avrdude/EEPROMFromConfig=true
+avrtarget/avrdude/FlashFile=C\:\\Users\\Gunnar\\Documents\\GitHub\\Lijn_In_Leren\\IMTHE1\\Week 2\\PatronenProject\\main.hex
+avrtarget/avrdude/FlashFromConfig=false
+avrtarget/avrdude/NoChipErase=false
+avrtarget/avrdude/NoSigCheck=false
+avrtarget/avrdude/NoVerify=false
+avrtarget/avrdude/NoWrite=false
+avrtarget/avrdude/OtherOptions=
+avrtarget/avrdude/ProgrammerID=programmerconfig.4
+avrtarget/avrdude/UseCounter=false
+avrtarget/avrdude/WriteEEPROM=false
+avrtarget/avrdude/WriteFlash=true
+avrtarget/perConfig=false
 eclipse.preferences.version=1
