@@ -26,12 +26,12 @@ int main(void)
 			// patroon tonen, methode ophalen
 			patroonTonen(patroon);
 		}
-		/*
+
 		if (secs == 15) // aantal seconden voordat patroon veranderd.
 		{
 			secs = 0;
 
-			if (patroon == 5) // laatste patroon bereikt
+			if (patroon == 6) // laatste patroon bereikt
 			{
 				patroon = 1; // opnieuw beginnen met patroonsequentie
 			}
@@ -43,7 +43,7 @@ int main(void)
 		else
 		{
 			secs++;
-		}*/
+		}
 	}
 }
 
@@ -54,69 +54,57 @@ patroonTonen(patroon)
 		// multiplexen, coooode
 		// vierkant (leeg)
 		PORTD = 0b11111000;
-		PORTB = 0b01110000;
+		PORTB = 0b01110000; // 2 randen langs groene draden
 		_delay_ms(1);
+
 		PORTD = 0b10001000;
-		PORTB = 0b00000000;
+		PORTB = 0b00000000; // 2 randen langs witte draden
 		_delay_ms(1);
 	}
 	if (patroon == 2)
 	{
 		// multiplexen, coooode
 		// ruit
-		PORTD = 0b00000000;
-		PORTB = 0b00000000;
+		PORTD = 0b01010000;
+		PORTB = 0b10101000; // 4 stippen (vierkantje)
 		_delay_ms(1);
-		PORTD = 0b00000000;
-		PORTB = 0b00000000;
+
+		PORTD = 0b00100000;
+		PORTB = 0b01110000; // 2 stippen buitenste rand, horizontaal langs witte strip draden
 		_delay_ms(1);
-		PORTD = 0b00000000;
-		PORTB = 0b00000000;
-		_delay_ms(1);
-		PORTD = 0b00000000;
-		PORTB = 0b00000000;
+
+		PORTD = 0b10001000;
+		PORTB = 0b11011000; // 2 stippen buitenste rand, verticaal langs witte strip draden
 		_delay_ms(1);
 	}
 	if (patroon == 3)
 	{
 		// multiplexen, coooode
-		// cirkel
-		PORTD = 0b00000000;
-		PORTB = 0b00000000;
-		_delay_ms(1);
-		PORTD = 0b00000000;
-		PORTB = 0b00000000;
-		_delay_ms(1);
-		PORTD = 0b00000000;
-		PORTB = 0b00000000;
-		_delay_ms(1);
+		// lijnen parallel aan groen
+		PORTD = 0b11111000;
+		PORTB = 0b01010000;
+		_delay_ms(10);
+		PORTD = 0b11111000;
+		PORTB = 0b10101000;
+		_delay_ms(10);
 	}
 	if (patroon == 4)
 	{
 		// multiplexen, coooode
-		// driehoek
-		PORTD = 0b00000000;
-		PORTB = 0b00000000;
-		_delay_ms(1);
-		PORTD = 0b00000000;
-		PORTB = 0b00000000;
-		_delay_ms(1);
-		PORTD = 0b00000000;
-		PORTB = 0b00000000;
-		_delay_ms(1);
+		// lijnen parallel aan wit
+		PORTD = 0b10101000;
+		PORTB = 0b00000000; // startend op rand
+		_delay_ms(10);		// 50 ms staat gelijk aan 2min, 8seconden
+		PORTD = 0b01010000;
+		PORTB = 0b00000000; // NIET startend op rand
+		_delay_ms(10);
 	}
 	if (patroon == 5)
 	{
 		// multiplexen, coooode
 		// vierkantje (gevuld)
-		PORTD = 0b00000000;
-		PORTB = 0b00000000;
-		_delay_ms(1);
-		PORTD = 0b00000000;
-		PORTB = 0b00000000;
-		_delay_ms(1);
-		PORTD = 0b00000000;
-		PORTB = 0b00000000;
-		_delay_ms(1);
+		PORTD = 0b01110000;
+		PORTB = 0b10001000;
+		_delay_ms(2); // tijd rekken voor tonen van patroon
 	}
 }
