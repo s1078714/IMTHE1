@@ -3,23 +3,23 @@ main.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000176  00000000  00000000  00000054  2**1
+  0 .text         0000017a  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .debug_aranges 00000020  00000000  00000000  000001ca  2**0
+  1 .debug_aranges 00000020  00000000  00000000  000001ce  2**0
                   CONTENTS, READONLY, DEBUGGING
-  2 .debug_pubnames 0000002c  00000000  00000000  000001ea  2**0
+  2 .debug_pubnames 0000002c  00000000  00000000  000001ee  2**0
                   CONTENTS, READONLY, DEBUGGING
-  3 .debug_info   000002ec  00000000  00000000  00000216  2**0
+  3 .debug_info   000002f0  00000000  00000000  0000021a  2**0
                   CONTENTS, READONLY, DEBUGGING
-  4 .debug_abbrev 000000f4  00000000  00000000  00000502  2**0
+  4 .debug_abbrev 000000f2  00000000  00000000  0000050a  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_line   00000266  00000000  00000000  000005f6  2**0
+  5 .debug_line   0000026a  00000000  00000000  000005fc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_frame  00000030  00000000  00000000  0000085c  2**2
+  6 .debug_frame  00000030  00000000  00000000  00000868  2**2
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_str    000000fd  00000000  00000000  0000088c  2**0
+  7 .debug_str    00000109  00000000  00000000  00000898  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_loc    00000168  00000000  00000000  00000989  2**0
+  8 .debug_loc    00000178  00000000  00000000  000009a1  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -59,8 +59,8 @@ Disassembly of section .text:
   6e:	d8 e0       	ldi	r29, 0x08	; 8
   70:	de bf       	out	0x3e, r29	; 62
   72:	cd bf       	out	0x3d, r28	; 61
-  74:	0e 94 99 00 	call	0x132	; 0x132 <main>
-  78:	0c 94 b9 00 	jmp	0x172	; 0x172 <_exit>
+  74:	0e 94 9f 00 	call	0x13e	; 0x13e <main>
+  78:	0c 94 bb 00 	jmp	0x176	; 0x176 <_exit>
 
 0000007c <__bad_interrupt>:
   7c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -73,6 +73,8 @@ Disassembly of section .text:
 patroonTonen(patroon)
 {
   80:	ac 01       	movw	r20, r24
+	int langsteTijd = 3;
+
 	if (patroon == 1)
   82:	81 30       	cpi	r24, 0x01	; 1
   84:	91 05       	cpc	r25, r1
@@ -92,28 +94,28 @@ void
 _delay_loop_2(uint16_t __count)
 {
 	__asm__ volatile (
-  90:	20 ed       	ldi	r18, 0xD0	; 208
-  92:	37 e0       	ldi	r19, 0x07	; 7
-  94:	f9 01       	movw	r30, r18
-  96:	31 97       	sbiw	r30, 0x01	; 1
-  98:	f1 f7       	brne	.-4      	; 0x96 <patroonTonen+0x16>
+  90:	e0 ed       	ldi	r30, 0xD0	; 208
+  92:	f7 e0       	ldi	r31, 0x07	; 7
+  94:	31 97       	sbiw	r30, 0x01	; 1
+  96:	f1 f7       	brne	.-4      	; 0x94 <patroonTonen+0x14>
 		_delay_ms(1);
 
 		PORTD = 0b10001000;
-  9a:	88 e8       	ldi	r24, 0x88	; 136
-  9c:	8b b9       	out	0x0b, r24	; 11
+  98:	88 e8       	ldi	r24, 0x88	; 136
+  9a:	8b b9       	out	0x0b, r24	; 11
 		PORTB = 0b00000000; // 2 randen langs witte draden
-  9e:	15 b8       	out	0x05, r1	; 5
-  a0:	f9 01       	movw	r30, r18
+  9c:	15 b8       	out	0x05, r1	; 5
+  9e:	e0 ea       	ldi	r30, 0xA0	; 160
+  a0:	ff e0       	ldi	r31, 0x0F	; 15
   a2:	31 97       	sbiw	r30, 0x01	; 1
   a4:	f1 f7       	brne	.-4      	; 0xa2 <patroonTonen+0x22>
-  a6:	39 c0       	rjmp	.+114    	; 0x11a <patroonTonen+0x9a>
-		_delay_ms(1);
+  a6:	2f c0       	rjmp	.+94     	; 0x106 <patroonTonen+0x86>
+		_delay_ms(2);
 	}
 	if (patroon == 2)
   a8:	82 30       	cpi	r24, 0x02	; 2
   aa:	91 05       	cpc	r25, r1
-  ac:	a1 f4       	brne	.+40     	; 0xd6 <patroonTonen+0x56>
+  ac:	c1 f4       	brne	.+48     	; 0xde <patroonTonen+0x5e>
 	{
 		// multiplexen, coooode
 		// ruit
@@ -125,8 +127,8 @@ _delay_loop_2(uint16_t __count)
   b4:	85 b9       	out	0x05, r24	; 5
   b6:	20 ed       	ldi	r18, 0xD0	; 208
   b8:	37 e0       	ldi	r19, 0x07	; 7
-  ba:	c9 01       	movw	r24, r18
-  bc:	01 97       	sbiw	r24, 0x01	; 1
+  ba:	f9 01       	movw	r30, r18
+  bc:	31 97       	sbiw	r30, 0x01	; 1
   be:	f1 f7       	brne	.-4      	; 0xbc <patroonTonen+0x3c>
 		_delay_ms(1);
 
@@ -136,8 +138,8 @@ _delay_loop_2(uint16_t __count)
 		PORTB = 0b01110000; // 2 stippen buitenste rand, horizontaal langs witte strip draden
   c4:	80 e7       	ldi	r24, 0x70	; 112
   c6:	85 b9       	out	0x05, r24	; 5
-  c8:	c9 01       	movw	r24, r18
-  ca:	01 97       	sbiw	r24, 0x01	; 1
+  c8:	f9 01       	movw	r30, r18
+  ca:	31 97       	sbiw	r30, 0x01	; 1
   cc:	f1 f7       	brne	.-4      	; 0xca <patroonTonen+0x4a>
 		_delay_ms(1);
 
@@ -146,163 +148,161 @@ _delay_loop_2(uint16_t __count)
   d0:	8b b9       	out	0x0b, r24	; 11
 		PORTB = 0b11011000; // 2 stippen buitenste rand, verticaal langs witte strip draden
   d2:	88 ed       	ldi	r24, 0xD8	; 216
-  d4:	0e c0       	rjmp	.+28     	; 0xf2 <patroonTonen+0x72>
+  d4:	85 b9       	out	0x05, r24	; 5
+  d6:	f9 01       	movw	r30, r18
+  d8:	31 97       	sbiw	r30, 0x01	; 1
+  da:	f1 f7       	brne	.-4      	; 0xd8 <patroonTonen+0x58>
+  dc:	19 c0       	rjmp	.+50     	; 0x110 <patroonTonen+0x90>
 		_delay_ms(1);
 	}
 	if (patroon == 3)
-  d6:	83 30       	cpi	r24, 0x03	; 3
-  d8:	91 05       	cpc	r25, r1
-  da:	69 f4       	brne	.+26     	; 0xf6 <patroonTonen+0x76>
+  de:	83 30       	cpi	r24, 0x03	; 3
+  e0:	91 05       	cpc	r25, r1
+  e2:	49 f4       	brne	.+18     	; 0xf6 <patroonTonen+0x76>
 	{
-		// multiplexen, coooode
-		// lijnen parallel aan groen
+		// lijnen parallel aan groen, startend op rand
 		PORTD = 0b11111000;
-  dc:	98 ef       	ldi	r25, 0xF8	; 248
-  de:	9b b9       	out	0x0b, r25	; 11
+  e4:	88 ef       	ldi	r24, 0xF8	; 248
+  e6:	8b b9       	out	0x0b, r24	; 11
 		PORTB = 0b01010000;
-  e0:	80 e5       	ldi	r24, 0x50	; 80
-  e2:	85 b9       	out	0x05, r24	; 5
-  e4:	20 e2       	ldi	r18, 0x20	; 32
-  e6:	3e e4       	ldi	r19, 0x4E	; 78
-  e8:	f9 01       	movw	r30, r18
-  ea:	31 97       	sbiw	r30, 0x01	; 1
-  ec:	f1 f7       	brne	.-4      	; 0xea <patroonTonen+0x6a>
-		_delay_ms(10);
-		PORTD = 0b11111000;
-  ee:	9b b9       	out	0x0b, r25	; 11
-		PORTB = 0b10101000;
-  f0:	88 ea       	ldi	r24, 0xA8	; 168
-  f2:	85 b9       	out	0x05, r24	; 5
-  f4:	0e c0       	rjmp	.+28     	; 0x112 <patroonTonen+0x92>
-		_delay_ms(10);
+  e8:	80 e5       	ldi	r24, 0x50	; 80
+  ea:	85 b9       	out	0x05, r24	; 5
+  ec:	e0 e7       	ldi	r30, 0x70	; 112
+  ee:	f7 e1       	ldi	r31, 0x17	; 23
+  f0:	31 97       	sbiw	r30, 0x01	; 1
+  f2:	f1 f7       	brne	.-4      	; 0xf0 <patroonTonen+0x70>
+  f4:	18 c0       	rjmp	.+48     	; 0x126 <patroonTonen+0xa6>
+		_delay_ms(langsteTijd);
 	}
 	if (patroon == 4)
   f6:	84 30       	cpi	r24, 0x04	; 4
   f8:	91 05       	cpc	r25, r1
-  fa:	79 f4       	brne	.+30     	; 0x11a <patroonTonen+0x9a>
+  fa:	29 f4       	brne	.+10     	; 0x106 <patroonTonen+0x86>
 	{
-		// multiplexen, coooode
-		// lijnen parallel aan wit
-		PORTD = 0b10101000;
-  fc:	88 ea       	ldi	r24, 0xA8	; 168
+		// lijnen parallel aan groen, niet startend op rand
+		PORTD = 0b11111000;
+  fc:	88 ef       	ldi	r24, 0xF8	; 248
   fe:	8b b9       	out	0x0b, r24	; 11
-		PORTB = 0b00000000; // startend op rand
- 100:	15 b8       	out	0x05, r1	; 5
- 102:	20 e2       	ldi	r18, 0x20	; 32
- 104:	3e e4       	ldi	r19, 0x4E	; 78
- 106:	c9 01       	movw	r24, r18
- 108:	01 97       	sbiw	r24, 0x01	; 1
- 10a:	f1 f7       	brne	.-4      	; 0x108 <patroonTonen+0x88>
-		_delay_ms(10);		// 50 ms staat gelijk aan 2min, 8seconden
-		PORTD = 0b01010000;
- 10c:	80 e5       	ldi	r24, 0x50	; 80
- 10e:	8b b9       	out	0x0b, r24	; 11
-		PORTB = 0b00000000; // NIET startend op rand
- 110:	15 b8       	out	0x05, r1	; 5
- 112:	c9 01       	movw	r24, r18
- 114:	01 97       	sbiw	r24, 0x01	; 1
- 116:	f1 f7       	brne	.-4      	; 0x114 <patroonTonen+0x94>
- 118:	08 95       	ret
-		_delay_ms(10);
+		PORTB = 0b10101000;
+ 100:	88 ea       	ldi	r24, 0xA8	; 168
+ 102:	85 b9       	out	0x05, r24	; 5
+ 104:	0b c0       	rjmp	.+22     	; 0x11c <patroonTonen+0x9c>
+		_delay_ms(langsteTijd);
 	}
 	if (patroon == 5)
- 11a:	45 30       	cpi	r20, 0x05	; 5
- 11c:	51 05       	cpc	r21, r1
- 11e:	41 f4       	brne	.+16     	; 0x130 <patroonTonen+0xb0>
+ 106:	45 30       	cpi	r20, 0x05	; 5
+ 108:	51 05       	cpc	r21, r1
+ 10a:	11 f4       	brne	.+4      	; 0x110 <patroonTonen+0x90>
+	{
+		// multiplexen, coooode
+		// lijnen parallel aan wit, startend op rand
+		PORTD = 0b10101000;
+ 10c:	88 ea       	ldi	r24, 0xA8	; 168
+ 10e:	04 c0       	rjmp	.+8      	; 0x118 <patroonTonen+0x98>
+		PORTB = 0b00000000;
+		_delay_ms(langsteTijd);		// 50 ms staat gelijk aan 2min, 8seconden
+	}
+	if (patroon == 6)
+ 110:	46 30       	cpi	r20, 0x06	; 6
+ 112:	51 05       	cpc	r21, r1
+ 114:	41 f4       	brne	.+16     	; 0x126 <patroonTonen+0xa6>
+	{
+		// lijnen parallel aan wit, niet startend op rand
+		PORTD = 0b01010000;
+ 116:	80 e5       	ldi	r24, 0x50	; 80
+ 118:	8b b9       	out	0x0b, r24	; 11
+		PORTB = 0b00000000; // NIET startend op rand
+ 11a:	15 b8       	out	0x05, r1	; 5
+ 11c:	80 e7       	ldi	r24, 0x70	; 112
+ 11e:	97 e1       	ldi	r25, 0x17	; 23
+ 120:	01 97       	sbiw	r24, 0x01	; 1
+ 122:	f1 f7       	brne	.-4      	; 0x120 <patroonTonen+0xa0>
+ 124:	08 95       	ret
+		_delay_ms(langsteTijd);
+	}
+	if (patroon == 7)
+ 126:	47 30       	cpi	r20, 0x07	; 7
+ 128:	51 05       	cpc	r21, r1
+ 12a:	41 f4       	brne	.+16     	; 0x13c <patroonTonen+0xbc>
 	{
 		// multiplexen, coooode
 		// vierkantje (gevuld)
 		PORTD = 0b01110000;
- 120:	80 e7       	ldi	r24, 0x70	; 112
- 122:	8b b9       	out	0x0b, r24	; 11
+ 12c:	80 e7       	ldi	r24, 0x70	; 112
+ 12e:	8b b9       	out	0x0b, r24	; 11
 		PORTB = 0b10001000;
- 124:	88 e8       	ldi	r24, 0x88	; 136
- 126:	85 b9       	out	0x05, r24	; 5
- 128:	80 ea       	ldi	r24, 0xA0	; 160
- 12a:	9f e0       	ldi	r25, 0x0F	; 15
- 12c:	01 97       	sbiw	r24, 0x01	; 1
- 12e:	f1 f7       	brne	.-4      	; 0x12c <patroonTonen+0xac>
-		_delay_ms(2); // tijd rekken voor tonen van patroon
+ 130:	88 e8       	ldi	r24, 0x88	; 136
+ 132:	85 b9       	out	0x05, r24	; 5
+ 134:	80 e7       	ldi	r24, 0x70	; 112
+ 136:	97 e1       	ldi	r25, 0x17	; 23
+ 138:	01 97       	sbiw	r24, 0x01	; 1
+ 13a:	f1 f7       	brne	.-4      	; 0x138 <patroonTonen+0xb8>
+		_delay_ms(langsteTijd); // tijd rekken voor tonen van patroon
 	}
 }
- 130:	08 95       	ret
+ 13c:	08 95       	ret
 
-00000132 <main>:
+0000013e <main>:
 #include <avr/io.h>
 #include <util/delay.h>
 
 
 int main(void)
 {
- 132:	ff 92       	push	r15
- 134:	0f 93       	push	r16
- 136:	1f 93       	push	r17
- 138:	cf 93       	push	r28
- 13a:	df 93       	push	r29
+ 13e:	1f 93       	push	r17
+ 140:	cf 93       	push	r28
+ 142:	df 93       	push	r29
 	DDRD = 0b11111000; // blauw || groen
- 13c:	88 ef       	ldi	r24, 0xF8	; 248
- 13e:	8a b9       	out	0x0a, r24	; 10
+ 144:	88 ef       	ldi	r24, 0xF8	; 248
+ 146:	8a b9       	out	0x0a, r24	; 10
 	DDRB = 0b11111000; // geel || wit
- 140:	84 b9       	out	0x04, r24	; 4
- 142:	ff 24       	eor	r15, r15
- 144:	01 e0       	ldi	r16, 0x01	; 1
- 146:	10 e0       	ldi	r17, 0x00	; 0
- 148:	c0 e0       	ldi	r28, 0x00	; 0
- 14a:	d0 e0       	ldi	r29, 0x00	; 0
+ 148:	84 b9       	out	0x04, r24	; 4
+ 14a:	10 e0       	ldi	r17, 0x00	; 0
+ 14c:	c1 e0       	ldi	r28, 0x01	; 1
+ 14e:	d0 e0       	ldi	r29, 0x00	; 0
 	{
-		for( i=0;i<10;i++)
+		for( i=0;i<3;i++) // i = 3, == 1 seconden realtime
 		{
 
 			// patroon tonen, methode ophalen
 			patroonTonen(patroon);
- 14c:	c8 01       	movw	r24, r16
- 14e:	0e 94 40 00 	call	0x80	; 0x80 <patroonTonen>
-	int patroon = 1; // reset naar eerste patroon, voor het leesgemak begint patroon bij 1 (patroon 1, patroon 2 enz enz)
-	int i;
-
-	while(1)
-	{
-		for( i=0;i<10;i++)
- 152:	21 96       	adiw	r28, 0x01	; 1
- 154:	ca 30       	cpi	r28, 0x0A	; 10
- 156:	d1 05       	cpc	r29, r1
- 158:	c9 f7       	brne	.-14     	; 0x14c <main+0x1a>
-
-			// patroon tonen, methode ophalen
-			patroonTonen(patroon);
+ 150:	ce 01       	movw	r24, r28
+ 152:	0e 94 40 00 	call	0x80	; 0x80 <patroonTonen>
+ 156:	ce 01       	movw	r24, r28
+ 158:	0e 94 40 00 	call	0x80	; 0x80 <patroonTonen>
+ 15c:	ce 01       	movw	r24, r28
+ 15e:	0e 94 40 00 	call	0x80	; 0x80 <patroonTonen>
 		}
 
 		if (secs == 15) // aantal seconden voordat patroon veranderd.
- 15a:	8f e0       	ldi	r24, 0x0F	; 15
- 15c:	f8 16       	cp	r15, r24
- 15e:	39 f4       	brne	.+14     	; 0x16e <main+0x3c>
+ 162:	1f 30       	cpi	r17, 0x0F	; 15
+ 164:	31 f4       	brne	.+12     	; 0x172 <main+0x34>
 		{
 			secs = 0;
 
-			if (patroon == 6) // laatste patroon bereikt
- 160:	06 30       	cpi	r16, 0x06	; 6
- 162:	11 05       	cpc	r17, r1
- 164:	71 f3       	breq	.-36     	; 0x142 <main+0x10>
+			if (patroon >= 7) // laatste patroon bereikt
+ 166:	c7 30       	cpi	r28, 0x07	; 7
+ 168:	d1 05       	cpc	r29, r1
+ 16a:	7c f7       	brge	.-34     	; 0x14a <main+0xc>
 			{
 				patroon = 1; // opnieuw beginnen met patroonsequentie
 			}
 			else
 			{
 				patroon++; // volgende patroon
- 166:	0f 5f       	subi	r16, 0xFF	; 255
- 168:	1f 4f       	sbci	r17, 0xFF	; 255
- 16a:	ff 24       	eor	r15, r15
- 16c:	ed cf       	rjmp	.-38     	; 0x148 <main+0x16>
+ 16c:	21 96       	adiw	r28, 0x01	; 1
+ 16e:	10 e0       	ldi	r17, 0x00	; 0
+ 170:	ef cf       	rjmp	.-34     	; 0x150 <main+0x12>
 			}
 		}
 		else
 		{
 			secs++;
- 16e:	f3 94       	inc	r15
- 170:	eb cf       	rjmp	.-42     	; 0x148 <main+0x16>
+ 172:	1f 5f       	subi	r17, 0xFF	; 255
+ 174:	ed cf       	rjmp	.-38     	; 0x150 <main+0x12>
 
-00000172 <_exit>:
- 172:	f8 94       	cli
+00000176 <_exit>:
+ 176:	f8 94       	cli
 
-00000174 <__stop_program>:
- 174:	ff cf       	rjmp	.-2      	; 0x174 <__stop_program>
+00000178 <__stop_program>:
+ 178:	ff cf       	rjmp	.-2      	; 0x178 <__stop_program>
