@@ -20,13 +20,13 @@ int main(void)
 
 	while(1)
 	{
-		for( i=0;i<3;i++) // i = 3, == 1 seconden realtime
+		for( i=0;i<6;i++) // i = 3, == 1 seconden realtime
 		{
 
 			// patroon tonen, methode ophalen
 			patroonTonen(patroon);
 		}
-
+/*
 		if (secs == 15) // aantal seconden voordat patroon veranderd.
 		{
 			secs = 0;
@@ -43,77 +43,85 @@ int main(void)
 		else
 		{
 			secs++;
-		}
+		}*/
 	}
 }
 
 patroonTonen(patroon)
 {
-	int langsteTijd = 3;
+	int langsteTijd = 1500; // in microseconden (us)
 
 	if (patroon == 1)
 	{
 		// multiplexen, coooode
 		// vierkant (leeg)
+		// met potmeter: toont alle leds behalve 2 buitenste randen parallel aan groene draden
 		PORTD = 0b11111000;
 		PORTB = 0b01110000; // 2 randen langs groene draden
-		_delay_ms(1);
+		_delay_us(750);
 
 		PORTD = 0b10001000;
 		PORTB = 0b00000000; // 2 randen langs witte draden
-		_delay_ms(2);
+		_delay_us(750);
 	}
 	if (patroon == 2)
 	{
 		// multiplexen, coooode
 		// ruit
+		// met potmeter: toont negatief van oorspronkelijk ruitje
 		PORTD = 0b01010000;
 		PORTB = 0b10101000; // 4 stippen (vierkantje)
-		_delay_ms(1);
+		_delay_us(500);
 
 		PORTD = 0b00100000;
 		PORTB = 0b01110000; // 2 stippen buitenste rand, horizontaal langs witte strip draden
-		_delay_ms(1);
+		_delay_us(500);
 
 		PORTD = 0b10001000;
 		PORTB = 0b11011000; // 2 stippen buitenste rand, verticaal langs witte strip draden
-		_delay_ms(1);
+		_delay_us(500);
 	}
 	if (patroon == 3)
 	{
 		// lijnen parallel aan groen, startend op rand
+		// 		met potmeter: niet startend op de rand (negatief)
 		PORTD = 0b11111000;
 		PORTB = 0b01010000;
-		_delay_ms(langsteTijd);
+		_delay_us(langsteTijd);
 	}
 	if (patroon == 4)
 	{
 		// lijnen parallel aan groen, niet startend op rand
+		// 		met potmeter: WEL startend op de rand (negatief)
 		PORTD = 0b11111000;
 		PORTB = 0b10101000;
-		_delay_ms(langsteTijd);
+		_delay_us(langsteTijd);
 	}
 	if (patroon == 5)
 	{
 		// multiplexen, coooode
 		// lijnen parallel aan wit, startend op rand
+		// 		met potmeter: geen leds
 		PORTD = 0b10101000;
 		PORTB = 0b00000000;
-		_delay_ms(langsteTijd);		// 50 ms staat gelijk aan 2min, 8seconden
+		_delay_us(langsteTijd);		// 50 ms staat gelijk aan 2min, 8seconden
 	}
 	if (patroon == 6)
 	{
 		// lijnen parallel aan wit, niet startend op rand
+		// 		met potmeter: geen leds
 		PORTD = 0b01010000;
 		PORTB = 0b00000000; // NIET startend op rand
-		_delay_ms(langsteTijd);
+		_delay_us(langsteTijd);
 	}
 	if (patroon == 7)
 	{
 		// multiplexen, coooode
 		// vierkantje (gevuld)
+		// 		met potmeter: toont alleen 2x3 leds parallel aan de groene draden,
+		// 		ter hoogte van oorspronkelijk klein vierkantje
 		PORTD = 0b01110000;
 		PORTB = 0b10001000;
-		_delay_ms(langsteTijd); // tijd rekken voor tonen van patroon
+		_delay_us(langsteTijd); // tijd rekken voor tonen van patroon
 	}
 }
