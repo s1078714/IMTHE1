@@ -177,12 +177,47 @@ void LCD_init(void)
 
 int main( void )
 {
+//	LCD_init();
 	LCD_init();
-	LCD_init();
-	LCDgoto (0,0);
-	LCDtext("Jaimy Rademaker");
+//	LCDgoto (0,0);
+	LCDtext("Gunnar Kelders");
 	LCDgoto (0,1);
-	LCDtext("LCD Display");
+	LCDtext("IMTHE1 LCD");
+//	LCDall();
+//	LCDhome();
+
+	DDRB |= 1 << PINB1;   //Output voor de led
+	DDRB &= ~(1 << PINB0);
+	PORTB |= 1 << PINB0;  //Input voor de pushbutton
+	int Pressed = 0;
+	int counter = 0;
+	char counterArray[3];
+
+	while (1)
+	{
+		if (bit_is_clear(PINB, 0)) //Kijken of er op de knop is gedrukt
+		{
+			//Kijk eerst of de knop losgelaten is
+			if (Pressed == 0)
+			{
+				PORTB ^= 1 << PINB1; //Zet de led op PB1 aan
+				Pressed = 1;
+				counter++;
+				_delay_ms(2); // dendergedrag uitsluiten
+			}
+		}
+		else
+		{
+			//Als er niet op de knop gedrukt wordt, blijft deze int op 0
+			Pressed = 0;
+		}
+
+
+
+		LCDgoto (0,1);
+		LCDtext("IMTHE1 LCD   ");
+		LCDtext(itoa(counter, counterArray , 10));
+	}
 }
 
 
