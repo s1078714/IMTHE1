@@ -26,7 +26,7 @@ int main(void)
 			// patroon tonen, methode ophalen
 			patroonTonen(patroon);
 		}
-/*
+
 		if (secs == 15) // aantal seconden voordat patroon veranderd.
 		{
 			secs = 0;
@@ -43,7 +43,7 @@ int main(void)
 		else
 		{
 			secs++;
-		}*/
+		}
 	}
 }
 

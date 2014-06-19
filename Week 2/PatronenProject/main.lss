@@ -3,23 +3,23 @@ main.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000162  00000000  00000000  00000054  2**1
+  0 .text         00000182  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .debug_aranges 00000020  00000000  00000000  000001b6  2**0
+  1 .debug_aranges 00000020  00000000  00000000  000001d6  2**0
                   CONTENTS, READONLY, DEBUGGING
-  2 .debug_pubnames 0000002c  00000000  00000000  000001d6  2**0
+  2 .debug_pubnames 0000002c  00000000  00000000  000001f6  2**0
                   CONTENTS, READONLY, DEBUGGING
-  3 .debug_info   00000420  00000000  00000000  00000202  2**0
+  3 .debug_info   00000429  00000000  00000000  00000222  2**0
                   CONTENTS, READONLY, DEBUGGING
-  4 .debug_abbrev 000000ff  00000000  00000000  00000622  2**0
+  4 .debug_abbrev 0000010e  00000000  00000000  0000064b  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_line   00000252  00000000  00000000  00000721  2**0
+  5 .debug_line   00000272  00000000  00000000  00000759  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_frame  00000030  00000000  00000000  00000974  2**2
+  6 .debug_frame  00000030  00000000  00000000  000009cc  2**2
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_str    00000126  00000000  00000000  000009a4  2**0
+  7 .debug_str    00000126  00000000  00000000  000009fc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_loc    00000178  00000000  00000000  00000aca  2**0
+  8 .debug_loc    00000178  00000000  00000000  00000b22  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -60,13 +60,13 @@ Disassembly of section .text:
   70:	de bf       	out	0x3e, r29	; 62
   72:	cd bf       	out	0x3d, r28	; 61
   74:	0e 94 9f 00 	call	0x13e	; 0x13e <main>
-  78:	0c 94 af 00 	jmp	0x15e	; 0x15e <_exit>
+  78:	0c 94 bf 00 	jmp	0x17e	; 0x17e <_exit>
 
 0000007c <__bad_interrupt>:
   7c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
 00000080 <patroonTonen>:
-		}*/
+		}
 	}
 }
 
@@ -257,38 +257,75 @@ _delay_loop_2(uint16_t __count)
 
 int main(void)
 {
- 13e:	cf 93       	push	r28
- 140:	df 93       	push	r29
+ 13e:	ff 92       	push	r15
+ 140:	0f 93       	push	r16
+ 142:	1f 93       	push	r17
+ 144:	cf 93       	push	r28
+ 146:	df 93       	push	r29
 	DDRD = 0b11111000; // blauw || groen
- 142:	88 ef       	ldi	r24, 0xF8	; 248
- 144:	8a b9       	out	0x0a, r24	; 10
+ 148:	88 ef       	ldi	r24, 0xF8	; 248
+ 14a:	8a b9       	out	0x0a, r24	; 10
 	DDRB = 0b11111000; // geel || wit
- 146:	84 b9       	out	0x04, r24	; 4
- 148:	c0 e0       	ldi	r28, 0x00	; 0
- 14a:	d0 e0       	ldi	r29, 0x00	; 0
+ 14c:	84 b9       	out	0x04, r24	; 4
+ 14e:	ff 24       	eor	r15, r15
+ 150:	01 e0       	ldi	r16, 0x01	; 1
+ 152:	10 e0       	ldi	r17, 0x00	; 0
+ 154:	c0 e0       	ldi	r28, 0x00	; 0
+ 156:	d0 e0       	ldi	r29, 0x00	; 0
 	{
 		for( i=0;i<6;i++) // i = 3, == 1 seconden realtime
 		{
 
 			// patroon tonen, methode ophalen
 			patroonTonen(patroon);
- 14c:	81 e0       	ldi	r24, 0x01	; 1
- 14e:	90 e0       	ldi	r25, 0x00	; 0
- 150:	0e 94 40 00 	call	0x80	; 0x80 <patroonTonen>
+ 158:	c8 01       	movw	r24, r16
+ 15a:	0e 94 40 00 	call	0x80	; 0x80 <patroonTonen>
 	int patroon = 1; // reset naar eerste patroon, voor het leesgemak begint patroon bij 1 (patroon 1, patroon 2 enz enz)
 	int i; // snelheid teller
 
 	while(1)
 	{
 		for( i=0;i<6;i++) // i = 3, == 1 seconden realtime
- 154:	21 96       	adiw	r28, 0x01	; 1
- 156:	c6 30       	cpi	r28, 0x06	; 6
- 158:	d1 05       	cpc	r29, r1
- 15a:	b4 f7       	brge	.-20     	; 0x148 <main+0xa>
- 15c:	f7 cf       	rjmp	.-18     	; 0x14c <main+0xe>
+ 15e:	21 96       	adiw	r28, 0x01	; 1
+ 160:	c6 30       	cpi	r28, 0x06	; 6
+ 162:	d1 05       	cpc	r29, r1
+ 164:	c9 f7       	brne	.-14     	; 0x158 <main+0x1a>
 
-0000015e <_exit>:
- 15e:	f8 94       	cli
+			// patroon tonen, methode ophalen
+			patroonTonen(patroon);
+		}
 
-00000160 <__stop_program>:
- 160:	ff cf       	rjmp	.-2      	; 0x160 <__stop_program>
+		if (secs == 15) // aantal seconden voordat patroon veranderd.
+ 166:	8f e0       	ldi	r24, 0x0F	; 15
+ 168:	f8 16       	cp	r15, r24
+ 16a:	39 f4       	brne	.+14     	; 0x17a <main+0x3c>
+		{
+			secs = 0;
+
+			if (patroon >= 7) // laatste patroon bereikt
+ 16c:	07 30       	cpi	r16, 0x07	; 7
+ 16e:	11 05       	cpc	r17, r1
+ 170:	74 f7       	brge	.-36     	; 0x14e <main+0x10>
+			{
+				patroon = 1; // opnieuw beginnen met patroonsequentie
+			}
+			else
+			{
+				patroon++; // volgende patroon
+ 172:	0f 5f       	subi	r16, 0xFF	; 255
+ 174:	1f 4f       	sbci	r17, 0xFF	; 255
+ 176:	ff 24       	eor	r15, r15
+ 178:	ed cf       	rjmp	.-38     	; 0x154 <main+0x16>
+			}
+		}
+		else
+		{
+			secs++;
+ 17a:	f3 94       	inc	r15
+ 17c:	eb cf       	rjmp	.-42     	; 0x154 <main+0x16>
+
+0000017e <_exit>:
+ 17e:	f8 94       	cli
+
+00000180 <__stop_program>:
+ 180:	ff cf       	rjmp	.-2      	; 0x180 <__stop_program>

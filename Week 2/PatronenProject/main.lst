@@ -305,41 +305,63 @@
  315               	main:
  316               	.LFB6:
  317               	.LM37:
- 318 00be CF93      		push r28
- 319 00c0 DF93      		push r29
- 320               	/* prologue: function */
- 321               	/* frame size = 0 */
- 322               	.LM38:
- 323 00c2 88EF      		ldi r24,lo8(-8)
- 324 00c4 8AB9      		out 42-32,r24
- 325               	.LM39:
- 326 00c6 84B9      		out 36-32,r24
- 327               	.LVL21:
- 328               	.L19:
- 329 00c8 C0E0      		ldi r28,lo8(0)
- 330 00ca D0E0      		ldi r29,hi8(0)
- 331               	.L18:
- 332               	.LM40:
- 333 00cc 81E0      		ldi r24,lo8(1)
- 334 00ce 90E0      		ldi r25,hi8(1)
- 335 00d0 0E94 0000 		call patroonTonen
- 336               	.LM41:
- 337 00d4 2196      		adiw r28,1
- 338 00d6 C630      		cpi r28,6
- 339 00d8 D105      		cpc r29,__zero_reg__
- 340 00da 04F4      		brge .L19
- 341 00dc 00C0      		rjmp .L18
- 342               	.LFE6:
- 376               	.Letext0:
+ 318 00be FF92      		push r15
+ 319 00c0 0F93      		push r16
+ 320 00c2 1F93      		push r17
+ 321 00c4 CF93      		push r28
+ 322 00c6 DF93      		push r29
+ 323               	/* prologue: function */
+ 324               	/* frame size = 0 */
+ 325               	.LM38:
+ 326 00c8 88EF      		ldi r24,lo8(-8)
+ 327 00ca 8AB9      		out 42-32,r24
+ 328               	.LM39:
+ 329 00cc 84B9      		out 36-32,r24
+ 330               	.LVL21:
+ 331               	.L17:
+ 332 00ce FF24      		clr r15
+ 333 00d0 01E0      		ldi r16,lo8(1)
+ 334 00d2 10E0      		ldi r17,hi8(1)
+ 335               	.L20:
+ 336 00d4 C0E0      		ldi r28,lo8(0)
+ 337 00d6 D0E0      		ldi r29,hi8(0)
+ 338               	.L15:
+ 339               	.LM40:
+ 340 00d8 C801      		movw r24,r16
+ 341 00da 0E94 0000 		call patroonTonen
+ 342               	.LM41:
+ 343 00de 2196      		adiw r28,1
+ 344 00e0 C630      		cpi r28,6
+ 345 00e2 D105      		cpc r29,__zero_reg__
+ 346 00e4 01F4      		brne .L15
+ 347               	.LM42:
+ 348 00e6 8FE0      		ldi r24,lo8(15)
+ 349 00e8 F816      		cp r15,r24
+ 350 00ea 01F4      		brne .L16
+ 351               	.LM43:
+ 352 00ec 0730      		cpi r16,7
+ 353 00ee 1105      		cpc r17,__zero_reg__
+ 354 00f0 04F4      		brge .L17
+ 355               	.LM44:
+ 356 00f2 0F5F      		subi r16,lo8(-(1))
+ 357 00f4 1F4F      		sbci r17,hi8(-(1))
+ 358 00f6 FF24      		clr r15
+ 359 00f8 00C0      		rjmp .L20
+ 360               	.L16:
+ 361               	.LM45:
+ 362 00fa F394      		inc r15
+ 363 00fc 00C0      		rjmp .L20
+ 364               	.LFE6:
+ 398               	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\Gunnar\AppData\Local\Temp/ccbbihYY.s:2      *ABS*:0000003f __SREG__
-C:\Users\Gunnar\AppData\Local\Temp/ccbbihYY.s:3      *ABS*:0000003e __SP_H__
-C:\Users\Gunnar\AppData\Local\Temp/ccbbihYY.s:4      *ABS*:0000003d __SP_L__
-C:\Users\Gunnar\AppData\Local\Temp/ccbbihYY.s:5      *ABS*:00000034 __CCP__
-C:\Users\Gunnar\AppData\Local\Temp/ccbbihYY.s:6      *ABS*:00000000 __tmp_reg__
-C:\Users\Gunnar\AppData\Local\Temp/ccbbihYY.s:7      *ABS*:00000001 __zero_reg__
-C:\Users\Gunnar\AppData\Local\Temp/ccbbihYY.s:18     .text:00000000 patroonTonen
-C:\Users\Gunnar\AppData\Local\Temp/ccbbihYY.s:315    .text:000000be main
+C:\Users\Gunnar\AppData\Local\Temp/ccL2uWkk.s:2      *ABS*:0000003f __SREG__
+C:\Users\Gunnar\AppData\Local\Temp/ccL2uWkk.s:3      *ABS*:0000003e __SP_H__
+C:\Users\Gunnar\AppData\Local\Temp/ccL2uWkk.s:4      *ABS*:0000003d __SP_L__
+C:\Users\Gunnar\AppData\Local\Temp/ccL2uWkk.s:5      *ABS*:00000034 __CCP__
+C:\Users\Gunnar\AppData\Local\Temp/ccL2uWkk.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\Gunnar\AppData\Local\Temp/ccL2uWkk.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\Gunnar\AppData\Local\Temp/ccL2uWkk.s:18     .text:00000000 patroonTonen
+C:\Users\Gunnar\AppData\Local\Temp/ccL2uWkk.s:315    .text:000000be main
 
 NO UNDEFINED SYMBOLS
