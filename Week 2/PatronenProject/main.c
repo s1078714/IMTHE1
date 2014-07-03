@@ -11,8 +11,8 @@
 
 int main(void)
 {
-	DDRD = 0b11111000; // blauw || groen
-	DDRB = 0b11111000; // geel || wit
+	DDRD = 0b11111100; // blauw || groen
+	DDRB = 0b11110000; // geel || wit
 
 	uint8_t secs = 0; // teller
 	int patroon = 1; // reset naar eerste patroon, voor het leesgemak begint patroon bij 1 (patroon 1, patroon 2 enz enz)
@@ -20,7 +20,7 @@ int main(void)
 
 	while(1)
 	{
-		for( i=0;i<6;i++) // i = 3, == 1 seconden realtime
+		for( i=0;i<1;i++) // i verhogen, betekent snelheid afwisseling vertragen
 		{
 
 			// patroon tonen, methode ophalen
@@ -31,7 +31,7 @@ int main(void)
 		{
 			secs = 0;
 
-			if (patroon >= 7) // laatste patroon bereikt
+			if (patroon >= 4) // laatste patroon bereikt
 			{
 				patroon = 1; // opnieuw beginnen met patroonsequentie
 			}
@@ -49,79 +49,175 @@ int main(void)
 
 patroonTonen(patroon)
 {
-	int langsteTijd = 1500; // in microseconden (us)
+	int langsteTijd = 80000; // in microseconden (us)
 
 	if (patroon == 1)
 	{
-		// multiplexen, coooode
-		// vierkant (leeg)
-		// met potmeter: toont alle leds behalve 2 buitenste randen parallel aan groene draden
-		PORTD = 0b11111000;
-		PORTB = 0b01110000; // 2 randen langs groene draden
-		_delay_us(750);
+//		// alle leds branden
+//		PORTD = 0b11111100;
+//		PORTB = 0b00000000;
+//		_delay_us(langsteTijd);
 
-		PORTD = 0b10001000;
-		PORTB = 0b00000000; // 2 randen langs witte draden
-		_delay_us(750);
+		for(int loop;loop<=(langsteTijd/70);loop++)
+		{
+			PORTD = 0b01111000;
+			PORTB = 0b00000000;
+			_delay_us(750);
+			PORTD = 0b10000100;
+			PORTB = 0b00000000;
+			_delay_us(750);
+		}
 	}
 	if (patroon == 2)
 	{
-		// multiplexen, coooode
-		// ruit
-		// met potmeter: toont negatief van oorspronkelijk ruitje
-		PORTD = 0b01010000;
-		PORTB = 0b10101000; // 4 stippen (vierkantje)
-		_delay_us(500);
+		int draaiSnelheid = 5;
+		// racer leds (cirkel beweging)
+		PORTD = 0b10000000;
+		PORTB = 0b01110000; // meest rechtse strip leds, langs groene draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b10000000;
+		PORTB = 0b10110000; // meest rechtse strip leds, langs groene draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b10000000;
+		PORTB = 0b11010000; // meest rechtse strip leds, langs groene draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b10000000;
+		PORTB = 0b11100000; // meest rechtse strip leds, langs groene draad (4)
+		_delay_ms(draaiSnelheid);
 
+		PORTD = 0b01000000;
+		PORTB = 0b10000000; // meest linkse strip leds, langs witte draad (4)
+		_delay_ms(draaiSnelheid);
 		PORTD = 0b00100000;
-		PORTB = 0b01110000; // 2 stippen buitenste rand, horizontaal langs witte strip draden
-		_delay_us(500);
+		PORTB = 0b10000000; // meest linkse strip leds, langs witte draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b00010000;
+		PORTB = 0b10000000; // meest linkse strip leds, langs witte draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b00001000;
+		PORTB = 0b10000000; // meest linkse strip leds, langs witte draad (4)
+		_delay_ms(draaiSnelheid);
 
-		PORTD = 0b10001000;
-		PORTB = 0b11011000; // 2 stippen buitenste rand, verticaal langs witte strip draden
-		_delay_us(500);
+		PORTD = 0b00000100;
+		PORTB = 0b11100000; // meest linkse strip leds, langs groene draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b00000100;
+		PORTB = 0b11010000; // meest linkse strip leds, langs groene draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b00000100;
+		PORTB = 0b10110000; // meest linkse strip leds, langs groene draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b00000100;
+		PORTB = 0b01110000; // meest linkse strip leds, langs groene draad (4)
+		_delay_ms(draaiSnelheid);
+
+		PORTD = 0b00001000;
+		PORTB = 0b00010000; // meest rechtse strip leds, langs witte draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b00010000;
+		PORTB = 0b00010000; // meest rechtse strip leds, langs witte draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b00100000;
+		PORTB = 0b00010000; // meest rechtse strip leds, langs witte draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b01000000;
+		PORTB = 0b00010000; // meest rechtse strip leds, langs witte draad (4)
+		_delay_ms(draaiSnelheid);
 	}
 	if (patroon == 3)
 	{
-		// lijnen parallel aan groen, startend op rand
-		// 		met potmeter: niet startend op de rand (negatief)
-		PORTD = 0b11111000;
-		PORTB = 0b01010000;
-		_delay_us(langsteTijd);
+		int draaiSnelheid = 5;
+		// racer leds (cirkel beweging) 		tegengestelde richting
+		PORTD = 0b01000000;
+		PORTB = 0b00010000; // meest rechtse strip leds, langs witte draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b00100000;
+		PORTB = 0b00010000; // meest rechtse strip leds, langs witte draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b00010000;
+		PORTB = 0b00010000; // meest rechtse strip leds, langs witte draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b00001000;
+		PORTB = 0b00010000; // meest rechtse strip leds, langs witte draad (4)
+		_delay_ms(draaiSnelheid);
+
+		PORTD = 0b00000100;
+		PORTB = 0b01110000; // meest linkse strip leds, langs groene draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b00000100;
+		PORTB = 0b10110000; // meest linkse strip leds, langs groene draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b00000100;
+		PORTB = 0b11010000; // meest linkse strip leds, langs groene draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b00000100;
+		PORTB = 0b11100000; // meest linkse strip leds, langs groene draad (4)
+		_delay_ms(draaiSnelheid);
+
+		PORTD = 0b00001000;
+		PORTB = 0b10000000; // meest linkse strip leds, langs witte draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b00010000;
+		PORTB = 0b10000000; // meest linkse strip leds, langs witte draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b00100000;
+		PORTB = 0b10000000; // meest linkse strip leds, langs witte draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b01000000;
+		PORTB = 0b10000000; // meest linkse strip leds, langs witte draad (4)
+		_delay_ms(draaiSnelheid);
+
+		PORTD = 0b10000000;
+		PORTB = 0b11100000; // meest rechtse strip leds, langs groene draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b10000000;
+		PORTB = 0b11010000; // meest rechtse strip leds, langs groene draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b10000000;
+		PORTB = 0b10110000; // meest rechtse strip leds, langs groene draad (4)
+		_delay_ms(draaiSnelheid);
+		PORTD = 0b10000000;
+		PORTB = 0b01110000; // meest rechtse strip leds, langs groene draad (4)
+		_delay_ms(draaiSnelheid);
 	}
 	if (patroon == 4)
 	{
 		// lijnen parallel aan groen, niet startend op rand
-		// 		met potmeter: WEL startend op de rand (negatief)
-		PORTD = 0b11111000;
-		PORTB = 0b10101000;
-		_delay_us(langsteTijd);
+		for(int loop;loop<=(langsteTijd/70);loop++)
+		{
+		PORTD = 0b00110000;
+		PORTB = 0b01100000;
+		_delay_us(750);
+		PORTD = 0b10000100;
+		PORTB = 0b10010000;
+		_delay_us(750);
+		}
 	}
-	if (patroon == 5)
-	{
-		// multiplexen, coooode
-		// lijnen parallel aan wit, startend op rand
-		// 		met potmeter: geen leds
-		PORTD = 0b10101000;
-		PORTB = 0b00000000;
-		_delay_us(langsteTijd);		// 50 ms staat gelijk aan 2min, 8seconden
-	}
-	if (patroon == 6)
-	{
-		// lijnen parallel aan wit, niet startend op rand
-		// 		met potmeter: geen leds
-		PORTD = 0b01010000;
-		PORTB = 0b00000000; // NIET startend op rand
-		_delay_us(langsteTijd);
-	}
-	if (patroon == 7)
-	{
-		// multiplexen, coooode
-		// vierkantje (gevuld)
-		// 		met potmeter: toont alleen 2x3 leds parallel aan de groene draden,
-		// 		ter hoogte van oorspronkelijk klein vierkantje
-		PORTD = 0b01110000;
-		PORTB = 0b10001000;
-		_delay_us(langsteTijd); // tijd rekken voor tonen van patroon
-	}
+//	if (patroon == 5)
+//	{
+//		// multiplexen, coooode
+//		// lijnen parallel aan wit, startend op rand
+//		// 		met potmeter: geen leds
+//		PORTD = 0b10101000;
+//		PORTB = 0b00000000;
+//		_delay_us(langsteTijd);		// 50 ms staat gelijk aan 2min, 8seconden
+//	}
+//	if (patroon == 6)
+//	{
+//		// lijnen parallel aan wit, niet startend op rand
+//		// 		met potmeter: geen leds
+//		PORTD = 0b01010000;
+//		PORTB = 0b00000000; // NIET startend op rand
+//		_delay_us(langsteTijd);
+//	}
+//	if (patroon == 7)
+//	{
+//		// multiplexen, coooode
+//		// vierkantje (gevuld)
+//		// 		met potmeter: toont alleen 2x3 leds parallel aan de groene draden,
+//		// 		ter hoogte van oorspronkelijk klein vierkantje
+//		PORTD = 0b01110000;
+//		PORTB = 0b10001000;
+//		_delay_us(langsteTijd); // tijd rekken voor tonen van patroon
+//	}
 }
