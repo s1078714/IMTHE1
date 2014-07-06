@@ -7,15 +7,19 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
+#include <stdlib.h>
 
+	int patroonTonen();
 
 int main(void)
 {
 	DDRD = 0b11111100; // blauw || groen
 	DDRB = 0b11110000; // geel || wit
 
+
 	uint8_t secs = 0; // teller
 	int patroon = 1; // reset naar eerste patroon, voor het leesgemak begint patroon bij 1 (patroon 1, patroon 2 enz enz)
+	int patroonAantal = 4;
 	int i; // snelheid teller
 
 	while(1)
@@ -27,18 +31,10 @@ int main(void)
 			patroonTonen(patroon);
 		}
 
-		if (secs == 15) // aantal seconden voordat patroon veranderd.
+		if (secs == 15) // aantal seconden voordat patroon veranderd. met i<1 geldt het volgende: int secs == XX is in werkelijkheid 2/3 van XX aantal seconden.
 		{
 			secs = 0;
-
-			if (patroon >= 4) // laatste patroon bereikt
-			{
-				patroon = 1; // opnieuw beginnen met patroonsequentie
-			}
-			else
-			{
-				patroon++; // volgende patroon
-			}
+			patroon = rand() % patroonAantal + 1; // random volgend patroon (1 - patroonAantal, ipv 0 - 3)
 		}
 		else
 		{
@@ -47,9 +43,12 @@ int main(void)
 	}
 }
 
-patroonTonen(patroon)
+int patroonTonen(patroon)
 {
-	int langsteTijd = 80000; // in microseconden (us)
+	unsigned int langsteTijd = 80000; // in microseconden (us)
+
+	int loop; // for-loop patroon 1
+	int loop2; // for-loop patroon 4
 
 	if (patroon == 1)
 	{
@@ -58,7 +57,7 @@ patroonTonen(patroon)
 //		PORTB = 0b00000000;
 //		_delay_us(langsteTijd);
 
-		for(int loop;loop<=(langsteTijd/70);loop++)
+		for(loop = 0;loop<=(langsteTijd/280);loop++)
 		{
 			PORTD = 0b01111000;
 			PORTB = 0b00000000;
@@ -182,8 +181,8 @@ patroonTonen(patroon)
 	}
 	if (patroon == 4)
 	{
-		// lijnen parallel aan groen, niet startend op rand
-		for(int loop;loop<=(langsteTijd/70);loop++)
+		// --
+		for(loop2 = 0;loop2<=(langsteTijd/280);loop2++)
 		{
 		PORTD = 0b00110000;
 		PORTB = 0b01100000;
@@ -221,3 +220,4 @@ patroonTonen(patroon)
 //		_delay_us(langsteTijd); // tijd rekken voor tonen van patroon
 //	}
 }
+
