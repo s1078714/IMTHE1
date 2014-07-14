@@ -1,20 +1,32 @@
 /*
  * main.c
  *
- *  Created on: 11 jun. 2014
- *      Author: Gunnar
+ *  Created on: 14 jul. 2014
+ *      Author: Gunnar, Jaimy, Peter
  */
+
 
 #include <avr/io.h>
 #include <util/delay.h>
 #include <stdlib.h>
 
 	int patroonTonen();
+	int adc_value;		//Variable om de waarde van de ADC converter in op te slaan
 
 int main(void)
 {
 	DDRD = 0b11111100; // blauw || groen
 	DDRB = 0b11110000; // geel || wit
+
+	// Prescalers voor deelconcept Geluid, Jaimy
+	ADCSRA |= ((0<<ADPS2)|(1<<ADPS1)|(1<<ADPS0));  			//Prescaler at 128 so we have an 125Khz clock source
+	ADMUX  |= (1<<REFS0);
+	ADMUX  &= ~(1<<REFS1);               				//Avcc(+5v) as voltage reference
+	ADCSRB &= ~((1<<ADTS2)|(1<<ADTS1)|(1<<ADTS0));			//ADC in free-running mode
+	ADCSRA |= (1<<ADATE);                				//Signal source, in this case is the free-running
+	ADCSRA |= (1<<ADEN);                				//Power up the ADC
+	ADCSRA |= (1<<ADSC);                				//Start converting
+
 
 
 	uint8_t secs = 0; // teller
@@ -24,12 +36,23 @@ int main(void)
 
 	while(1)
 	{
-		for( i=0;i<1;i++) // i verhogen, betekent snelheid afwisseling vertragen
-		{
+		adc_value = ADCW;
 
-			// patroon tonen, methode ophalen
-			patroonTonen(patroon);
-		}
+//		for( i=0;i<1;i++) // i verhogen, betekent snelheid afwisseling vertragen
+//		{
+
+			if(adc_value < 200)
+			{
+				//PORTB = 0b00000001;
+				patroonTonen(patroon);
+			}
+			else
+			{
+				PORTB = 0b11111111;
+				//			patroonTonen(null);
+			}
+
+//		}
 
 		if (secs == 15) // aantal seconden voordat patroon veranderd. met i<1 geldt het volgende: int secs == XX is in werkelijkheid 2/3 van XX aantal seconden.
 		{
@@ -45,17 +68,14 @@ int main(void)
 
 int patroonTonen(patroon)
 {
-	unsigned int langsteTijd = 80000; // in microseconden (us)
+	unsigned int langsteTijd = 80; // in microseconden (us)
 
 	int loop; // for-loop patroon 1
 	int loop2; // for-loop patroon 4
 
 	if (patroon == 1)
 	{
-//		// alle leds branden
-//		PORTD = 0b11111100;
-//		PORTB = 0b00000000;
-//		_delay_us(langsteTijd);
+		// alle leds branden
 
 		for(loop = 0;loop<=(langsteTijd/280);loop++)
 		{
@@ -192,32 +212,6 @@ int patroonTonen(patroon)
 		_delay_us(750);
 		}
 	}
-//	if (patroon == 5)
-//	{
-//		// multiplexen, coooode
-//		// lijnen parallel aan wit, startend op rand
-//		// 		met potmeter: geen leds
-//		PORTD = 0b10101000;
-//		PORTB = 0b00000000;
-//		_delay_us(langsteTijd);		// 50 ms staat gelijk aan 2min, 8seconden
-//	}
-//	if (patroon == 6)
-//	{
-//		// lijnen parallel aan wit, niet startend op rand
-//		// 		met potmeter: geen leds
-//		PORTD = 0b01010000;
-//		PORTB = 0b00000000; // NIET startend op rand
-//		_delay_us(langsteTijd);
-//	}
-//	if (patroon == 7)
-//	{
-//		// multiplexen, coooode
-//		// vierkantje (gevuld)
-//		// 		met potmeter: toont alleen 2x3 leds parallel aan de groene draden,
-//		// 		ter hoogte van oorspronkelijk klein vierkantje
-//		PORTD = 0b01110000;
-//		PORTB = 0b10001000;
-//		_delay_us(langsteTijd); // tijd rekken voor tonen van patroon
-//	}
-}
 
+	return 0;
+}

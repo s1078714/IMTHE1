@@ -3,58 +3,58 @@ main.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000004  00800100  000004f0  00000564  2**0
+  0 .data         00000004  00800100  00000542  000005d6  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         000004f0  00000000  00000000  00000074  2**1
+  1 .text         00000542  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .debug_aranges 00000020  00000000  00000000  00000568  2**0
+  2 .bss          00000002  00800104  00800104  000005da  2**0
+                  ALLOC
+  3 .debug_aranges 00000020  00000000  00000000  000005da  2**0
                   CONTENTS, READONLY, DEBUGGING
-  3 .debug_pubnames 0000002c  00000000  00000000  00000588  2**0
+  4 .debug_pubnames 0000003a  00000000  00000000  000005fa  2**0
                   CONTENTS, READONLY, DEBUGGING
-  4 .debug_info   000009b5  00000000  00000000  000005b4  2**0
+  5 .debug_info   00000960  00000000  00000000  00000634  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_abbrev 00000149  00000000  00000000  00000f69  2**0
+  6 .debug_abbrev 0000012a  00000000  00000000  00000f94  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_line   000005c3  00000000  00000000  000010b2  2**0
+  7 .debug_line   000005a9  00000000  00000000  000010be  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_frame  00000030  00000000  00000000  00001678  2**2
+  8 .debug_frame  00000030  00000000  00000000  00001668  2**2
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_str    0000014d  00000000  00000000  000016a8  2**0
+  9 .debug_str    00000157  00000000  00000000  00001698  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_loc    00000448  00000000  00000000  000017f5  2**0
-                  CONTENTS, READONLY, DEBUGGING
- 10 .debug_ranges 000000f0  00000000  00000000  00001c3d  2**0
+ 10 .debug_loc    000003b0  00000000  00000000  000017ef  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
    0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
-   4:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-   8:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-   c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  10:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  14:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  18:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  1c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  20:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  24:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  28:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  2c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  30:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  34:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  38:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  3c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  40:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  44:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  48:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  4c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  50:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  54:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  58:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  5c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  60:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
-  64:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+   4:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   8:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  10:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  14:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  18:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  1c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  20:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  24:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  28:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  2c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  30:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  34:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  38:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  3c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  40:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  44:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  48:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  4c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  50:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  54:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  58:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  5c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  60:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  64:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
 
 00000068 <__ctors_end>:
   68:	11 24       	eor	r1, r1
@@ -64,832 +64,858 @@ Disassembly of section .text:
   70:	de bf       	out	0x3e, r29	; 62
   72:	cd bf       	out	0x3d, r28	; 61
 
-00000074 <__do_copy_data>:
+00000074 <__do_clear_bss>:
   74:	11 e0       	ldi	r17, 0x01	; 1
-  76:	a0 e0       	ldi	r26, 0x00	; 0
+  76:	a4 e0       	ldi	r26, 0x04	; 4
   78:	b1 e0       	ldi	r27, 0x01	; 1
-  7a:	e0 ef       	ldi	r30, 0xF0	; 240
-  7c:	f4 e0       	ldi	r31, 0x04	; 4
-  7e:	02 c0       	rjmp	.+4      	; 0x84 <.do_copy_data_start>
+  7a:	01 c0       	rjmp	.+2      	; 0x7e <.do_clear_bss_start>
 
-00000080 <.do_copy_data_loop>:
-  80:	05 90       	lpm	r0, Z+
-  82:	0d 92       	st	X+, r0
+0000007c <.do_clear_bss_loop>:
+  7c:	1d 92       	st	X+, r1
 
-00000084 <.do_copy_data_start>:
-  84:	a4 30       	cpi	r26, 0x04	; 4
-  86:	b1 07       	cpc	r27, r17
-  88:	d9 f7       	brne	.-10     	; 0x80 <.do_copy_data_loop>
-  8a:	0e 94 40 01 	call	0x280	; 0x280 <main>
-  8e:	0c 94 76 02 	jmp	0x4ec	; 0x4ec <_exit>
+0000007e <.do_clear_bss_start>:
+  7e:	a6 30       	cpi	r26, 0x06	; 6
+  80:	b1 07       	cpc	r27, r17
+  82:	e1 f7       	brne	.-8      	; 0x7c <.do_clear_bss_loop>
 
-00000092 <__bad_interrupt>:
-  92:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+00000084 <__do_copy_data>:
+  84:	11 e0       	ldi	r17, 0x01	; 1
+  86:	a0 e0       	ldi	r26, 0x00	; 0
+  88:	b1 e0       	ldi	r27, 0x01	; 1
+  8a:	e2 e4       	ldi	r30, 0x42	; 66
+  8c:	f5 e0       	ldi	r31, 0x05	; 5
+  8e:	02 c0       	rjmp	.+4      	; 0x94 <.do_copy_data_start>
 
-00000096 <patroonTonen>:
+00000090 <.do_copy_data_loop>:
+  90:	05 90       	lpm	r0, Z+
+  92:	0d 92       	st	X+, r0
+
+00000094 <.do_copy_data_start>:
+  94:	a4 30       	cpi	r26, 0x04	; 4
+  96:	b1 07       	cpc	r27, r17
+  98:	d9 f7       	brne	.-10     	; 0x90 <.do_copy_data_loop>
+  9a:	0e 94 37 01 	call	0x26e	; 0x26e <main>
+  9e:	0c 94 9f 02 	jmp	0x53e	; 0x53e <_exit>
+
+000000a2 <__bad_interrupt>:
+  a2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a6 <patroonTonen>:
 		}
 	}
 }
 
 int patroonTonen(patroon)
 {
-  96:	cf 93       	push	r28
-  98:	df 93       	push	r29
-	unsigned int langsteTijd = 80000; // in microseconden (us)
+  a6:	cf 93       	push	r28
+  a8:	df 93       	push	r29
+	unsigned int langsteTijd = 80; // in microseconden (us)
 
 	int loop; // for-loop patroon 1
 	int loop2; // for-loop patroon 4
 
 	if (patroon == 1)
-  9a:	81 30       	cpi	r24, 0x01	; 1
-  9c:	91 05       	cpc	r25, r1
-  9e:	b1 f4       	brne	.+44     	; 0xcc <patroonTonen+0x36>
-  a0:	20 e0       	ldi	r18, 0x00	; 0
-  a2:	30 e0       	ldi	r19, 0x00	; 0
-//		PORTB = 0b00000000;
-//		_delay_us(langsteTijd);
+  aa:	81 30       	cpi	r24, 0x01	; 1
+  ac:	91 05       	cpc	r25, r1
+  ae:	61 f4       	brne	.+24     	; 0xc8 <patroonTonen+0x22>
+	{
+		// alle leds branden
 
 		for(loop = 0;loop<=(langsteTijd/280);loop++)
 		{
 			PORTD = 0b01111000;
-  a4:	78 e7       	ldi	r23, 0x78	; 120
+  b0:	88 e7       	ldi	r24, 0x78	; 120
+  b2:	8b b9       	out	0x0b, r24	; 11
+			PORTB = 0b00000000;
+  b4:	15 b8       	out	0x05, r1	; 5
     milliseconds can be achieved.
  */
 void
 _delay_loop_2(uint16_t __count)
 {
 	__asm__ volatile (
-  a6:	4c ed       	ldi	r20, 0xDC	; 220
-  a8:	55 e0       	ldi	r21, 0x05	; 5
-			PORTB = 0b00000000;
-			_delay_us(750);
-			PORTD = 0b10000100;
-  aa:	64 e8       	ldi	r22, 0x84	; 132
-//		PORTB = 0b00000000;
-//		_delay_us(langsteTijd);
-
-		for(loop = 0;loop<=(langsteTijd/280);loop++)
-		{
-			PORTD = 0b01111000;
-  ac:	7b b9       	out	0x0b, r23	; 11
-			PORTB = 0b00000000;
-  ae:	15 b8       	out	0x05, r1	; 5
-  b0:	ca 01       	movw	r24, r20
-  b2:	01 97       	sbiw	r24, 0x01	; 1
-  b4:	f1 f7       	brne	.-4      	; 0xb2 <patroonTonen+0x1c>
-			_delay_us(750);
-			PORTD = 0b10000100;
-  b6:	6b b9       	out	0x0b, r22	; 11
-			PORTB = 0b00000000;
-  b8:	15 b8       	out	0x05, r1	; 5
-  ba:	ca 01       	movw	r24, r20
+  b6:	2c ed       	ldi	r18, 0xDC	; 220
+  b8:	35 e0       	ldi	r19, 0x05	; 5
+  ba:	c9 01       	movw	r24, r18
   bc:	01 97       	sbiw	r24, 0x01	; 1
-  be:	f1 f7       	brne	.-4      	; 0xbc <patroonTonen+0x26>
-//		// alle leds branden
-//		PORTD = 0b11111100;
-//		PORTB = 0b00000000;
-//		_delay_us(langsteTijd);
-
-		for(loop = 0;loop<=(langsteTijd/280);loop++)
-  c0:	2f 5f       	subi	r18, 0xFF	; 255
-  c2:	3f 4f       	sbci	r19, 0xFF	; 255
-  c4:	24 33       	cpi	r18, 0x34	; 52
-  c6:	31 05       	cpc	r19, r1
-  c8:	89 f7       	brne	.-30     	; 0xac <patroonTonen+0x16>
-  ca:	d7 c0       	rjmp	.+430    	; 0x27a <patroonTonen+0x1e4>
+  be:	f1 f7       	brne	.-4      	; 0xbc <patroonTonen+0x16>
+			_delay_us(750);
 			PORTD = 0b10000100;
+  c0:	84 e8       	ldi	r24, 0x84	; 132
+  c2:	8b b9       	out	0x0b, r24	; 11
 			PORTB = 0b00000000;
+  c4:	15 b8       	out	0x05, r1	; 5
+  c6:	cb c0       	rjmp	.+406    	; 0x25e <patroonTonen+0x1b8>
 			_delay_us(750);
 		}
 	}
 	if (patroon == 2)
-  cc:	82 30       	cpi	r24, 0x02	; 2
-  ce:	91 05       	cpc	r25, r1
-  d0:	09 f0       	breq	.+2      	; 0xd4 <patroonTonen+0x3e>
-  d2:	5a c0       	rjmp	.+180    	; 0x188 <patroonTonen+0xf2>
+  c8:	82 30       	cpi	r24, 0x02	; 2
+  ca:	91 05       	cpc	r25, r1
+  cc:	09 f0       	breq	.+2      	; 0xd0 <patroonTonen+0x2a>
+  ce:	5a c0       	rjmp	.+180    	; 0x184 <patroonTonen+0xde>
 	{
 		int draaiSnelheid = 5;
 		// racer leds (cirkel beweging)
 		PORTD = 0b10000000;
-  d4:	20 e8       	ldi	r18, 0x80	; 128
-  d6:	2b b9       	out	0x0b, r18	; 11
+  d0:	20 e8       	ldi	r18, 0x80	; 128
+  d2:	2b b9       	out	0x0b, r18	; 11
 		PORTB = 0b01110000; // meest rechtse strip leds, langs groene draad (4)
-  d8:	a0 e7       	ldi	r26, 0x70	; 112
-  da:	a5 b9       	out	0x05, r26	; 5
-  dc:	80 e1       	ldi	r24, 0x10	; 16
-  de:	97 e2       	ldi	r25, 0x27	; 39
-  e0:	fc 01       	movw	r30, r24
-  e2:	31 97       	sbiw	r30, 0x01	; 1
-  e4:	f1 f7       	brne	.-4      	; 0xe2 <patroonTonen+0x4c>
+  d4:	a0 e7       	ldi	r26, 0x70	; 112
+  d6:	a5 b9       	out	0x05, r26	; 5
+  d8:	80 e1       	ldi	r24, 0x10	; 16
+  da:	97 e2       	ldi	r25, 0x27	; 39
+  dc:	fc 01       	movw	r30, r24
+  de:	31 97       	sbiw	r30, 0x01	; 1
+  e0:	f1 f7       	brne	.-4      	; 0xde <patroonTonen+0x38>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b10000000;
-  e6:	2b b9       	out	0x0b, r18	; 11
+  e2:	2b b9       	out	0x0b, r18	; 11
 		PORTB = 0b10110000; // meest rechtse strip leds, langs groene draad (4)
-  e8:	e0 eb       	ldi	r30, 0xB0	; 176
-  ea:	e5 b9       	out	0x05, r30	; 5
-  ec:	ec 01       	movw	r28, r24
-  ee:	21 97       	sbiw	r28, 0x01	; 1
-  f0:	f1 f7       	brne	.-4      	; 0xee <patroonTonen+0x58>
+  e4:	e0 eb       	ldi	r30, 0xB0	; 176
+  e6:	e5 b9       	out	0x05, r30	; 5
+  e8:	ec 01       	movw	r28, r24
+  ea:	21 97       	sbiw	r28, 0x01	; 1
+  ec:	f1 f7       	brne	.-4      	; 0xea <patroonTonen+0x44>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b10000000;
-  f2:	2b b9       	out	0x0b, r18	; 11
+  ee:	2b b9       	out	0x0b, r18	; 11
 		PORTB = 0b11010000; // meest rechtse strip leds, langs groene draad (4)
-  f4:	60 ed       	ldi	r22, 0xD0	; 208
-  f6:	65 b9       	out	0x05, r22	; 5
-  f8:	ec 01       	movw	r28, r24
-  fa:	21 97       	sbiw	r28, 0x01	; 1
-  fc:	f1 f7       	brne	.-4      	; 0xfa <patroonTonen+0x64>
+  f0:	60 ed       	ldi	r22, 0xD0	; 208
+  f2:	65 b9       	out	0x05, r22	; 5
+  f4:	ec 01       	movw	r28, r24
+  f6:	21 97       	sbiw	r28, 0x01	; 1
+  f8:	f1 f7       	brne	.-4      	; 0xf6 <patroonTonen+0x50>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b10000000;
-  fe:	2b b9       	out	0x0b, r18	; 11
+  fa:	2b b9       	out	0x0b, r18	; 11
 		PORTB = 0b11100000; // meest rechtse strip leds, langs groene draad (4)
- 100:	50 ee       	ldi	r21, 0xE0	; 224
- 102:	55 b9       	out	0x05, r21	; 5
- 104:	ec 01       	movw	r28, r24
- 106:	21 97       	sbiw	r28, 0x01	; 1
- 108:	f1 f7       	brne	.-4      	; 0x106 <patroonTonen+0x70>
+  fc:	50 ee       	ldi	r21, 0xE0	; 224
+  fe:	55 b9       	out	0x05, r21	; 5
+ 100:	ec 01       	movw	r28, r24
+ 102:	21 97       	sbiw	r28, 0x01	; 1
+ 104:	f1 f7       	brne	.-4      	; 0x102 <patroonTonen+0x5c>
 		_delay_ms(draaiSnelheid);
 
 		PORTD = 0b01000000;
- 10a:	f0 e4       	ldi	r31, 0x40	; 64
- 10c:	fb b9       	out	0x0b, r31	; 11
+ 106:	f0 e4       	ldi	r31, 0x40	; 64
+ 108:	fb b9       	out	0x0b, r31	; 11
 		PORTB = 0b10000000; // meest linkse strip leds, langs witte draad (4)
- 10e:	25 b9       	out	0x05, r18	; 5
- 110:	ec 01       	movw	r28, r24
- 112:	21 97       	sbiw	r28, 0x01	; 1
- 114:	f1 f7       	brne	.-4      	; 0x112 <patroonTonen+0x7c>
+ 10a:	25 b9       	out	0x05, r18	; 5
+ 10c:	ec 01       	movw	r28, r24
+ 10e:	21 97       	sbiw	r28, 0x01	; 1
+ 110:	f1 f7       	brne	.-4      	; 0x10e <patroonTonen+0x68>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b00100000;
- 116:	70 e2       	ldi	r23, 0x20	; 32
- 118:	7b b9       	out	0x0b, r23	; 11
+ 112:	70 e2       	ldi	r23, 0x20	; 32
+ 114:	7b b9       	out	0x0b, r23	; 11
 		PORTB = 0b10000000; // meest linkse strip leds, langs witte draad (4)
- 11a:	25 b9       	out	0x05, r18	; 5
- 11c:	ec 01       	movw	r28, r24
- 11e:	21 97       	sbiw	r28, 0x01	; 1
- 120:	f1 f7       	brne	.-4      	; 0x11e <patroonTonen+0x88>
+ 116:	25 b9       	out	0x05, r18	; 5
+ 118:	ec 01       	movw	r28, r24
+ 11a:	21 97       	sbiw	r28, 0x01	; 1
+ 11c:	f1 f7       	brne	.-4      	; 0x11a <patroonTonen+0x74>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b00010000;
- 122:	30 e1       	ldi	r19, 0x10	; 16
- 124:	3b b9       	out	0x0b, r19	; 11
+ 11e:	30 e1       	ldi	r19, 0x10	; 16
+ 120:	3b b9       	out	0x0b, r19	; 11
 		PORTB = 0b10000000; // meest linkse strip leds, langs witte draad (4)
- 126:	25 b9       	out	0x05, r18	; 5
- 128:	ec 01       	movw	r28, r24
- 12a:	21 97       	sbiw	r28, 0x01	; 1
- 12c:	f1 f7       	brne	.-4      	; 0x12a <patroonTonen+0x94>
+ 122:	25 b9       	out	0x05, r18	; 5
+ 124:	ec 01       	movw	r28, r24
+ 126:	21 97       	sbiw	r28, 0x01	; 1
+ 128:	f1 f7       	brne	.-4      	; 0x126 <patroonTonen+0x80>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b00001000;
- 12e:	48 e0       	ldi	r20, 0x08	; 8
- 130:	4b b9       	out	0x0b, r20	; 11
+ 12a:	48 e0       	ldi	r20, 0x08	; 8
+ 12c:	4b b9       	out	0x0b, r20	; 11
 		PORTB = 0b10000000; // meest linkse strip leds, langs witte draad (4)
- 132:	25 b9       	out	0x05, r18	; 5
- 134:	ec 01       	movw	r28, r24
- 136:	21 97       	sbiw	r28, 0x01	; 1
- 138:	f1 f7       	brne	.-4      	; 0x136 <patroonTonen+0xa0>
+ 12e:	25 b9       	out	0x05, r18	; 5
+ 130:	ec 01       	movw	r28, r24
+ 132:	21 97       	sbiw	r28, 0x01	; 1
+ 134:	f1 f7       	brne	.-4      	; 0x132 <patroonTonen+0x8c>
 		_delay_ms(draaiSnelheid);
 
 		PORTD = 0b00000100;
- 13a:	24 e0       	ldi	r18, 0x04	; 4
- 13c:	2b b9       	out	0x0b, r18	; 11
+ 136:	24 e0       	ldi	r18, 0x04	; 4
+ 138:	2b b9       	out	0x0b, r18	; 11
 		PORTB = 0b11100000; // meest linkse strip leds, langs groene draad (4)
- 13e:	55 b9       	out	0x05, r21	; 5
- 140:	ec 01       	movw	r28, r24
- 142:	21 97       	sbiw	r28, 0x01	; 1
- 144:	f1 f7       	brne	.-4      	; 0x142 <patroonTonen+0xac>
+ 13a:	55 b9       	out	0x05, r21	; 5
+ 13c:	ec 01       	movw	r28, r24
+ 13e:	21 97       	sbiw	r28, 0x01	; 1
+ 140:	f1 f7       	brne	.-4      	; 0x13e <patroonTonen+0x98>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b00000100;
- 146:	2b b9       	out	0x0b, r18	; 11
+ 142:	2b b9       	out	0x0b, r18	; 11
 		PORTB = 0b11010000; // meest linkse strip leds, langs groene draad (4)
- 148:	65 b9       	out	0x05, r22	; 5
- 14a:	ec 01       	movw	r28, r24
- 14c:	21 97       	sbiw	r28, 0x01	; 1
- 14e:	f1 f7       	brne	.-4      	; 0x14c <patroonTonen+0xb6>
+ 144:	65 b9       	out	0x05, r22	; 5
+ 146:	ec 01       	movw	r28, r24
+ 148:	21 97       	sbiw	r28, 0x01	; 1
+ 14a:	f1 f7       	brne	.-4      	; 0x148 <patroonTonen+0xa2>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b00000100;
- 150:	2b b9       	out	0x0b, r18	; 11
+ 14c:	2b b9       	out	0x0b, r18	; 11
 		PORTB = 0b10110000; // meest linkse strip leds, langs groene draad (4)
- 152:	e5 b9       	out	0x05, r30	; 5
- 154:	ec 01       	movw	r28, r24
- 156:	21 97       	sbiw	r28, 0x01	; 1
- 158:	f1 f7       	brne	.-4      	; 0x156 <patroonTonen+0xc0>
+ 14e:	e5 b9       	out	0x05, r30	; 5
+ 150:	ec 01       	movw	r28, r24
+ 152:	21 97       	sbiw	r28, 0x01	; 1
+ 154:	f1 f7       	brne	.-4      	; 0x152 <patroonTonen+0xac>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b00000100;
- 15a:	2b b9       	out	0x0b, r18	; 11
+ 156:	2b b9       	out	0x0b, r18	; 11
 		PORTB = 0b01110000; // meest linkse strip leds, langs groene draad (4)
- 15c:	a5 b9       	out	0x05, r26	; 5
- 15e:	dc 01       	movw	r26, r24
- 160:	11 97       	sbiw	r26, 0x01	; 1
- 162:	f1 f7       	brne	.-4      	; 0x160 <patroonTonen+0xca>
+ 158:	a5 b9       	out	0x05, r26	; 5
+ 15a:	dc 01       	movw	r26, r24
+ 15c:	11 97       	sbiw	r26, 0x01	; 1
+ 15e:	f1 f7       	brne	.-4      	; 0x15c <patroonTonen+0xb6>
 		_delay_ms(draaiSnelheid);
 
 		PORTD = 0b00001000;
- 164:	4b b9       	out	0x0b, r20	; 11
+ 160:	4b b9       	out	0x0b, r20	; 11
 		PORTB = 0b00010000; // meest rechtse strip leds, langs witte draad (4)
- 166:	35 b9       	out	0x05, r19	; 5
- 168:	dc 01       	movw	r26, r24
- 16a:	11 97       	sbiw	r26, 0x01	; 1
- 16c:	f1 f7       	brne	.-4      	; 0x16a <patroonTonen+0xd4>
+ 162:	35 b9       	out	0x05, r19	; 5
+ 164:	dc 01       	movw	r26, r24
+ 166:	11 97       	sbiw	r26, 0x01	; 1
+ 168:	f1 f7       	brne	.-4      	; 0x166 <patroonTonen+0xc0>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b00010000;
- 16e:	3b b9       	out	0x0b, r19	; 11
+ 16a:	3b b9       	out	0x0b, r19	; 11
 		PORTB = 0b00010000; // meest rechtse strip leds, langs witte draad (4)
- 170:	35 b9       	out	0x05, r19	; 5
- 172:	dc 01       	movw	r26, r24
- 174:	11 97       	sbiw	r26, 0x01	; 1
- 176:	f1 f7       	brne	.-4      	; 0x174 <patroonTonen+0xde>
+ 16c:	35 b9       	out	0x05, r19	; 5
+ 16e:	dc 01       	movw	r26, r24
+ 170:	11 97       	sbiw	r26, 0x01	; 1
+ 172:	f1 f7       	brne	.-4      	; 0x170 <patroonTonen+0xca>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b00100000;
- 178:	7b b9       	out	0x0b, r23	; 11
+ 174:	7b b9       	out	0x0b, r23	; 11
 		PORTB = 0b00010000; // meest rechtse strip leds, langs witte draad (4)
- 17a:	35 b9       	out	0x05, r19	; 5
- 17c:	dc 01       	movw	r26, r24
- 17e:	11 97       	sbiw	r26, 0x01	; 1
- 180:	f1 f7       	brne	.-4      	; 0x17e <patroonTonen+0xe8>
+ 176:	35 b9       	out	0x05, r19	; 5
+ 178:	dc 01       	movw	r26, r24
+ 17a:	11 97       	sbiw	r26, 0x01	; 1
+ 17c:	f1 f7       	brne	.-4      	; 0x17a <patroonTonen+0xd4>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b01000000;
- 182:	fb b9       	out	0x0b, r31	; 11
+ 17e:	fb b9       	out	0x0b, r31	; 11
 		PORTB = 0b00010000; // meest rechtse strip leds, langs witte draad (4)
- 184:	35 b9       	out	0x05, r19	; 5
- 186:	5d c0       	rjmp	.+186    	; 0x242 <patroonTonen+0x1ac>
+ 180:	35 b9       	out	0x05, r19	; 5
+ 182:	6e c0       	rjmp	.+220    	; 0x260 <patroonTonen+0x1ba>
 		_delay_ms(draaiSnelheid);
 	}
 	if (patroon == 3)
- 188:	83 30       	cpi	r24, 0x03	; 3
- 18a:	91 05       	cpc	r25, r1
- 18c:	09 f0       	breq	.+2      	; 0x190 <patroonTonen+0xfa>
- 18e:	5c c0       	rjmp	.+184    	; 0x248 <patroonTonen+0x1b2>
+ 184:	83 30       	cpi	r24, 0x03	; 3
+ 186:	91 05       	cpc	r25, r1
+ 188:	09 f0       	breq	.+2      	; 0x18c <patroonTonen+0xe6>
+ 18a:	5a c0       	rjmp	.+180    	; 0x240 <patroonTonen+0x19a>
 	{
 		int draaiSnelheid = 5;
 		// racer leds (cirkel beweging) 		tegengestelde richting
 		PORTD = 0b01000000;
- 190:	a0 e4       	ldi	r26, 0x40	; 64
- 192:	ab b9       	out	0x0b, r26	; 11
+ 18c:	a0 e4       	ldi	r26, 0x40	; 64
+ 18e:	ab b9       	out	0x0b, r26	; 11
 		PORTB = 0b00010000; // meest rechtse strip leds, langs witte draad (4)
- 194:	30 e1       	ldi	r19, 0x10	; 16
- 196:	35 b9       	out	0x05, r19	; 5
- 198:	80 e1       	ldi	r24, 0x10	; 16
- 19a:	97 e2       	ldi	r25, 0x27	; 39
- 19c:	fc 01       	movw	r30, r24
- 19e:	31 97       	sbiw	r30, 0x01	; 1
- 1a0:	f1 f7       	brne	.-4      	; 0x19e <patroonTonen+0x108>
+ 190:	30 e1       	ldi	r19, 0x10	; 16
+ 192:	35 b9       	out	0x05, r19	; 5
+ 194:	80 e1       	ldi	r24, 0x10	; 16
+ 196:	97 e2       	ldi	r25, 0x27	; 39
+ 198:	fc 01       	movw	r30, r24
+ 19a:	31 97       	sbiw	r30, 0x01	; 1
+ 19c:	f1 f7       	brne	.-4      	; 0x19a <patroonTonen+0xf4>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b00100000;
- 1a2:	e0 e2       	ldi	r30, 0x20	; 32
- 1a4:	eb b9       	out	0x0b, r30	; 11
+ 19e:	e0 e2       	ldi	r30, 0x20	; 32
+ 1a0:	eb b9       	out	0x0b, r30	; 11
 		PORTB = 0b00010000; // meest rechtse strip leds, langs witte draad (4)
- 1a6:	35 b9       	out	0x05, r19	; 5
- 1a8:	ec 01       	movw	r28, r24
- 1aa:	21 97       	sbiw	r28, 0x01	; 1
- 1ac:	f1 f7       	brne	.-4      	; 0x1aa <patroonTonen+0x114>
+ 1a2:	35 b9       	out	0x05, r19	; 5
+ 1a4:	ec 01       	movw	r28, r24
+ 1a6:	21 97       	sbiw	r28, 0x01	; 1
+ 1a8:	f1 f7       	brne	.-4      	; 0x1a6 <patroonTonen+0x100>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b00010000;
- 1ae:	3b b9       	out	0x0b, r19	; 11
+ 1aa:	3b b9       	out	0x0b, r19	; 11
 		PORTB = 0b00010000; // meest rechtse strip leds, langs witte draad (4)
- 1b0:	35 b9       	out	0x05, r19	; 5
- 1b2:	ec 01       	movw	r28, r24
- 1b4:	21 97       	sbiw	r28, 0x01	; 1
- 1b6:	f1 f7       	brne	.-4      	; 0x1b4 <patroonTonen+0x11e>
+ 1ac:	35 b9       	out	0x05, r19	; 5
+ 1ae:	ec 01       	movw	r28, r24
+ 1b0:	21 97       	sbiw	r28, 0x01	; 1
+ 1b2:	f1 f7       	brne	.-4      	; 0x1b0 <patroonTonen+0x10a>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b00001000;
- 1b8:	58 e0       	ldi	r21, 0x08	; 8
- 1ba:	5b b9       	out	0x0b, r21	; 11
+ 1b4:	58 e0       	ldi	r21, 0x08	; 8
+ 1b6:	5b b9       	out	0x0b, r21	; 11
 		PORTB = 0b00010000; // meest rechtse strip leds, langs witte draad (4)
- 1bc:	35 b9       	out	0x05, r19	; 5
- 1be:	ec 01       	movw	r28, r24
- 1c0:	21 97       	sbiw	r28, 0x01	; 1
- 1c2:	f1 f7       	brne	.-4      	; 0x1c0 <patroonTonen+0x12a>
+ 1b8:	35 b9       	out	0x05, r19	; 5
+ 1ba:	ec 01       	movw	r28, r24
+ 1bc:	21 97       	sbiw	r28, 0x01	; 1
+ 1be:	f1 f7       	brne	.-4      	; 0x1bc <patroonTonen+0x116>
 		_delay_ms(draaiSnelheid);
 
 		PORTD = 0b00000100;
- 1c4:	24 e0       	ldi	r18, 0x04	; 4
- 1c6:	2b b9       	out	0x0b, r18	; 11
+ 1c0:	24 e0       	ldi	r18, 0x04	; 4
+ 1c2:	2b b9       	out	0x0b, r18	; 11
 		PORTB = 0b01110000; // meest linkse strip leds, langs groene draad (4)
- 1c8:	f0 e7       	ldi	r31, 0x70	; 112
- 1ca:	f5 b9       	out	0x05, r31	; 5
- 1cc:	ec 01       	movw	r28, r24
- 1ce:	21 97       	sbiw	r28, 0x01	; 1
- 1d0:	f1 f7       	brne	.-4      	; 0x1ce <patroonTonen+0x138>
+ 1c4:	f0 e7       	ldi	r31, 0x70	; 112
+ 1c6:	f5 b9       	out	0x05, r31	; 5
+ 1c8:	ec 01       	movw	r28, r24
+ 1ca:	21 97       	sbiw	r28, 0x01	; 1
+ 1cc:	f1 f7       	brne	.-4      	; 0x1ca <patroonTonen+0x124>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b00000100;
- 1d2:	2b b9       	out	0x0b, r18	; 11
+ 1ce:	2b b9       	out	0x0b, r18	; 11
 		PORTB = 0b10110000; // meest linkse strip leds, langs groene draad (4)
- 1d4:	70 eb       	ldi	r23, 0xB0	; 176
- 1d6:	75 b9       	out	0x05, r23	; 5
- 1d8:	ec 01       	movw	r28, r24
- 1da:	21 97       	sbiw	r28, 0x01	; 1
- 1dc:	f1 f7       	brne	.-4      	; 0x1da <patroonTonen+0x144>
+ 1d0:	70 eb       	ldi	r23, 0xB0	; 176
+ 1d2:	75 b9       	out	0x05, r23	; 5
+ 1d4:	ec 01       	movw	r28, r24
+ 1d6:	21 97       	sbiw	r28, 0x01	; 1
+ 1d8:	f1 f7       	brne	.-4      	; 0x1d6 <patroonTonen+0x130>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b00000100;
- 1de:	2b b9       	out	0x0b, r18	; 11
+ 1da:	2b b9       	out	0x0b, r18	; 11
 		PORTB = 0b11010000; // meest linkse strip leds, langs groene draad (4)
- 1e0:	60 ed       	ldi	r22, 0xD0	; 208
- 1e2:	65 b9       	out	0x05, r22	; 5
- 1e4:	ec 01       	movw	r28, r24
- 1e6:	21 97       	sbiw	r28, 0x01	; 1
- 1e8:	f1 f7       	brne	.-4      	; 0x1e6 <patroonTonen+0x150>
+ 1dc:	60 ed       	ldi	r22, 0xD0	; 208
+ 1de:	65 b9       	out	0x05, r22	; 5
+ 1e0:	ec 01       	movw	r28, r24
+ 1e2:	21 97       	sbiw	r28, 0x01	; 1
+ 1e4:	f1 f7       	brne	.-4      	; 0x1e2 <patroonTonen+0x13c>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b00000100;
- 1ea:	2b b9       	out	0x0b, r18	; 11
+ 1e6:	2b b9       	out	0x0b, r18	; 11
 		PORTB = 0b11100000; // meest linkse strip leds, langs groene draad (4)
- 1ec:	40 ee       	ldi	r20, 0xE0	; 224
- 1ee:	45 b9       	out	0x05, r20	; 5
- 1f0:	ec 01       	movw	r28, r24
- 1f2:	21 97       	sbiw	r28, 0x01	; 1
- 1f4:	f1 f7       	brne	.-4      	; 0x1f2 <patroonTonen+0x15c>
+ 1e8:	40 ee       	ldi	r20, 0xE0	; 224
+ 1ea:	45 b9       	out	0x05, r20	; 5
+ 1ec:	ec 01       	movw	r28, r24
+ 1ee:	21 97       	sbiw	r28, 0x01	; 1
+ 1f0:	f1 f7       	brne	.-4      	; 0x1ee <patroonTonen+0x148>
 		_delay_ms(draaiSnelheid);
 
 		PORTD = 0b00001000;
- 1f6:	5b b9       	out	0x0b, r21	; 11
+ 1f2:	5b b9       	out	0x0b, r21	; 11
 		PORTB = 0b10000000; // meest linkse strip leds, langs witte draad (4)
- 1f8:	20 e8       	ldi	r18, 0x80	; 128
- 1fa:	25 b9       	out	0x05, r18	; 5
- 1fc:	ec 01       	movw	r28, r24
- 1fe:	21 97       	sbiw	r28, 0x01	; 1
- 200:	f1 f7       	brne	.-4      	; 0x1fe <patroonTonen+0x168>
+ 1f4:	20 e8       	ldi	r18, 0x80	; 128
+ 1f6:	25 b9       	out	0x05, r18	; 5
+ 1f8:	ec 01       	movw	r28, r24
+ 1fa:	21 97       	sbiw	r28, 0x01	; 1
+ 1fc:	f1 f7       	brne	.-4      	; 0x1fa <patroonTonen+0x154>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b00010000;
- 202:	3b b9       	out	0x0b, r19	; 11
+ 1fe:	3b b9       	out	0x0b, r19	; 11
 		PORTB = 0b10000000; // meest linkse strip leds, langs witte draad (4)
- 204:	25 b9       	out	0x05, r18	; 5
- 206:	ec 01       	movw	r28, r24
- 208:	21 97       	sbiw	r28, 0x01	; 1
- 20a:	f1 f7       	brne	.-4      	; 0x208 <patroonTonen+0x172>
+ 200:	25 b9       	out	0x05, r18	; 5
+ 202:	ec 01       	movw	r28, r24
+ 204:	21 97       	sbiw	r28, 0x01	; 1
+ 206:	f1 f7       	brne	.-4      	; 0x204 <patroonTonen+0x15e>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b00100000;
- 20c:	eb b9       	out	0x0b, r30	; 11
+ 208:	eb b9       	out	0x0b, r30	; 11
 		PORTB = 0b10000000; // meest linkse strip leds, langs witte draad (4)
- 20e:	25 b9       	out	0x05, r18	; 5
- 210:	ec 01       	movw	r28, r24
- 212:	21 97       	sbiw	r28, 0x01	; 1
- 214:	f1 f7       	brne	.-4      	; 0x212 <patroonTonen+0x17c>
+ 20a:	25 b9       	out	0x05, r18	; 5
+ 20c:	ec 01       	movw	r28, r24
+ 20e:	21 97       	sbiw	r28, 0x01	; 1
+ 210:	f1 f7       	brne	.-4      	; 0x20e <patroonTonen+0x168>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b01000000;
- 216:	ab b9       	out	0x0b, r26	; 11
+ 212:	ab b9       	out	0x0b, r26	; 11
 		PORTB = 0b10000000; // meest linkse strip leds, langs witte draad (4)
- 218:	25 b9       	out	0x05, r18	; 5
- 21a:	dc 01       	movw	r26, r24
- 21c:	11 97       	sbiw	r26, 0x01	; 1
- 21e:	f1 f7       	brne	.-4      	; 0x21c <patroonTonen+0x186>
+ 214:	25 b9       	out	0x05, r18	; 5
+ 216:	dc 01       	movw	r26, r24
+ 218:	11 97       	sbiw	r26, 0x01	; 1
+ 21a:	f1 f7       	brne	.-4      	; 0x218 <patroonTonen+0x172>
 		_delay_ms(draaiSnelheid);
 
 		PORTD = 0b10000000;
- 220:	2b b9       	out	0x0b, r18	; 11
+ 21c:	2b b9       	out	0x0b, r18	; 11
 		PORTB = 0b11100000; // meest rechtse strip leds, langs groene draad (4)
- 222:	45 b9       	out	0x05, r20	; 5
- 224:	dc 01       	movw	r26, r24
- 226:	11 97       	sbiw	r26, 0x01	; 1
- 228:	f1 f7       	brne	.-4      	; 0x226 <patroonTonen+0x190>
+ 21e:	45 b9       	out	0x05, r20	; 5
+ 220:	dc 01       	movw	r26, r24
+ 222:	11 97       	sbiw	r26, 0x01	; 1
+ 224:	f1 f7       	brne	.-4      	; 0x222 <patroonTonen+0x17c>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b10000000;
- 22a:	2b b9       	out	0x0b, r18	; 11
+ 226:	2b b9       	out	0x0b, r18	; 11
 		PORTB = 0b11010000; // meest rechtse strip leds, langs groene draad (4)
- 22c:	65 b9       	out	0x05, r22	; 5
- 22e:	dc 01       	movw	r26, r24
- 230:	11 97       	sbiw	r26, 0x01	; 1
- 232:	f1 f7       	brne	.-4      	; 0x230 <patroonTonen+0x19a>
+ 228:	65 b9       	out	0x05, r22	; 5
+ 22a:	dc 01       	movw	r26, r24
+ 22c:	11 97       	sbiw	r26, 0x01	; 1
+ 22e:	f1 f7       	brne	.-4      	; 0x22c <patroonTonen+0x186>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b10000000;
- 234:	2b b9       	out	0x0b, r18	; 11
+ 230:	2b b9       	out	0x0b, r18	; 11
 		PORTB = 0b10110000; // meest rechtse strip leds, langs groene draad (4)
- 236:	75 b9       	out	0x05, r23	; 5
- 238:	dc 01       	movw	r26, r24
- 23a:	11 97       	sbiw	r26, 0x01	; 1
- 23c:	f1 f7       	brne	.-4      	; 0x23a <patroonTonen+0x1a4>
+ 232:	75 b9       	out	0x05, r23	; 5
+ 234:	dc 01       	movw	r26, r24
+ 236:	11 97       	sbiw	r26, 0x01	; 1
+ 238:	f1 f7       	brne	.-4      	; 0x236 <patroonTonen+0x190>
 		_delay_ms(draaiSnelheid);
 		PORTD = 0b10000000;
- 23e:	2b b9       	out	0x0b, r18	; 11
+ 23a:	2b b9       	out	0x0b, r18	; 11
 		PORTB = 0b01110000; // meest rechtse strip leds, langs groene draad (4)
- 240:	f5 b9       	out	0x05, r31	; 5
- 242:	01 97       	sbiw	r24, 0x01	; 1
- 244:	f1 f7       	brne	.-4      	; 0x242 <patroonTonen+0x1ac>
- 246:	19 c0       	rjmp	.+50     	; 0x27a <patroonTonen+0x1e4>
+ 23c:	f5 b9       	out	0x05, r31	; 5
+ 23e:	10 c0       	rjmp	.+32     	; 0x260 <patroonTonen+0x1ba>
 		_delay_ms(draaiSnelheid);
 	}
 	if (patroon == 4)
- 248:	04 97       	sbiw	r24, 0x04	; 4
- 24a:	b9 f4       	brne	.+46     	; 0x27a <patroonTonen+0x1e4>
- 24c:	20 e0       	ldi	r18, 0x00	; 0
- 24e:	30 e0       	ldi	r19, 0x00	; 0
+ 240:	04 97       	sbiw	r24, 0x04	; 4
+ 242:	81 f4       	brne	.+32     	; 0x264 <patroonTonen+0x1be>
 	{
 		// --
 		for(loop2 = 0;loop2<=(langsteTijd/280);loop2++)
 		{
 		PORTD = 0b00110000;
- 250:	f0 e3       	ldi	r31, 0x30	; 48
+ 244:	80 e3       	ldi	r24, 0x30	; 48
+ 246:	8b b9       	out	0x0b, r24	; 11
 		PORTB = 0b01100000;
- 252:	e0 e6       	ldi	r30, 0x60	; 96
- 254:	4c ed       	ldi	r20, 0xDC	; 220
- 256:	55 e0       	ldi	r21, 0x05	; 5
+ 248:	80 e6       	ldi	r24, 0x60	; 96
+ 24a:	85 b9       	out	0x05, r24	; 5
+ 24c:	2c ed       	ldi	r18, 0xDC	; 220
+ 24e:	35 e0       	ldi	r19, 0x05	; 5
+ 250:	c9 01       	movw	r24, r18
+ 252:	01 97       	sbiw	r24, 0x01	; 1
+ 254:	f1 f7       	brne	.-4      	; 0x252 <patroonTonen+0x1ac>
 		_delay_us(750);
 		PORTD = 0b10000100;
- 258:	74 e8       	ldi	r23, 0x84	; 132
+ 256:	84 e8       	ldi	r24, 0x84	; 132
+ 258:	8b b9       	out	0x0b, r24	; 11
 		PORTB = 0b10010000;
- 25a:	60 e9       	ldi	r22, 0x90	; 144
-	if (patroon == 4)
-	{
-		// --
-		for(loop2 = 0;loop2<=(langsteTijd/280);loop2++)
-		{
-		PORTD = 0b00110000;
- 25c:	fb b9       	out	0x0b, r31	; 11
-		PORTB = 0b01100000;
- 25e:	e5 b9       	out	0x05, r30	; 5
- 260:	ca 01       	movw	r24, r20
- 262:	01 97       	sbiw	r24, 0x01	; 1
- 264:	f1 f7       	brne	.-4      	; 0x262 <patroonTonen+0x1cc>
+ 25a:	80 e9       	ldi	r24, 0x90	; 144
+ 25c:	85 b9       	out	0x05, r24	; 5
+ 25e:	c9 01       	movw	r24, r18
+ 260:	01 97       	sbiw	r24, 0x01	; 1
+ 262:	f1 f7       	brne	.-4      	; 0x260 <patroonTonen+0x1ba>
 		_delay_us(750);
-		PORTD = 0b10000100;
- 266:	7b b9       	out	0x0b, r23	; 11
-		PORTB = 0b10010000;
- 268:	65 b9       	out	0x05, r22	; 5
- 26a:	ca 01       	movw	r24, r20
- 26c:	01 97       	sbiw	r24, 0x01	; 1
- 26e:	f1 f7       	brne	.-4      	; 0x26c <patroonTonen+0x1d6>
-		_delay_ms(draaiSnelheid);
+		}
 	}
-	if (patroon == 4)
-	{
-		// --
-		for(loop2 = 0;loop2<=(langsteTijd/280);loop2++)
- 270:	2f 5f       	subi	r18, 0xFF	; 255
- 272:	3f 4f       	sbci	r19, 0xFF	; 255
- 274:	24 33       	cpi	r18, 0x34	; 52
- 276:	31 05       	cpc	r19, r1
- 278:	89 f7       	brne	.-30     	; 0x25c <patroonTonen+0x1c6>
-//		// 		ter hoogte van oorspronkelijk klein vierkantje
-//		PORTD = 0b01110000;
-//		PORTB = 0b10001000;
-//		_delay_us(langsteTijd); // tijd rekken voor tonen van patroon
-//	}
-}
- 27a:	df 91       	pop	r29
- 27c:	cf 91       	pop	r28
- 27e:	08 95       	ret
 
-00000280 <main>:
-#include <stdlib.h>
+	return 0;
+}
+ 264:	80 e0       	ldi	r24, 0x00	; 0
+ 266:	90 e0       	ldi	r25, 0x00	; 0
+ 268:	df 91       	pop	r29
+ 26a:	cf 91       	pop	r28
+ 26c:	08 95       	ret
+
+0000026e <main>:
 
 	int patroonTonen();
+	int adc_value;		//Variable om de waarde van de ADC converter in op te slaan
 
 int main(void)
 {
- 280:	1f 93       	push	r17
- 282:	cf 93       	push	r28
- 284:	df 93       	push	r29
+ 26e:	0f 93       	push	r16
+ 270:	1f 93       	push	r17
+ 272:	cf 93       	push	r28
+ 274:	df 93       	push	r29
 	DDRD = 0b11111100; // blauw || groen
- 286:	8c ef       	ldi	r24, 0xFC	; 252
- 288:	8a b9       	out	0x0a, r24	; 10
+ 276:	8c ef       	ldi	r24, 0xFC	; 252
+ 278:	8a b9       	out	0x0a, r24	; 10
 	DDRB = 0b11110000; // geel || wit
- 28a:	80 ef       	ldi	r24, 0xF0	; 240
- 28c:	84 b9       	out	0x04, r24	; 4
- 28e:	10 e0       	ldi	r17, 0x00	; 0
- 290:	c1 e0       	ldi	r28, 0x01	; 1
- 292:	d0 e0       	ldi	r29, 0x00	; 0
-	{
-		for( i=0;i<1;i++) // i verhogen, betekent snelheid afwisseling vertragen
-		{
+ 27a:	80 ef       	ldi	r24, 0xF0	; 240
+ 27c:	84 b9       	out	0x04, r24	; 4
 
-			// patroon tonen, methode ophalen
-			patroonTonen(patroon);
- 294:	ce 01       	movw	r24, r28
- 296:	0e 94 4b 00 	call	0x96	; 0x96 <patroonTonen>
-		}
+	// Prescalers voor deelconcept Geluid, Jaimy
+	ADCSRA |= ((0<<ADPS2)|(1<<ADPS1)|(1<<ADPS0));  			//Prescaler at 128 so we have an 125Khz clock source
+ 27e:	80 91 7a 00 	lds	r24, 0x007A
+ 282:	83 60       	ori	r24, 0x03	; 3
+ 284:	80 93 7a 00 	sts	0x007A, r24
+	ADMUX  |= (1<<REFS0);
+ 288:	80 91 7c 00 	lds	r24, 0x007C
+ 28c:	80 64       	ori	r24, 0x40	; 64
+ 28e:	80 93 7c 00 	sts	0x007C, r24
+	ADMUX  &= ~(1<<REFS1);               				//Avcc(+5v) as voltage reference
+ 292:	80 91 7c 00 	lds	r24, 0x007C
+ 296:	8f 77       	andi	r24, 0x7F	; 127
+ 298:	80 93 7c 00 	sts	0x007C, r24
+	ADCSRB &= ~((1<<ADTS2)|(1<<ADTS1)|(1<<ADTS0));			//ADC in free-running mode
+ 29c:	80 91 7b 00 	lds	r24, 0x007B
+ 2a0:	88 7f       	andi	r24, 0xF8	; 248
+ 2a2:	80 93 7b 00 	sts	0x007B, r24
+	ADCSRA |= (1<<ADATE);                				//Signal source, in this case is the free-running
+ 2a6:	80 91 7a 00 	lds	r24, 0x007A
+ 2aa:	80 62       	ori	r24, 0x20	; 32
+ 2ac:	80 93 7a 00 	sts	0x007A, r24
+	ADCSRA |= (1<<ADEN);                				//Power up the ADC
+ 2b0:	80 91 7a 00 	lds	r24, 0x007A
+ 2b4:	80 68       	ori	r24, 0x80	; 128
+ 2b6:	80 93 7a 00 	sts	0x007A, r24
+	ADCSRA |= (1<<ADSC);                				//Start converting
+ 2ba:	80 91 7a 00 	lds	r24, 0x007A
+ 2be:	80 64       	ori	r24, 0x40	; 64
+ 2c0:	80 93 7a 00 	sts	0x007A, r24
+ 2c4:	10 e0       	ldi	r17, 0x00	; 0
+ 2c6:	c1 e0       	ldi	r28, 0x01	; 1
+ 2c8:	d0 e0       	ldi	r29, 0x00	; 0
+				//PORTB = 0b00000001;
+				patroonTonen(patroon);
+			}
+			else
+			{
+				PORTB = 0b11111111;
+ 2ca:	0f ef       	ldi	r16, 0xFF	; 255
+	int patroonAantal = 4;
+	int i; // snelheid teller
+
+	while(1)
+	{
+		adc_value = ADCW;
+ 2cc:	80 91 78 00 	lds	r24, 0x0078
+ 2d0:	90 91 79 00 	lds	r25, 0x0079
+ 2d4:	90 93 05 01 	sts	0x0105, r25
+ 2d8:	80 93 04 01 	sts	0x0104, r24
+
+//		for( i=0;i<1;i++) // i verhogen, betekent snelheid afwisseling vertragen
+//		{
+
+			if(adc_value < 200)
+ 2dc:	88 3c       	cpi	r24, 0xC8	; 200
+ 2de:	91 05       	cpc	r25, r1
+ 2e0:	24 f4       	brge	.+8      	; 0x2ea <main+0x7c>
+			{
+				//PORTB = 0b00000001;
+				patroonTonen(patroon);
+ 2e2:	ce 01       	movw	r24, r28
+ 2e4:	0e 94 53 00 	call	0xa6	; 0xa6 <patroonTonen>
+ 2e8:	01 c0       	rjmp	.+2      	; 0x2ec <main+0x7e>
+			}
+			else
+			{
+				PORTB = 0b11111111;
+ 2ea:	05 b9       	out	0x05, r16	; 5
+				//			patroonTonen(null);
+			}
+
+//		}
 
 		if (secs == 15) // aantal seconden voordat patroon veranderd. met i<1 geldt het volgende: int secs == XX is in werkelijkheid 2/3 van XX aantal seconden.
- 29a:	1f 30       	cpi	r17, 0x0F	; 15
- 29c:	51 f4       	brne	.+20     	; 0x2b2 <main+0x32>
+ 2ec:	1f 30       	cpi	r17, 0x0F	; 15
+ 2ee:	51 f4       	brne	.+20     	; 0x304 <main+0x96>
 		{
 			secs = 0;
-			patroon = rand() % patroonAantal + 1; // random volgend patroon (1 - 4)
- 29e:	0e 94 d3 01 	call	0x3a6	; 0x3a6 <rand>
- 2a2:	64 e0       	ldi	r22, 0x04	; 4
- 2a4:	70 e0       	ldi	r23, 0x00	; 0
- 2a6:	0e 94 5b 01 	call	0x2b6	; 0x2b6 <__divmodhi4>
- 2aa:	ec 01       	movw	r28, r24
- 2ac:	21 96       	adiw	r28, 0x01	; 1
- 2ae:	10 e0       	ldi	r17, 0x00	; 0
- 2b0:	f1 cf       	rjmp	.-30     	; 0x294 <main+0x14>
+			patroon = rand() % patroonAantal + 1; // random volgend patroon (1 - patroonAantal, ipv 0 - 3)
+ 2f0:	0e 94 fc 01 	call	0x3f8	; 0x3f8 <rand>
+ 2f4:	64 e0       	ldi	r22, 0x04	; 4
+ 2f6:	70 e0       	ldi	r23, 0x00	; 0
+ 2f8:	0e 94 84 01 	call	0x308	; 0x308 <__divmodhi4>
+ 2fc:	ec 01       	movw	r28, r24
+ 2fe:	21 96       	adiw	r28, 0x01	; 1
+ 300:	10 e0       	ldi	r17, 0x00	; 0
+ 302:	e4 cf       	rjmp	.-56     	; 0x2cc <main+0x5e>
 		}
 		else
 		{
 			secs++;
- 2b2:	1f 5f       	subi	r17, 0xFF	; 255
- 2b4:	ef cf       	rjmp	.-34     	; 0x294 <main+0x14>
+ 304:	1f 5f       	subi	r17, 0xFF	; 255
+ 306:	e2 cf       	rjmp	.-60     	; 0x2cc <main+0x5e>
 
-000002b6 <__divmodhi4>:
- 2b6:	97 fb       	bst	r25, 7
- 2b8:	09 2e       	mov	r0, r25
- 2ba:	07 26       	eor	r0, r23
- 2bc:	0a d0       	rcall	.+20     	; 0x2d2 <__divmodhi4_neg1>
- 2be:	77 fd       	sbrc	r23, 7
- 2c0:	04 d0       	rcall	.+8      	; 0x2ca <__divmodhi4_neg2>
- 2c2:	0c d0       	rcall	.+24     	; 0x2dc <__udivmodhi4>
- 2c4:	06 d0       	rcall	.+12     	; 0x2d2 <__divmodhi4_neg1>
- 2c6:	00 20       	and	r0, r0
- 2c8:	1a f4       	brpl	.+6      	; 0x2d0 <__divmodhi4_exit>
+00000308 <__divmodhi4>:
+ 308:	97 fb       	bst	r25, 7
+ 30a:	09 2e       	mov	r0, r25
+ 30c:	07 26       	eor	r0, r23
+ 30e:	0a d0       	rcall	.+20     	; 0x324 <__divmodhi4_neg1>
+ 310:	77 fd       	sbrc	r23, 7
+ 312:	04 d0       	rcall	.+8      	; 0x31c <__divmodhi4_neg2>
+ 314:	0c d0       	rcall	.+24     	; 0x32e <__udivmodhi4>
+ 316:	06 d0       	rcall	.+12     	; 0x324 <__divmodhi4_neg1>
+ 318:	00 20       	and	r0, r0
+ 31a:	1a f4       	brpl	.+6      	; 0x322 <__divmodhi4_exit>
 
-000002ca <__divmodhi4_neg2>:
- 2ca:	70 95       	com	r23
- 2cc:	61 95       	neg	r22
- 2ce:	7f 4f       	sbci	r23, 0xFF	; 255
+0000031c <__divmodhi4_neg2>:
+ 31c:	70 95       	com	r23
+ 31e:	61 95       	neg	r22
+ 320:	7f 4f       	sbci	r23, 0xFF	; 255
 
-000002d0 <__divmodhi4_exit>:
- 2d0:	08 95       	ret
+00000322 <__divmodhi4_exit>:
+ 322:	08 95       	ret
 
-000002d2 <__divmodhi4_neg1>:
- 2d2:	f6 f7       	brtc	.-4      	; 0x2d0 <__divmodhi4_exit>
- 2d4:	90 95       	com	r25
- 2d6:	81 95       	neg	r24
- 2d8:	9f 4f       	sbci	r25, 0xFF	; 255
- 2da:	08 95       	ret
+00000324 <__divmodhi4_neg1>:
+ 324:	f6 f7       	brtc	.-4      	; 0x322 <__divmodhi4_exit>
+ 326:	90 95       	com	r25
+ 328:	81 95       	neg	r24
+ 32a:	9f 4f       	sbci	r25, 0xFF	; 255
+ 32c:	08 95       	ret
 
-000002dc <__udivmodhi4>:
- 2dc:	aa 1b       	sub	r26, r26
- 2de:	bb 1b       	sub	r27, r27
- 2e0:	51 e1       	ldi	r21, 0x11	; 17
- 2e2:	07 c0       	rjmp	.+14     	; 0x2f2 <__udivmodhi4_ep>
+0000032e <__udivmodhi4>:
+ 32e:	aa 1b       	sub	r26, r26
+ 330:	bb 1b       	sub	r27, r27
+ 332:	51 e1       	ldi	r21, 0x11	; 17
+ 334:	07 c0       	rjmp	.+14     	; 0x344 <__udivmodhi4_ep>
 
-000002e4 <__udivmodhi4_loop>:
- 2e4:	aa 1f       	adc	r26, r26
- 2e6:	bb 1f       	adc	r27, r27
- 2e8:	a6 17       	cp	r26, r22
- 2ea:	b7 07       	cpc	r27, r23
- 2ec:	10 f0       	brcs	.+4      	; 0x2f2 <__udivmodhi4_ep>
- 2ee:	a6 1b       	sub	r26, r22
- 2f0:	b7 0b       	sbc	r27, r23
+00000336 <__udivmodhi4_loop>:
+ 336:	aa 1f       	adc	r26, r26
+ 338:	bb 1f       	adc	r27, r27
+ 33a:	a6 17       	cp	r26, r22
+ 33c:	b7 07       	cpc	r27, r23
+ 33e:	10 f0       	brcs	.+4      	; 0x344 <__udivmodhi4_ep>
+ 340:	a6 1b       	sub	r26, r22
+ 342:	b7 0b       	sbc	r27, r23
 
-000002f2 <__udivmodhi4_ep>:
- 2f2:	88 1f       	adc	r24, r24
- 2f4:	99 1f       	adc	r25, r25
- 2f6:	5a 95       	dec	r21
- 2f8:	a9 f7       	brne	.-22     	; 0x2e4 <__udivmodhi4_loop>
- 2fa:	80 95       	com	r24
- 2fc:	90 95       	com	r25
- 2fe:	bc 01       	movw	r22, r24
- 300:	cd 01       	movw	r24, r26
- 302:	08 95       	ret
+00000344 <__udivmodhi4_ep>:
+ 344:	88 1f       	adc	r24, r24
+ 346:	99 1f       	adc	r25, r25
+ 348:	5a 95       	dec	r21
+ 34a:	a9 f7       	brne	.-22     	; 0x336 <__udivmodhi4_loop>
+ 34c:	80 95       	com	r24
+ 34e:	90 95       	com	r25
+ 350:	bc 01       	movw	r22, r24
+ 352:	cd 01       	movw	r24, r26
+ 354:	08 95       	ret
 
-00000304 <do_rand>:
- 304:	a0 e0       	ldi	r26, 0x00	; 0
- 306:	b0 e0       	ldi	r27, 0x00	; 0
- 308:	e8 e8       	ldi	r30, 0x88	; 136
- 30a:	f1 e0       	ldi	r31, 0x01	; 1
- 30c:	0c 94 25 02 	jmp	0x44a	; 0x44a <__prologue_saves__+0x10>
- 310:	ec 01       	movw	r28, r24
- 312:	a8 80       	ld	r10, Y
- 314:	b9 80       	ldd	r11, Y+1	; 0x01
- 316:	ca 80       	ldd	r12, Y+2	; 0x02
- 318:	db 80       	ldd	r13, Y+3	; 0x03
- 31a:	a1 14       	cp	r10, r1
- 31c:	b1 04       	cpc	r11, r1
- 31e:	c1 04       	cpc	r12, r1
- 320:	d1 04       	cpc	r13, r1
- 322:	41 f4       	brne	.+16     	; 0x334 <do_rand+0x30>
- 324:	84 e2       	ldi	r24, 0x24	; 36
- 326:	a8 2e       	mov	r10, r24
- 328:	89 ed       	ldi	r24, 0xD9	; 217
- 32a:	b8 2e       	mov	r11, r24
- 32c:	8b e5       	ldi	r24, 0x5B	; 91
- 32e:	c8 2e       	mov	r12, r24
- 330:	87 e0       	ldi	r24, 0x07	; 7
- 332:	d8 2e       	mov	r13, r24
- 334:	c6 01       	movw	r24, r12
- 336:	b5 01       	movw	r22, r10
- 338:	2d e1       	ldi	r18, 0x1D	; 29
- 33a:	33 ef       	ldi	r19, 0xF3	; 243
- 33c:	41 e0       	ldi	r20, 0x01	; 1
- 33e:	50 e0       	ldi	r21, 0x00	; 0
- 340:	0e 94 02 02 	call	0x404	; 0x404 <__divmodsi4>
- 344:	27 ea       	ldi	r18, 0xA7	; 167
- 346:	31 e4       	ldi	r19, 0x41	; 65
- 348:	40 e0       	ldi	r20, 0x00	; 0
- 34a:	50 e0       	ldi	r21, 0x00	; 0
- 34c:	0e 94 e3 01 	call	0x3c6	; 0x3c6 <__mulsi3>
- 350:	7b 01       	movw	r14, r22
- 352:	8c 01       	movw	r16, r24
- 354:	c6 01       	movw	r24, r12
- 356:	b5 01       	movw	r22, r10
- 358:	2d e1       	ldi	r18, 0x1D	; 29
- 35a:	33 ef       	ldi	r19, 0xF3	; 243
- 35c:	41 e0       	ldi	r20, 0x01	; 1
- 35e:	50 e0       	ldi	r21, 0x00	; 0
- 360:	0e 94 02 02 	call	0x404	; 0x404 <__divmodsi4>
- 364:	ca 01       	movw	r24, r20
- 366:	b9 01       	movw	r22, r18
- 368:	2c ee       	ldi	r18, 0xEC	; 236
- 36a:	34 ef       	ldi	r19, 0xF4	; 244
- 36c:	4f ef       	ldi	r20, 0xFF	; 255
- 36e:	5f ef       	ldi	r21, 0xFF	; 255
- 370:	0e 94 e3 01 	call	0x3c6	; 0x3c6 <__mulsi3>
- 374:	6e 0d       	add	r22, r14
- 376:	7f 1d       	adc	r23, r15
- 378:	80 1f       	adc	r24, r16
- 37a:	91 1f       	adc	r25, r17
- 37c:	97 ff       	sbrs	r25, 7
- 37e:	04 c0       	rjmp	.+8      	; 0x388 <do_rand+0x84>
- 380:	61 50       	subi	r22, 0x01	; 1
- 382:	70 40       	sbci	r23, 0x00	; 0
- 384:	80 40       	sbci	r24, 0x00	; 0
- 386:	90 48       	sbci	r25, 0x80	; 128
- 388:	68 83       	st	Y, r22
- 38a:	79 83       	std	Y+1, r23	; 0x01
- 38c:	8a 83       	std	Y+2, r24	; 0x02
- 38e:	9b 83       	std	Y+3, r25	; 0x03
- 390:	9b 01       	movw	r18, r22
- 392:	3f 77       	andi	r19, 0x7F	; 127
- 394:	c9 01       	movw	r24, r18
- 396:	cd b7       	in	r28, 0x3d	; 61
- 398:	de b7       	in	r29, 0x3e	; 62
- 39a:	ea e0       	ldi	r30, 0x0A	; 10
- 39c:	0c 94 41 02 	jmp	0x482	; 0x482 <__epilogue_restores__+0x10>
+00000356 <do_rand>:
+ 356:	a0 e0       	ldi	r26, 0x00	; 0
+ 358:	b0 e0       	ldi	r27, 0x00	; 0
+ 35a:	e1 eb       	ldi	r30, 0xB1	; 177
+ 35c:	f1 e0       	ldi	r31, 0x01	; 1
+ 35e:	0c 94 4e 02 	jmp	0x49c	; 0x49c <__prologue_saves__+0x10>
+ 362:	ec 01       	movw	r28, r24
+ 364:	a8 80       	ld	r10, Y
+ 366:	b9 80       	ldd	r11, Y+1	; 0x01
+ 368:	ca 80       	ldd	r12, Y+2	; 0x02
+ 36a:	db 80       	ldd	r13, Y+3	; 0x03
+ 36c:	a1 14       	cp	r10, r1
+ 36e:	b1 04       	cpc	r11, r1
+ 370:	c1 04       	cpc	r12, r1
+ 372:	d1 04       	cpc	r13, r1
+ 374:	41 f4       	brne	.+16     	; 0x386 <do_rand+0x30>
+ 376:	84 e2       	ldi	r24, 0x24	; 36
+ 378:	a8 2e       	mov	r10, r24
+ 37a:	89 ed       	ldi	r24, 0xD9	; 217
+ 37c:	b8 2e       	mov	r11, r24
+ 37e:	8b e5       	ldi	r24, 0x5B	; 91
+ 380:	c8 2e       	mov	r12, r24
+ 382:	87 e0       	ldi	r24, 0x07	; 7
+ 384:	d8 2e       	mov	r13, r24
+ 386:	c6 01       	movw	r24, r12
+ 388:	b5 01       	movw	r22, r10
+ 38a:	2d e1       	ldi	r18, 0x1D	; 29
+ 38c:	33 ef       	ldi	r19, 0xF3	; 243
+ 38e:	41 e0       	ldi	r20, 0x01	; 1
+ 390:	50 e0       	ldi	r21, 0x00	; 0
+ 392:	0e 94 2b 02 	call	0x456	; 0x456 <__divmodsi4>
+ 396:	27 ea       	ldi	r18, 0xA7	; 167
+ 398:	31 e4       	ldi	r19, 0x41	; 65
+ 39a:	40 e0       	ldi	r20, 0x00	; 0
+ 39c:	50 e0       	ldi	r21, 0x00	; 0
+ 39e:	0e 94 0c 02 	call	0x418	; 0x418 <__mulsi3>
+ 3a2:	7b 01       	movw	r14, r22
+ 3a4:	8c 01       	movw	r16, r24
+ 3a6:	c6 01       	movw	r24, r12
+ 3a8:	b5 01       	movw	r22, r10
+ 3aa:	2d e1       	ldi	r18, 0x1D	; 29
+ 3ac:	33 ef       	ldi	r19, 0xF3	; 243
+ 3ae:	41 e0       	ldi	r20, 0x01	; 1
+ 3b0:	50 e0       	ldi	r21, 0x00	; 0
+ 3b2:	0e 94 2b 02 	call	0x456	; 0x456 <__divmodsi4>
+ 3b6:	ca 01       	movw	r24, r20
+ 3b8:	b9 01       	movw	r22, r18
+ 3ba:	2c ee       	ldi	r18, 0xEC	; 236
+ 3bc:	34 ef       	ldi	r19, 0xF4	; 244
+ 3be:	4f ef       	ldi	r20, 0xFF	; 255
+ 3c0:	5f ef       	ldi	r21, 0xFF	; 255
+ 3c2:	0e 94 0c 02 	call	0x418	; 0x418 <__mulsi3>
+ 3c6:	6e 0d       	add	r22, r14
+ 3c8:	7f 1d       	adc	r23, r15
+ 3ca:	80 1f       	adc	r24, r16
+ 3cc:	91 1f       	adc	r25, r17
+ 3ce:	97 ff       	sbrs	r25, 7
+ 3d0:	04 c0       	rjmp	.+8      	; 0x3da <do_rand+0x84>
+ 3d2:	61 50       	subi	r22, 0x01	; 1
+ 3d4:	70 40       	sbci	r23, 0x00	; 0
+ 3d6:	80 40       	sbci	r24, 0x00	; 0
+ 3d8:	90 48       	sbci	r25, 0x80	; 128
+ 3da:	68 83       	st	Y, r22
+ 3dc:	79 83       	std	Y+1, r23	; 0x01
+ 3de:	8a 83       	std	Y+2, r24	; 0x02
+ 3e0:	9b 83       	std	Y+3, r25	; 0x03
+ 3e2:	9b 01       	movw	r18, r22
+ 3e4:	3f 77       	andi	r19, 0x7F	; 127
+ 3e6:	c9 01       	movw	r24, r18
+ 3e8:	cd b7       	in	r28, 0x3d	; 61
+ 3ea:	de b7       	in	r29, 0x3e	; 62
+ 3ec:	ea e0       	ldi	r30, 0x0A	; 10
+ 3ee:	0c 94 6a 02 	jmp	0x4d4	; 0x4d4 <__epilogue_restores__+0x10>
 
-000003a0 <rand_r>:
- 3a0:	0e 94 82 01 	call	0x304	; 0x304 <do_rand>
- 3a4:	08 95       	ret
+000003f2 <rand_r>:
+ 3f2:	0e 94 ab 01 	call	0x356	; 0x356 <do_rand>
+ 3f6:	08 95       	ret
 
-000003a6 <rand>:
- 3a6:	80 e0       	ldi	r24, 0x00	; 0
- 3a8:	91 e0       	ldi	r25, 0x01	; 1
- 3aa:	0e 94 82 01 	call	0x304	; 0x304 <do_rand>
- 3ae:	08 95       	ret
+000003f8 <rand>:
+ 3f8:	80 e0       	ldi	r24, 0x00	; 0
+ 3fa:	91 e0       	ldi	r25, 0x01	; 1
+ 3fc:	0e 94 ab 01 	call	0x356	; 0x356 <do_rand>
+ 400:	08 95       	ret
 
-000003b0 <srand>:
- 3b0:	a0 e0       	ldi	r26, 0x00	; 0
- 3b2:	b0 e0       	ldi	r27, 0x00	; 0
- 3b4:	80 93 00 01 	sts	0x0100, r24
- 3b8:	90 93 01 01 	sts	0x0101, r25
- 3bc:	a0 93 02 01 	sts	0x0102, r26
- 3c0:	b0 93 03 01 	sts	0x0103, r27
- 3c4:	08 95       	ret
+00000402 <srand>:
+ 402:	a0 e0       	ldi	r26, 0x00	; 0
+ 404:	b0 e0       	ldi	r27, 0x00	; 0
+ 406:	80 93 00 01 	sts	0x0100, r24
+ 40a:	90 93 01 01 	sts	0x0101, r25
+ 40e:	a0 93 02 01 	sts	0x0102, r26
+ 412:	b0 93 03 01 	sts	0x0103, r27
+ 416:	08 95       	ret
 
-000003c6 <__mulsi3>:
- 3c6:	62 9f       	mul	r22, r18
- 3c8:	d0 01       	movw	r26, r0
- 3ca:	73 9f       	mul	r23, r19
- 3cc:	f0 01       	movw	r30, r0
- 3ce:	82 9f       	mul	r24, r18
- 3d0:	e0 0d       	add	r30, r0
- 3d2:	f1 1d       	adc	r31, r1
- 3d4:	64 9f       	mul	r22, r20
- 3d6:	e0 0d       	add	r30, r0
- 3d8:	f1 1d       	adc	r31, r1
- 3da:	92 9f       	mul	r25, r18
- 3dc:	f0 0d       	add	r31, r0
- 3de:	83 9f       	mul	r24, r19
- 3e0:	f0 0d       	add	r31, r0
- 3e2:	74 9f       	mul	r23, r20
- 3e4:	f0 0d       	add	r31, r0
- 3e6:	65 9f       	mul	r22, r21
- 3e8:	f0 0d       	add	r31, r0
- 3ea:	99 27       	eor	r25, r25
- 3ec:	72 9f       	mul	r23, r18
- 3ee:	b0 0d       	add	r27, r0
- 3f0:	e1 1d       	adc	r30, r1
- 3f2:	f9 1f       	adc	r31, r25
- 3f4:	63 9f       	mul	r22, r19
- 3f6:	b0 0d       	add	r27, r0
- 3f8:	e1 1d       	adc	r30, r1
- 3fa:	f9 1f       	adc	r31, r25
- 3fc:	bd 01       	movw	r22, r26
- 3fe:	cf 01       	movw	r24, r30
- 400:	11 24       	eor	r1, r1
- 402:	08 95       	ret
+00000418 <__mulsi3>:
+ 418:	62 9f       	mul	r22, r18
+ 41a:	d0 01       	movw	r26, r0
+ 41c:	73 9f       	mul	r23, r19
+ 41e:	f0 01       	movw	r30, r0
+ 420:	82 9f       	mul	r24, r18
+ 422:	e0 0d       	add	r30, r0
+ 424:	f1 1d       	adc	r31, r1
+ 426:	64 9f       	mul	r22, r20
+ 428:	e0 0d       	add	r30, r0
+ 42a:	f1 1d       	adc	r31, r1
+ 42c:	92 9f       	mul	r25, r18
+ 42e:	f0 0d       	add	r31, r0
+ 430:	83 9f       	mul	r24, r19
+ 432:	f0 0d       	add	r31, r0
+ 434:	74 9f       	mul	r23, r20
+ 436:	f0 0d       	add	r31, r0
+ 438:	65 9f       	mul	r22, r21
+ 43a:	f0 0d       	add	r31, r0
+ 43c:	99 27       	eor	r25, r25
+ 43e:	72 9f       	mul	r23, r18
+ 440:	b0 0d       	add	r27, r0
+ 442:	e1 1d       	adc	r30, r1
+ 444:	f9 1f       	adc	r31, r25
+ 446:	63 9f       	mul	r22, r19
+ 448:	b0 0d       	add	r27, r0
+ 44a:	e1 1d       	adc	r30, r1
+ 44c:	f9 1f       	adc	r31, r25
+ 44e:	bd 01       	movw	r22, r26
+ 450:	cf 01       	movw	r24, r30
+ 452:	11 24       	eor	r1, r1
+ 454:	08 95       	ret
 
-00000404 <__divmodsi4>:
- 404:	97 fb       	bst	r25, 7
- 406:	09 2e       	mov	r0, r25
- 408:	05 26       	eor	r0, r21
- 40a:	0e d0       	rcall	.+28     	; 0x428 <__divmodsi4_neg1>
- 40c:	57 fd       	sbrc	r21, 7
- 40e:	04 d0       	rcall	.+8      	; 0x418 <__divmodsi4_neg2>
- 410:	4b d0       	rcall	.+150    	; 0x4a8 <__udivmodsi4>
- 412:	0a d0       	rcall	.+20     	; 0x428 <__divmodsi4_neg1>
- 414:	00 1c       	adc	r0, r0
- 416:	38 f4       	brcc	.+14     	; 0x426 <__divmodsi4_exit>
+00000456 <__divmodsi4>:
+ 456:	97 fb       	bst	r25, 7
+ 458:	09 2e       	mov	r0, r25
+ 45a:	05 26       	eor	r0, r21
+ 45c:	0e d0       	rcall	.+28     	; 0x47a <__divmodsi4_neg1>
+ 45e:	57 fd       	sbrc	r21, 7
+ 460:	04 d0       	rcall	.+8      	; 0x46a <__divmodsi4_neg2>
+ 462:	4b d0       	rcall	.+150    	; 0x4fa <__udivmodsi4>
+ 464:	0a d0       	rcall	.+20     	; 0x47a <__divmodsi4_neg1>
+ 466:	00 1c       	adc	r0, r0
+ 468:	38 f4       	brcc	.+14     	; 0x478 <__divmodsi4_exit>
 
-00000418 <__divmodsi4_neg2>:
- 418:	50 95       	com	r21
- 41a:	40 95       	com	r20
- 41c:	30 95       	com	r19
- 41e:	21 95       	neg	r18
- 420:	3f 4f       	sbci	r19, 0xFF	; 255
- 422:	4f 4f       	sbci	r20, 0xFF	; 255
- 424:	5f 4f       	sbci	r21, 0xFF	; 255
+0000046a <__divmodsi4_neg2>:
+ 46a:	50 95       	com	r21
+ 46c:	40 95       	com	r20
+ 46e:	30 95       	com	r19
+ 470:	21 95       	neg	r18
+ 472:	3f 4f       	sbci	r19, 0xFF	; 255
+ 474:	4f 4f       	sbci	r20, 0xFF	; 255
+ 476:	5f 4f       	sbci	r21, 0xFF	; 255
 
-00000426 <__divmodsi4_exit>:
- 426:	08 95       	ret
+00000478 <__divmodsi4_exit>:
+ 478:	08 95       	ret
 
-00000428 <__divmodsi4_neg1>:
- 428:	f6 f7       	brtc	.-4      	; 0x426 <__divmodsi4_exit>
- 42a:	90 95       	com	r25
- 42c:	80 95       	com	r24
- 42e:	70 95       	com	r23
- 430:	61 95       	neg	r22
- 432:	7f 4f       	sbci	r23, 0xFF	; 255
- 434:	8f 4f       	sbci	r24, 0xFF	; 255
- 436:	9f 4f       	sbci	r25, 0xFF	; 255
- 438:	08 95       	ret
+0000047a <__divmodsi4_neg1>:
+ 47a:	f6 f7       	brtc	.-4      	; 0x478 <__divmodsi4_exit>
+ 47c:	90 95       	com	r25
+ 47e:	80 95       	com	r24
+ 480:	70 95       	com	r23
+ 482:	61 95       	neg	r22
+ 484:	7f 4f       	sbci	r23, 0xFF	; 255
+ 486:	8f 4f       	sbci	r24, 0xFF	; 255
+ 488:	9f 4f       	sbci	r25, 0xFF	; 255
+ 48a:	08 95       	ret
 
-0000043a <__prologue_saves__>:
- 43a:	2f 92       	push	r2
- 43c:	3f 92       	push	r3
- 43e:	4f 92       	push	r4
- 440:	5f 92       	push	r5
- 442:	6f 92       	push	r6
- 444:	7f 92       	push	r7
- 446:	8f 92       	push	r8
- 448:	9f 92       	push	r9
- 44a:	af 92       	push	r10
- 44c:	bf 92       	push	r11
- 44e:	cf 92       	push	r12
- 450:	df 92       	push	r13
- 452:	ef 92       	push	r14
- 454:	ff 92       	push	r15
- 456:	0f 93       	push	r16
- 458:	1f 93       	push	r17
- 45a:	cf 93       	push	r28
- 45c:	df 93       	push	r29
- 45e:	cd b7       	in	r28, 0x3d	; 61
- 460:	de b7       	in	r29, 0x3e	; 62
- 462:	ca 1b       	sub	r28, r26
- 464:	db 0b       	sbc	r29, r27
- 466:	0f b6       	in	r0, 0x3f	; 63
- 468:	f8 94       	cli
- 46a:	de bf       	out	0x3e, r29	; 62
- 46c:	0f be       	out	0x3f, r0	; 63
- 46e:	cd bf       	out	0x3d, r28	; 61
- 470:	09 94       	ijmp
+0000048c <__prologue_saves__>:
+ 48c:	2f 92       	push	r2
+ 48e:	3f 92       	push	r3
+ 490:	4f 92       	push	r4
+ 492:	5f 92       	push	r5
+ 494:	6f 92       	push	r6
+ 496:	7f 92       	push	r7
+ 498:	8f 92       	push	r8
+ 49a:	9f 92       	push	r9
+ 49c:	af 92       	push	r10
+ 49e:	bf 92       	push	r11
+ 4a0:	cf 92       	push	r12
+ 4a2:	df 92       	push	r13
+ 4a4:	ef 92       	push	r14
+ 4a6:	ff 92       	push	r15
+ 4a8:	0f 93       	push	r16
+ 4aa:	1f 93       	push	r17
+ 4ac:	cf 93       	push	r28
+ 4ae:	df 93       	push	r29
+ 4b0:	cd b7       	in	r28, 0x3d	; 61
+ 4b2:	de b7       	in	r29, 0x3e	; 62
+ 4b4:	ca 1b       	sub	r28, r26
+ 4b6:	db 0b       	sbc	r29, r27
+ 4b8:	0f b6       	in	r0, 0x3f	; 63
+ 4ba:	f8 94       	cli
+ 4bc:	de bf       	out	0x3e, r29	; 62
+ 4be:	0f be       	out	0x3f, r0	; 63
+ 4c0:	cd bf       	out	0x3d, r28	; 61
+ 4c2:	09 94       	ijmp
 
-00000472 <__epilogue_restores__>:
- 472:	2a 88       	ldd	r2, Y+18	; 0x12
- 474:	39 88       	ldd	r3, Y+17	; 0x11
- 476:	48 88       	ldd	r4, Y+16	; 0x10
- 478:	5f 84       	ldd	r5, Y+15	; 0x0f
- 47a:	6e 84       	ldd	r6, Y+14	; 0x0e
- 47c:	7d 84       	ldd	r7, Y+13	; 0x0d
- 47e:	8c 84       	ldd	r8, Y+12	; 0x0c
- 480:	9b 84       	ldd	r9, Y+11	; 0x0b
- 482:	aa 84       	ldd	r10, Y+10	; 0x0a
- 484:	b9 84       	ldd	r11, Y+9	; 0x09
- 486:	c8 84       	ldd	r12, Y+8	; 0x08
- 488:	df 80       	ldd	r13, Y+7	; 0x07
- 48a:	ee 80       	ldd	r14, Y+6	; 0x06
- 48c:	fd 80       	ldd	r15, Y+5	; 0x05
- 48e:	0c 81       	ldd	r16, Y+4	; 0x04
- 490:	1b 81       	ldd	r17, Y+3	; 0x03
- 492:	aa 81       	ldd	r26, Y+2	; 0x02
- 494:	b9 81       	ldd	r27, Y+1	; 0x01
- 496:	ce 0f       	add	r28, r30
- 498:	d1 1d       	adc	r29, r1
- 49a:	0f b6       	in	r0, 0x3f	; 63
- 49c:	f8 94       	cli
- 49e:	de bf       	out	0x3e, r29	; 62
- 4a0:	0f be       	out	0x3f, r0	; 63
- 4a2:	cd bf       	out	0x3d, r28	; 61
- 4a4:	ed 01       	movw	r28, r26
- 4a6:	08 95       	ret
+000004c4 <__epilogue_restores__>:
+ 4c4:	2a 88       	ldd	r2, Y+18	; 0x12
+ 4c6:	39 88       	ldd	r3, Y+17	; 0x11
+ 4c8:	48 88       	ldd	r4, Y+16	; 0x10
+ 4ca:	5f 84       	ldd	r5, Y+15	; 0x0f
+ 4cc:	6e 84       	ldd	r6, Y+14	; 0x0e
+ 4ce:	7d 84       	ldd	r7, Y+13	; 0x0d
+ 4d0:	8c 84       	ldd	r8, Y+12	; 0x0c
+ 4d2:	9b 84       	ldd	r9, Y+11	; 0x0b
+ 4d4:	aa 84       	ldd	r10, Y+10	; 0x0a
+ 4d6:	b9 84       	ldd	r11, Y+9	; 0x09
+ 4d8:	c8 84       	ldd	r12, Y+8	; 0x08
+ 4da:	df 80       	ldd	r13, Y+7	; 0x07
+ 4dc:	ee 80       	ldd	r14, Y+6	; 0x06
+ 4de:	fd 80       	ldd	r15, Y+5	; 0x05
+ 4e0:	0c 81       	ldd	r16, Y+4	; 0x04
+ 4e2:	1b 81       	ldd	r17, Y+3	; 0x03
+ 4e4:	aa 81       	ldd	r26, Y+2	; 0x02
+ 4e6:	b9 81       	ldd	r27, Y+1	; 0x01
+ 4e8:	ce 0f       	add	r28, r30
+ 4ea:	d1 1d       	adc	r29, r1
+ 4ec:	0f b6       	in	r0, 0x3f	; 63
+ 4ee:	f8 94       	cli
+ 4f0:	de bf       	out	0x3e, r29	; 62
+ 4f2:	0f be       	out	0x3f, r0	; 63
+ 4f4:	cd bf       	out	0x3d, r28	; 61
+ 4f6:	ed 01       	movw	r28, r26
+ 4f8:	08 95       	ret
 
-000004a8 <__udivmodsi4>:
- 4a8:	a1 e2       	ldi	r26, 0x21	; 33
- 4aa:	1a 2e       	mov	r1, r26
- 4ac:	aa 1b       	sub	r26, r26
- 4ae:	bb 1b       	sub	r27, r27
- 4b0:	fd 01       	movw	r30, r26
- 4b2:	0d c0       	rjmp	.+26     	; 0x4ce <__udivmodsi4_ep>
+000004fa <__udivmodsi4>:
+ 4fa:	a1 e2       	ldi	r26, 0x21	; 33
+ 4fc:	1a 2e       	mov	r1, r26
+ 4fe:	aa 1b       	sub	r26, r26
+ 500:	bb 1b       	sub	r27, r27
+ 502:	fd 01       	movw	r30, r26
+ 504:	0d c0       	rjmp	.+26     	; 0x520 <__udivmodsi4_ep>
 
-000004b4 <__udivmodsi4_loop>:
- 4b4:	aa 1f       	adc	r26, r26
- 4b6:	bb 1f       	adc	r27, r27
- 4b8:	ee 1f       	adc	r30, r30
- 4ba:	ff 1f       	adc	r31, r31
- 4bc:	a2 17       	cp	r26, r18
- 4be:	b3 07       	cpc	r27, r19
- 4c0:	e4 07       	cpc	r30, r20
- 4c2:	f5 07       	cpc	r31, r21
- 4c4:	20 f0       	brcs	.+8      	; 0x4ce <__udivmodsi4_ep>
- 4c6:	a2 1b       	sub	r26, r18
- 4c8:	b3 0b       	sbc	r27, r19
- 4ca:	e4 0b       	sbc	r30, r20
- 4cc:	f5 0b       	sbc	r31, r21
+00000506 <__udivmodsi4_loop>:
+ 506:	aa 1f       	adc	r26, r26
+ 508:	bb 1f       	adc	r27, r27
+ 50a:	ee 1f       	adc	r30, r30
+ 50c:	ff 1f       	adc	r31, r31
+ 50e:	a2 17       	cp	r26, r18
+ 510:	b3 07       	cpc	r27, r19
+ 512:	e4 07       	cpc	r30, r20
+ 514:	f5 07       	cpc	r31, r21
+ 516:	20 f0       	brcs	.+8      	; 0x520 <__udivmodsi4_ep>
+ 518:	a2 1b       	sub	r26, r18
+ 51a:	b3 0b       	sbc	r27, r19
+ 51c:	e4 0b       	sbc	r30, r20
+ 51e:	f5 0b       	sbc	r31, r21
 
-000004ce <__udivmodsi4_ep>:
- 4ce:	66 1f       	adc	r22, r22
- 4d0:	77 1f       	adc	r23, r23
- 4d2:	88 1f       	adc	r24, r24
- 4d4:	99 1f       	adc	r25, r25
- 4d6:	1a 94       	dec	r1
- 4d8:	69 f7       	brne	.-38     	; 0x4b4 <__udivmodsi4_loop>
- 4da:	60 95       	com	r22
- 4dc:	70 95       	com	r23
- 4de:	80 95       	com	r24
- 4e0:	90 95       	com	r25
- 4e2:	9b 01       	movw	r18, r22
- 4e4:	ac 01       	movw	r20, r24
- 4e6:	bd 01       	movw	r22, r26
- 4e8:	cf 01       	movw	r24, r30
- 4ea:	08 95       	ret
+00000520 <__udivmodsi4_ep>:
+ 520:	66 1f       	adc	r22, r22
+ 522:	77 1f       	adc	r23, r23
+ 524:	88 1f       	adc	r24, r24
+ 526:	99 1f       	adc	r25, r25
+ 528:	1a 94       	dec	r1
+ 52a:	69 f7       	brne	.-38     	; 0x506 <__udivmodsi4_loop>
+ 52c:	60 95       	com	r22
+ 52e:	70 95       	com	r23
+ 530:	80 95       	com	r24
+ 532:	90 95       	com	r25
+ 534:	9b 01       	movw	r18, r22
+ 536:	ac 01       	movw	r20, r24
+ 538:	bd 01       	movw	r22, r26
+ 53a:	cf 01       	movw	r24, r30
+ 53c:	08 95       	ret
 
-000004ec <_exit>:
- 4ec:	f8 94       	cli
+0000053e <_exit>:
+ 53e:	f8 94       	cli
 
-000004ee <__stop_program>:
- 4ee:	ff cf       	rjmp	.-2      	; 0x4ee <__stop_program>
+00000540 <__stop_program>:
+ 540:	ff cf       	rjmp	.-2      	; 0x540 <__stop_program>
