@@ -1,4 +1,4 @@
-#Wed Jul 16 15:01:54 CEST 2014
+#Fri Aug 22 11:42:28 CEST 2014
 avrtarget/ClockFrequency=1000000
 avrtarget/ExtRAMSize=0
 avrtarget/ExtendedRAM=false
@@ -9,8 +9,8 @@ avrtarget/avrdude/BitBangDelay=
 avrtarget/avrdude/Bitclock=
 avrtarget/avrdude/EEPROMFile=
 avrtarget/avrdude/EEPROMFromConfig=true
-avrtarget/avrdude/FlashFile=C\:\\Users\\Gunnar\\Documents\\GitHub\\Lijn_In_Leren\\IMTHE1\\Week 2\\PatronenProject\\main.hex
-avrtarget/avrdude/FlashFromConfig=false
+avrtarget/avrdude/FlashFile=
+avrtarget/avrdude/FlashFromConfig=true
 avrtarget/avrdude/NoChipErase=false
 avrtarget/avrdude/NoSigCheck=false
 avrtarget/avrdude/NoVerify=false
